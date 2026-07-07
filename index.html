@@ -2,200 +2,987 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Mandocas Venezolanas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyecto Gastronómico: Mandocas</title>
 <style>
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.15);
-    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    --accent-gold: #ffc107;
-    --text-white: #ffffff;
-    --text-gray: #b0bec5;
-    --bg-dark: #0a0e14;
-    --card-bg: rgba(20, 25, 35, 0.6);
+--primary-color: #d97706;
+--secondary-color: #451a03;
+--accent-color: #dc2626;
+--bg-main: #fefcfb;
+--card-bg: rgba(255, 255, 255, 0.65);
+--text-dark: #1c1917;
+--text-light: #44403c;
+--border: rgba(255, 255, 255, 0.4);
+--glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
-    -webkit-tap-highlight-color: transparent;
+html {
+-webkit-text-size-adjust: 100%;
+-moz-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+text-size-adjust: 100%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+-webkit-box-sizing: inherit;
+-moz-box-sizing: inherit;
+box-sizing: inherit;
+margin-top: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+margin-left: 0px;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
 }
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
-    background-image: radial-gradient(circle at 50% 0%, #1a2a3a 0%, #0a0e14 100%);
-    min-height: 100vh;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+background-color: #fdfbfb;
+background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%), linear-gradient(to right, #fef3c7, #fde68a);
+background-blend-mode: multiply;
+background-attachment: fixed;
+color: #1c1917;
+line-height: 1.6;
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+padding-left: 20px;
+min-height: 100vh;
 }
-.app-container {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.container {
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+width: 100%;
+max-width: 1000px;
+margin-top: 0px;
+margin-right: auto;
+margin-bottom: 0px;
+margin-left: auto;
 }
-.header {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: var(--glass-shadow);
+.main-header {
+text-align: center;
+background-color: rgba(255, 255, 255, 0.45);
+background-image: linear-gradient(135deg, rgba(254, 243, 199, 0.6) 0%, rgba(253, 230, 138, 0.6) 100%);
+padding-top: 25px;
+padding-right: 20px;
+padding-bottom: 25px;
+padding-left: 20px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+-webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+-moz-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+-webkit-backdrop-filter: blur(12px);
+backdrop-filter: blur(12px);
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: solid;
+border-right-style: solid;
+border-bottom-style: solid;
+border-left-style: solid;
+border-top-color: rgba(255, 255, 255, 0.7);
+border-right-color: rgba(255, 255, 255, 0.7);
+border-bottom-color: rgba(255, 255, 255, 0.7);
+border-left-color: rgba(255, 255, 255, 0.7);
+margin-bottom: 30px;
+-webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+-moz-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+-o-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.main-header:hover {
+-webkit-transform: translateY(-5px);
+-moz-transform: translateY(-5px);
+-ms-transform: translateY(-5px);
+-o-transform: translateY(-5px);
+transform: translateY(-5px);
+-webkit-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+-moz-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+}
+.main-header p {
+font-weight: 700;
+color: #d97706;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 0.9rem;
+margin-bottom: 5px;
+}
+.main-header h1 {
+font-size: 1.8rem;
+color: #451a03;
+margin-bottom: 15px;
+line-height: 1.2;
+}
+.integrantes-list {
+list-style-type: none;
+list-style-position: outside;
+list-style-image: none;
+font-size: 1rem;
+font-weight: 600;
+color: #78350f;
+margin-top: 15px;
+padding-top: 10px;
+padding-right: 15px;
+padding-bottom: 10px;
+padding-left: 15px;
+background-color: rgba(255, 255, 255, 0.5);
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+-webkit-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
+-webkit-box-align: center;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+gap: 10px;
+}
+.integrantes-list li {
+display: inline-block;
+padding-top: 4px;
+padding-right: 12px;
+padding-bottom: 4px;
+padding-left: 12px;
+background-color: rgba(253, 230, 138, 0.4);
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.integrantes-list li:first-child {
+background-color: transparent;
+padding-top: 0px;
+padding-right: 0px;
+padding-bottom: 0px;
+padding-left: 0px;
+}
+.integrantes-list li:hover {
+background-color: rgba(253, 230, 138, 1);
+-webkit-transform: scale(1.05);
+-moz-transform: scale(1.05);
+-ms-transform: scale(1.05);
+-o-transform: scale(1.05);
+transform: scale(1.05);
+}
+.hero-banner {
+width: 100%;
+height: 380px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+overflow-x: hidden;
+overflow-y: hidden;
+-webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+-moz-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+margin-bottom: 30px;
+position: relative;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+.hero-banner:hover {
+-webkit-box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+-moz-box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+.hero-banner img {
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+-webkit-transition: all 0.8s ease;
+-moz-transition: all 0.8s ease;
+-o-transition: all 0.8s ease;
+transition: all 0.8s ease;
+}
+.hero-banner:hover img {
+-webkit-transform: scale(1.08);
+-moz-transform: scale(1.08);
+-ms-transform: scale(1.08);
+-o-transform: scale(1.08);
+transform: scale(1.08);
+}
+.hero-text {
+position: absolute;
+bottom: 0px;
+left: 0px;
+right: 0px;
+background-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+padding-top: 40px;
+padding-right: 25px;
+padding-bottom: 25px;
+padding-left: 25px;
+color: #ffffff;
+-webkit-backdrop-filter: blur(4px);
+backdrop-filter: blur(4px);
+}
+.hero-text h2 {
+font-size: 1.4rem;
+color: #fde68a;
+margin-bottom: 8px;
+}
+.hero-text p {
+font-size: 0.95rem;
+color: #ffffff;
+}
+.content-grid {
+display: -ms-grid;
+display: grid;
+-ms-grid-columns: 1fr;
+grid-template-columns: 1fr;
+grid-row-gap: 30px;
+grid-column-gap: 30px;
 }
 .section-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--glass-border);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+background-color: rgba(255, 255, 255, 0.65);
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+padding-top: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+padding-left: 30px;
+-webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+-moz-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+-webkit-backdrop-filter: blur(16px);
+backdrop-filter: blur(16px);
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: solid;
+border-right-style: solid;
+border-bottom-style: solid;
+border-left-style: solid;
+border-top-color: rgba(255, 255, 255, 0.8);
+border-right-color: rgba(255, 255, 255, 0.8);
+border-bottom-color: rgba(255, 255, 255, 0.8);
+border-left-color: rgba(255, 255, 255, 0.8);
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+transition: all 0.4s ease;
 }
-.title-main {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: var(--accent-gold);
+.section-card:hover {
+-webkit-transform: translateY(-3px);
+-moz-transform: translateY(-3px);
+-ms-transform: translateY(-3px);
+-o-transform: translateY(-3px);
+transform: translateY(-3px);
+-webkit-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+-moz-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+background-color: rgba(255, 255, 255, 0.75);
 }
-.ingredient-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.section-title {
+font-size: 1.4rem;
+color: #451a03;
+margin-bottom: 20px;
+padding-bottom: 10px;
+border-bottom-width: 3px;
+border-bottom-style: solid;
+border-bottom-color: #d97706;
+display: inline-block;
+font-weight: 700;
 }
-.ingredient-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(255,255,255,0.03);
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
+.ingredients-table {
+width: 100%;
+border-collapse: collapse;
+background-color: transparent;
 }
-.step-item {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--glass-border);
+.ingredients-table th {
+background-color: rgba(255, 251, 235, 0.8);
+color: #451a03;
+text-align: left;
+padding-top: 14px;
+padding-right: 14px;
+padding-bottom: 14px;
+padding-left: 14px;
+font-weight: 700;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: #fde68a;
 }
-.step-number {
-    display: inline-block;
-    background: var(--accent-gold);
-    color: #000;
-    padding: 2px 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-bottom: 8px;
+.ingredients-table td {
+padding-top: 14px;
+padding-right: 14px;
+padding-bottom: 14px;
+padding-left: 14px;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+border-bottom-color: rgba(245, 245, 244, 0.6);
+color: #44403c;
+font-size: 1rem;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.ingredients-table tbody tr {
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.ingredients-table tbody tr:hover {
+background-color: rgba(253, 230, 138, 0.2);
+}
+.ingredients-table tbody tr:hover td {
+color: #1c1917;
+-webkit-transform: translateX(5px);
+-moz-transform: translateX(5px);
+-ms-transform: translateX(5px);
+-o-transform: translateX(5px);
+transform: translateX(5px);
+}
+.step-block {
+margin-bottom: 25px;
+padding-bottom: 20px;
+border-bottom-width: 1px;
+border-bottom-style: dashed;
+border-bottom-color: rgba(231, 229, 228, 0.8);
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.step-block:hover {
+background-color: rgba(255, 255, 255, 0.3);
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+border-bottom-color: transparent;
+}
+.step-block:last-child {
+margin-bottom: 0px;
+padding-bottom: 0px;
+border-bottom-width: 0px;
+border-bottom-style: none;
+border-bottom-color: transparent;
+}
+.step-num-title {
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+gap: 15px;
+margin-bottom: 12px;
+}
+.step-num {
+background-color: #d97706;
+color: #ffffff;
+width: 36px;
+height: 36px;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+border-bottom-right-radius: 50%;
+border-bottom-left-radius: 50%;
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-align: center;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: center;
+-webkit-justify-content: center;
+-ms-flex-pack: center;
+justify-content: center;
+font-weight: 700;
+font-size: 1.1rem;
+-webkit-box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
+-moz-box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
+box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.step-block:hover .step-num {
+-webkit-transform: rotate(360deg) scale(1.1);
+-moz-transform: rotate(360deg) scale(1.1);
+-ms-transform: rotate(360deg) scale(1.1);
+-o-transform: rotate(360deg) scale(1.1);
+transform: rotate(360deg) scale(1.1);
+background-color: #b45309;
+}
+.step-title {
+font-size: 1.2rem;
+font-weight: 700;
+color: #451a03;
+}
+.step-detail-grid {
+display: -ms-grid;
+display: grid;
+-ms-grid-columns: 1fr;
+grid-template-columns: 1fr;
+grid-row-gap: 15px;
+grid-column-gap: 15px;
+}
+.step-desc {
+font-size: 1rem;
+color: #44403c;
+text-align: justify;
+line-height: 1.7;
+}
+.step-img-holder {
+width: 100%;
+height: 150px;
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+overflow-x: hidden;
+overflow-y: hidden;
+-webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+-moz-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+border-top-width: 3px;
+border-right-width: 3px;
+border-bottom-width: 3px;
+border-left-width: 3px;
+border-top-style: solid;
+border-right-style: solid;
+border-bottom-style: solid;
+border-left-style: solid;
+border-top-color: rgba(255, 255, 255, 0.9);
+border-right-color: rgba(255, 255, 255, 0.9);
+border-bottom-color: rgba(255, 255, 255, 0.9);
+border-left-color: rgba(255, 255, 255, 0.9);
+background-color: rgba(245, 245, 244, 0.5);
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+.step-img-holder img {
+width: 100%;
+height: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+.step-block:hover .step-img-holder {
+-webkit-transform: scale(1.03);
+-moz-transform: scale(1.03);
+-ms-transform: scale(1.03);
+-o-transform: scale(1.03);
+transform: scale(1.03);
+-webkit-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+-moz-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+.step-block:hover .step-img-holder img {
+-webkit-transform: scale(1.1);
+-moz-transform: scale(1.1);
+-ms-transform: scale(1.1);
+-o-transform: scale(1.1);
+transform: scale(1.1);
+}
+.info-alert {
+background-color: rgba(255, 247, 237, 0.8);
+border-left-width: 5px;
+border-left-style: solid;
+border-left-color: #d97706;
+padding-top: 18px;
+padding-right: 18px;
+padding-bottom: 18px;
+padding-left: 18px;
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+margin-top: 25px;
+color: #7c2d12;
+font-size: 0.95rem;
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+-webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+-moz-box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.info-alert:hover {
+background-color: rgba(255, 247, 237, 1);
+-webkit-transform: translateX(8px);
+-moz-transform: translateX(8px);
+-ms-transform: translateX(8px);
+-o-transform: translateX(8px);
+transform: translateX(8px);
+border-left-color: #b45309;
+}
+.thanks-section {
+text-align: center;
+background-color: rgba(69, 26, 3, 0.85);
+background-image: linear-gradient(135deg, rgba(69, 26, 3, 0.9) 0%, rgba(28, 25, 23, 0.9) 100%);
+color: #fef3c7;
+padding-top: 45px;
+padding-right: 25px;
+padding-bottom: 45px;
+padding-left: 25px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+margin-top: 45px;
+-webkit-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+-moz-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(10px);
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: solid;
+border-right-style: solid;
+border-bottom-style: solid;
+border-left-style: solid;
+border-top-color: rgba(253, 230, 138, 0.2);
+border-right-color: rgba(253, 230, 138, 0.2);
+border-bottom-color: rgba(253, 230, 138, 0.2);
+border-left-color: rgba(253, 230, 138, 0.2);
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+.thanks-section:hover {
+-webkit-transform: scale(1.02);
+-moz-transform: scale(1.02);
+-ms-transform: scale(1.02);
+-o-transform: scale(1.02);
+transform: scale(1.02);
+-webkit-box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+}
+.thanks-section h3 {
+font-size: 2.2rem;
+margin-bottom: 0px;
+color: #fde68a;
+letter-spacing: 1px;
+}
+.logo-container {
+text-align: center;
+margin-top: 40px;
+margin-bottom: 40px;
+-webkit-transition: all 0.5s ease;
+-moz-transition: all 0.5s ease;
+-o-transition: all 0.5s ease;
+transition: all 0.5s ease;
+}
+.logo-container img {
+max-width: 100%;
+width: 250px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+-webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+-moz-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+-webkit-transition: all 0.4s ease;
+-moz-transition: all 0.4s ease;
+-o-transition: all 0.4s ease;
+transition: all 0.4s ease;
+}
+.logo-container img:hover {
+-webkit-transform: translateY(-8px) scale(1.05);
+-moz-transform: translateY(-8px) scale(1.05);
+-ms-transform: translateY(-8px) scale(1.05);
+-o-transform: translateY(-8px) scale(1.05);
+transform: translateY(-8px) scale(1.05);
+-webkit-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+-moz-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+.custom-footer {
+margin-top: 30px;
+padding-top: 20px;
+padding-right: 10px;
+padding-bottom: 20px;
+padding-left: 10px;
+border-top-width: 1px;
+border-top-style: solid;
+border-top-color: rgba(231, 229, 228, 0.5);
+display: -webkit-box;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: horizontal;
+-webkit-box-direction: normal;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+-webkit-box-pack: justify;
+-webkit-justify-content: space-between;
+-ms-flex-pack: justify;
+justify-content: space-between;
+-webkit-box-align: center;
+-webkit-align-items: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-flex-wrap: wrap;
+-ms-flex-wrap: wrap;
+flex-wrap: wrap;
+gap: 15px;
+background-color: rgba(255, 255, 255, 0.3);
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+}
+.footer-left {
+font-size: 0.95rem;
+color: #57534e;
+font-style: italic;
+}
+.footer-right {
+font-size: 1.05rem;
+font-weight: 700;
+color: #451a03;
+background-color: #fde68a;
+padding-top: 6px;
+padding-right: 18px;
+padding-bottom: 6px;
+padding-left: 18px;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+border-bottom-right-radius: 8px;
+border-bottom-left-radius: 8px;
+-webkit-box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
+-moz-box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
+box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+transition: all 0.3s ease;
+}
+.footer-right:hover {
+background-color: #fcd34d;
+-webkit-transform: translateY(-2px);
+-moz-transform: translateY(-2px);
+-ms-transform: translateY(-2px);
+-o-transform: translateY(-2px);
+transform: translateY(-2px);
+-webkit-box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
+-moz-box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
+box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
+}
+@media screen and (min-width: 600px) {
+.step-detail-grid {
+-ms-grid-columns: 1fr 180px;
+grid-template-columns: 1fr 180px;
+}
+.step-img-holder {
+height: 120px;
+}
+}
+@media screen and (min-width: 900px) {
+.content-grid {
+-ms-grid-columns: 1.5fr 1fr;
+grid-template-columns: 1.5fr 1fr;
+}
+.main-header h1 {
+font-size: 2.2rem;
+}
+.hero-banner {
+height: 450px;
+}
+.step-img-holder {
+height: 140px;
+}
+}
+@media screen and (max-width: 599px) {
+body {
+padding-top: 10px;
+padding-right: 10px;
+padding-bottom: 10px;
+padding-left: 10px;
+}
+.main-header h1 {
+font-size: 1.5rem;
+}
+.integrantes-list {
+font-size: 0.9rem;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+gap: 5px;
+}
+.hero-banner {
+height: 250px;
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+}
+.hero-text h2 {
+font-size: 1.2rem;
+}
+.section-card {
+padding-top: 20px;
+padding-right: 15px;
+padding-bottom: 20px;
+padding-left: 15px;
+}
+.custom-footer {
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+text-align: center;
+}
+.thanks-section h3 {
+font-size: 1.6rem;
+}
+}
+@media screen and (max-width: 380px) {
+.main-header h1 {
+font-size: 1.3rem;
+}
+.hero-banner {
+height: 200px;
+}
+.step-num {
+width: 30px;
+height: 30px;
+font-size: 0.9rem;
+}
+.step-title {
+font-size: 1.1rem;
+}
+}
+@media print {
+body {
+background-color: #ffffff;
+background-image: none;
+color: #000000;
+}
+.section-card,
+.main-header,
+.thanks-section {
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+border-top-width: 1px;
+border-right-width: 1px;
+border-bottom-width: 1px;
+border-left-width: 1px;
+border-top-style: solid;
+border-right-style: solid;
+border-bottom-style: solid;
+border-left-style: solid;
+border-top-color: #dddddd;
+border-right-color: #dddddd;
+border-bottom-color: #dddddd;
+border-left-color: #dddddd;
+-webkit-backdrop-filter: none;
+backdrop-filter: none;
+}
+.hero-text {
+position: relative;
+background-image: none;
+background-color: #eeeeee;
+color: #000000;
+}
+.hero-text h2,
+.hero-text p {
+color: #000000;
+}
 }
 </style>
 </head>
 <body>
-<div class="app-container">
-    <div class="header">
-        <h1 class="title-main">Mandocas Venezolanas</h1>
-    </div>
-    <div class="section-card">
-        <h2 style="margin-bottom: 15px;">Ingredientes Necesarios</h2>
-        <div class="ingredient-list">
-            <div class="ingredient-item">
-                <div>
-                    <div style="font-weight: bold;">Plátanos maduros</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">2 unidades</div>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div>
-                    <div style="font-weight: bold;">Papelón (Panela)</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">250g</div>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div>
-                    <div style="font-weight: bold;">Harina de maíz</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">2 tazas</div>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div>
-                    <div style="font-weight: bold;">Queso blanco duro</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">300g</div>
-                </div>
-            </div>
-            <div class="ingredient-item">
-                <div>
-                    <div style="font-weight: bold;">Ajonjolí</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">Al gusto</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section-card">
-        <h2 style="margin-bottom: 15px;">Pasos de Preparación</h2>
-        <div class="step-item">
-            <span class="step-number">01</span>
-            <p>Hervir el papelón con agua hasta obtener un almíbar espeso.</p>
-        </div>
-        <div class="step-item">
-            <span class="step-number">02</span>
-            <p>Cocinar los plátanos y triturarlos hasta formar un puré suave.</p>
-        </div>
-        <div class="step-item">
-            <span class="step-number">03</span>
-            <p>Mezclar el puré de plátano con la harina, el queso y el ajonjolí.</p>
-        </div>
-        <div class="step-item">
-            <span class="step-number">04</span>
-            <p>Amasar bien hasta obtener una consistencia homogénea.</p>
-        </div>
-        <div class="step-item">
-            <span class="step-number">05</span>
-            <p>Formar cilindros y unir los extremos para crear la forma de gota.</p>
-        </div>
-        <div class="step-item">
-            <span class="step-number">06</span>
-            <p>Freír en aceite caliente hasta obtener un color dorado.</p>
-        </div>
-    </div>
+<div class="container">
+<header class="main-header">
+<p>Proyecto Expositivo de Gastronomía</p>
+<h1>Mandocas con Ajonjolí</h1>
+<ul class="integrantes-list">
+<li>Integrantes:</li>
+<li>Christian Liao</li>
+<li>Saul Alfonzo</li>
+<li>Pablo Mesa</li>
+</ul>
+</header>
+<div class="hero-banner">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200" alt="Plato de Mandocas Tradicionales">
+<div class="hero-text">
+<h2>Tradición y Sabor del Estado Zulia</h2>
+<p>Una receta típica de nuestra tierra que equilibra perfectamente el sabor dulce y el salado.</p>
 </div>
-<script>
-const APP_DATA = { version: "1.0.0", active: true };
-const filler = [
-    { n: 1 }, { n: 2 }, { n: 3 }, { n: 4 }, { n: 5 }, { n: 6 }, { n: 7 }, { n: 8 }, { n: 9 }, { n: 10 },
-    { n: 11 }, { n: 12 }, { n: 13 }, { n: 14 }, { n: 15 }, { n: 16 }, { n: 17 }, { n: 18 }, { n: 19 }, { n: 20 },
-    { n: 21 }, { n: 22 }, { n: 23 }, { n: 24 }, { n: 25 }, { n: 26 }, { n: 27 }, { n: 28 }, { n: 29 }, { n: 30 },
-    { n: 31 }, { n: 32 }, { n: 33 }, { n: 34 }, { n: 35 }, { n: 36 }, { n: 37 }, { n: 38 }, { n: 39 }, { n: 40 },
-    { n: 41 }, { n: 42 }, { n: 43 }, { n: 44 }, { n: 45 }, { n: 46 }, { n: 47 }, { n: 48 }, { n: 49 }, { n: 50 },
-    { n: 51 }, { n: 52 }, { n: 53 }, { n: 54 }, { n: 55 }, { n: 56 }, { n: 57 }, { n: 58 }, { n: 59 }, { n: 60 },
-    { n: 61 }, { n: 62 }, { n: 63 }, { n: 64 }, { n: 65 }, { n: 66 }, { n: 67 }, { n: 68 }, { n: 69 }, { n: 70 },
-    { n: 71 }, { n: 72 }, { n: 73 }, { n: 74 }, { n: 75 }, { n: 76 }, { n: 77 }, { n: 78 }, { n: 79 }, { n: 80 },
-    { n: 81 }, { n: 82 }, { n: 83 }, { n: 84 }, { n: 85 }, { n: 86 }, { n: 87 }, { n: 88 }, { n: 89 }, { n: 90 },
-    { n: 91 }, { n: 92 }, { n: 93 }, { n: 94 }, { n: 95 }, { n: 96 }, { n: 97 }, { n: 98 }, { n: 99 }, { n: 100 },
-    { n: 101 }, { n: 102 }, { n: 103 }, { n: 104 }, { n: 105 }, { n: 106 }, { n: 107 }, { n: 108 }, { n: 109 }, { n: 110 },
-    { n: 111 }, { n: 112 }, { n: 113 }, { n: 114 }, { n: 115 }, { n: 116 }, { n: 117 }, { n: 118 }, { n: 119 }, { n: 120 },
-    { n: 121 }, { n: 122 }, { n: 123 }, { n: 124 }, { n: 125 }, { n: 126 }, { n: 127 }, { n: 128 }, { n: 129 }, { n: 130 },
-    { n: 131 }, { n: 132 }, { n: 133 }, { n: 134 }, { n: 135 }, { n: 136 }, { n: 137 }, { n: 138 }, { n: 139 }, { n: 140 },
-    { n: 141 }, { n: 142 }, { n: 143 }, { n: 144 }, { n: 145 }, { n: 146 }, { n: 147 }, { n: 148 }, { n: 149 }, { n: 150 },
-    { n: 151 }, { n: 152 }, { n: 153 }, { n: 154 }, { n: 155 }, { n: 156 }, { n: 157 }, { n: 158 }, { n: 159 }, { n: 160 },
-    { n: 161 }, { n: 162 }, { n: 163 }, { n: 164 }, { n: 165 }, { n: 166 }, { n: 167 }, { n: 168 }, { n: 169 }, { n: 170 },
-    { n: 171 }, { n: 172 }, { n: 173 }, { n: 174 }, { n: 175 }, { n: 176 }, { n: 177 }, { n: 178 }, { n: 179 }, { n: 180 },
-    { n: 181 }, { n: 182 }, { n: 183 }, { n: 184 }, { n: 185 }, { n: 186 }, { n: 187 }, { n: 188 }, { n: 189 }, { n: 190 },
-    { n: 191 }, { n: 192 }, { n: 193 }, { n: 194 }, { n: 195 }, { n: 196 }, { n: 197 }, { n: 198 }, { n: 199 }, { n: 200 },
-    { n: 201 }, { n: 202 }, { n: 203 }, { n: 204 }, { n: 205 }, { n: 206 }, { n: 207 }, { n: 208 }, { n: 209 }, { n: 210 },
-    { n: 211 }, { n: 212 }, { n: 213 }, { n: 214 }, { n: 215 }, { n: 216 }, { n: 217 }, { n: 218 }, { n: 219 }, { n: 220 },
-    { n: 221 }, { n: 222 }, { n: 223 }, { n: 224 }, { n: 225 }, { n: 226 }, { n: 227 }, { n: 228 }, { n: 229 }, { n: 230 },
-    { n: 231 }, { n: 232 }, { n: 233 }, { n: 234 }, { n: 235 }, { n: 236 }, { n: 237 }, { n: 238 }, { n: 239 }, { n: 240 },
-    { n: 241 }, { n: 242 }, { n: 243 }, { n: 244 }, { n: 245 }, { n: 246 }, { n: 247 }, { n: 248 }, { n: 249 }, { n: 250 },
-    { n: 251 }, { n: 252 }, { n: 253 }, { n: 254 }, { n: 255 }, { n: 256 }, { n: 257 }, { n: 258 }, { n: 259 }, { n: 260 },
-    { n: 261 }, { n: 262 }, { n: 263 }, { n: 264 }, { n: 265 }, { n: 266 }, { n: 267 }, { n: 268 }, { n: 269 }, { n: 270 },
-    { n: 271 }, { n: 272 }, { n: 273 }, { n: 274 }, { n: 275 }, { n: 276 }, { n: 277 }, { n: 278 }, { n: 279 }, { n: 280 },
-    { n: 281 }, { n: 282 }, { n: 283 }, { n: 284 }, { n: 285 }, { n: 286 }, { n: 287 }, { n: 288 }, { n: 289 }, { n: 290 },
-    { n: 291 }, { n: 292 }, { n: 293 }, { n: 294 }, { n: 295 }, { n: 296 }, { n: 297 }, { n: 298 }, { n: 299 }, { n: 300 },
-    { n: 301 }, { n: 302 }, { n: 303 }, { n: 304 }, { n: 305 }, { n: 306 }, { n: 307 }, { n: 308 }, { n: 309 }, { n: 310 },
-    { n: 311 }, { n: 312 }, { n: 313 }, { n: 314 }, { n: 315 }, { n: 316 }, { n: 317 }, { n: 318 }, { n: 319 }, { n: 320 }
-];
-</script>
+</div>
+<div class="content-grid">
+<div class="section-card">
+<span class="section-title">Pasos de Preparación</span>
+<div class="step-block">
+<div class="step-num-title">
+<div class="step-num">1</div>
+<div class="step-title">El Melao de Papelón</div>
+</div>
+<div class="step-detail-grid">
+<div class="step-desc">
+Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave, homogéneo y libre de impurezas. Dejar enfriar un poco.
+</div>
+<div class="step-img-holder">
+<img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=300" alt="Melao hirviendo">
+</div>
+</div>
+</div>
+<div class="step-block">
+<div class="step-num-title">
+<div class="step-num">2</div>
+<div class="step-title">Aromatizar la Base</div>
+</div>
+<div class="step-detail-grid">
+<div class="step-desc">
+Agregar los 50g de leche en polvo y la cucharada de esencia de vainilla al melao templado. Batir muy bien para evitar grumos y lograr una base líquida rica y perfumada.
+</div>
+<div class="step-img-holder">
+<img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=300" alt="Mezcla de vainilla">
+</div>
+</div>
+</div>
+<div class="step-block">
+<div class="step-num-title">
+<div class="step-num">3</div>
+<div class="step-title">El Amasado</div>
+</div>
+<div class="step-detail-grid">
+<div class="step-desc">
+Hacer un puré firme con los 2 plátanos maduros cocidos y los 100g de margarina. Agregar el melao líquido, el kilo de harina de maíz y los 700g de queso llanero rallado. Amasar hasta conseguir una consistencia suave y compacta.
+</div>
+<div class="step-img-holder">
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=300" alt="Amasado manual">
+</div>
+</div>
+</div>
+<div class="step-block">
+<div class="step-num-title">
+<div class="step-num">4</div>
+<div class="step-title">Modelado del Lazo</div>
+</div>
+<div class="step-detail-grid">
+<div class="step-desc">
+Hacer tiras o bastones delgados con la masa usando las manos sobre la mesa de trabajo. Doblar y unir los extremos para darle la forma tradicional de lazo o gota zuliana.
+</div>
+<div class="step-img-holder">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300" alt="Forma de la masa">
+</div>
+</div>
+</div>
+<div class="step-block">
+<div class="step-num-title">
+<div class="step-num">5</div>
+<div class="step-title">Fritura y Toque Final</div>
+</div>
+<div class="step-detail-grid">
+<div class="step-desc">
+Pasar los lazos por semillas de ajonjolí al gusto. Freír en un caldero con el 1/2 litro de aceite bien caliente hasta que adquieran un color dorado oscuro y una textura muy crujiente.
+</div>
+<div class="step-img-holder">
+<img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=300" alt="Fritura en sartén">
+</div>
+</div>
+</div>
+</div>
+<div class="section-card">
+<span class="section-title">Ingredientes</span>
+<table class="ingredients-table">
+<thead>
+<tr>
+<th>Ingrediente</th>
+<th>Cantidad</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><strong>Harina de maíz</strong></td><td>1 kg</td></tr>
+<tr><td><strong>Plátanos maduros</strong></td><td>2 unidades</td></tr>
+<tr><td><strong>Papelón (Panela)</strong></td><td>1 unidad</td></tr>
+<tr><td><strong>Queso llanero</strong></td><td>700 g</td></tr>
+<tr><td><strong>Margarina</strong></td><td>100 g</td></tr>
+<tr><td><strong>Leche en polvo</strong></td><td>50 g</td></tr>
+<tr><td><strong>Esencia de Vainilla</strong></td><td>1 cda.</td></tr>
+<tr><td><strong>Ajonjolí (Sésamo)</strong></td><td>Al gusto</td></tr>
+<tr><td><strong>Aceite vegetal</strong></td><td>1/2 litro</td></tr>
+</tbody>
+</table>
+<div class="info-alert">
+⚠️ <strong>Nota Técnica:</strong> Los 700g de queso llanero aportan la sal necesaria para la masa, logrando un equilibrio idóneo sin agregar sal común.
+</div>
+</div>
+</div>
+<section class="thanks-section">
+<h3>¡Muchas Gracias por su Atención!</h3>
+</section>
+<div class="logo-container">
+<img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo">
+</div>
+<footer class="custom-footer">
+<span class="footer-left">Todo el sitio web fue realizado independientemente por Christian.</span>
+<span class="footer-right">5to Grado "A"</span>
+</footer>
+</div>
 </body>
 </html>
