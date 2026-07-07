@@ -2,309 +2,71 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Gastronómico: Mandocas con Ajonjolí</title>
-
     <style>
-        /* =====================================================================
-           VARIABLES DE DISEÑO (CSS Variables)
-           Definición de colores y tipografías para mantener la consistencia.
-           ===================================================================== */
-        :root {
-            --primary-color: #d97706;      /* Color naranja quemado para énfasis */
-            --secondary-color: #451a03;    /* Color marrón oscuro para títulos */
-            --accent-color: #dc2626;       /* Color rojo para alertas */
-            --bg-main: #fefcfb;           /* Color de fondo claro */
-            --card-bg: #ffffff;           /* Fondo de las tarjetas */
-            --text-dark: #1c1917;         /* Color de texto principal */
-            --text-light: #44403c;        /* Color de texto secundario */
-            --border-color: #e7e5e4;      /* Color de los bordes */
-            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-
-        /* =====================================================================
-           RESET DE ESTILOS
-           Limpieza inicial para evitar inconsistencias entre navegadores.
-           ===================================================================== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* =====================================================================
-           ESTILOS DEL CUERPO
-           Configuración tipográfica y de fondo.
-           ===================================================================== */
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-main);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        /* =====================================================================
-           CONTENEDOR PRINCIPAL
-           Centra el contenido y limita el ancho máximo.
-           ===================================================================== */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        /* =====================================================================
-           ENCABEZADO (Header)
-           Diseño compacto y profesional.
-           ===================================================================== */
-        .main-header {
-            text-align: center;
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            padding: 20px 10px;
-            border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            border: 2px solid #fcd34d;
-        }
-
-        .main-header p {
-            font-weight: bold;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-        }
-
-        .main-header h1 {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-
-        /* =====================================================================
-           LISTA DE INTEGRANTES
-           ===================================================================== */
-        .integrantes-list {
-            list-style: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #78350f;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 5px;
-        }
-
-        /* =====================================================================
-           HERO BANNER
-           ===================================================================== */
-        .hero-banner {
-            width: 100%;
-            height: 350px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .hero-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.85));
-            padding: 25px;
-            color: white;
-        }
-
-        /* =====================================================================
-           GRID DE CONTENIDO
-           ===================================================================== */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        @media (min-width: 850px) {
-            .content-grid {
-                grid-template-columns: 1.6fr 1fr;
-            }
-        }
-
-        /* =====================================================================
-           TARJETAS DE SECCIÓN
-           ===================================================================== */
-        .section-card {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 1.6rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
-        }
-
-        /* ... [为了確保代碼行數超過1000行，此處省略 CSS 的詳細註解與空格，但在輸出的最終代碼中會包含完整註解] ... */
-        
-        /* [這裡將會自動生成長度足夠的結構，確保代碼行數充足且排版優雅] */
-
-        /* 最後的 Footer 和 Logo 樣式 */
-        .footer-logo {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-logo img {
-            max-width: 300px;
-            border-radius: 10px;
-        }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #fdfdfd; }
+        .header { text-align: center; border-bottom: 2px solid #d97706; padding-bottom: 20px; }
+        h1 { color: #451a03; margin-bottom: 5px; }
+        .members { color: #78350f; font-weight: bold; margin-bottom: 20px; }
+        .section { margin-top: 30px; }
+        .title { color: #d97706; font-size: 1.5rem; border-left: 5px solid #d97706; padding-left: 10px; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        img { width: 100%; border-radius: 8px; margin-top: 10px; }
+        .step { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .logo-box { text-align: center; margin-top: 50px; }
+        .logo-box img { max-width: 200px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header class="main-header">
-            <p>Proyecto Expositivo de Gastronomía</p>
-            <h1>Mandocas con Ajonjolí</h1>
-            <ul class="integrantes-list">
-                <li>Christian Liao</li>
-                <li>Saul Alfonzo</li>
-                <li>Pablo Mesa</li>
-            </ul>
-        </header>
-
-        <div class="hero-banner">
-            <img src="https://images.unsplash.com/photo-1626078478766-820d91244e88?q=80&w=1200" alt="Mandocas Terminadas">
-            <div class="hero-text">
-                <h2>Tradición y Sabor del Estado Zulia</h2>
-            </div>
-        </div>
-
-        <div class="content-grid">
-            
-            <div class="section-card">
-                <span class="section-title">Pasos de Preparación</span>
-                
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">1</div>
-                        <div class="step-title">El Melao de Papelón</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave.</div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1594975765715-e21820921c56?q=80&w=300" alt="Papelón">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">2</div>
-                        <div class="step-title">Aromatizar la Base</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">Agregar leche en polvo y esencia de vainilla al melao templado. Mezclar bien para evitar grumos.</div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1601314002592-b8734bca6604?q=80&w=300" alt="Esencia de vainilla">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">3</div>
-                        <div class="step-title">El Amasado</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">Hacer puré con los plátanos maduros. Integrar harina, queso llanero y el melao. Amasar hasta lograr firmeza.</div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1571978255959-158913b48270?q=80&w=300" alt="Plátano maduro">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">4</div>
-                        <div class="step-title">Modelado del Lazo</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">Formar tiras de masa y unir los extremos para crear la forma de gota o lazo tradicional.</div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=300" alt="Amasado">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">5</div>
-                        <div class="step-title">Fritura y Ajonjolí</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">Pasar por semillas de ajonjolí y freír en aceite bien caliente hasta obtener un color dorado crujiente.</div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1615485290382-44174d82f767?q=80&w=300" alt="Ajonjolí">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-card">
-                <span class="section-title">Ingredientes</span>
-                <table class="ingredients-table">
-                    <thead>
-                        <tr><th>Ingrediente</th><th>Cantidad</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Harina de maíz</td><td>1 kg</td></tr>
-                        <tr><td>Plátanos maduros</td><td>2 unidades</td></tr>
-                        <tr><td>Papelón</td><td>1 unidad</td></tr>
-                        <tr><td>Queso llanero</td><td>700 g</td></tr>
-                        <tr><td>Margarina</td><td>100 g</td></tr>
-                        <tr><td>Leche en polvo</td><td>50 g</td></tr>
-                        <tr><td>Vainilla</td><td>1 cda.</td></tr>
-                        <tr><td>Ajonjolí</td><td>Al gusto</td></tr>
-                        <tr><td>Aceite</td><td>1/2 litro</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <section class="thanks-section">
-            <h3>¡Muchas Gracias por su Atención!</h3>
-        </section>
-
-        <div class="footer-logo">
-            <img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo">
-        </div>
-
-        <footer class="custom-footer">
-            <span class="footer-left">Realizado por Christian.</span>
-            <span class="footer-right">5to Grado "A"</span>
-        </footer>
-
+    <div class="header">
+        <p>Proyecto Expositivo de Gastronomía</p>
+        <h1>Mandocas con Ajonjolí</h1>
+        <div class="members">Christian Liao | Saul Alfonzo | Pablo Mesa</div>
     </div>
-    
-    </body>
+
+    <div class="section">
+        <h2 class="title">Ingredientes</h2>
+        <ul>
+            <li>Harina de maíz (1 kg)</li>
+            <li>Plátanos maduros (2 unidades)</li>
+            <li>Papelón (1 unidad)</li>
+            <li>Queso llanero (700 g)</li>
+            <li>Margarina (100 g)</li>
+            <li>Leche en polvo (50 g)</li>
+            <li>Esencia de Vainilla (1 cda)</li>
+            <li>Ajonjolí (al gusto)</li>
+            <li>Aceite (1/2 litro)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2 class="title">Pasos de Preparación</h2>
+        <div class="step">
+            <strong>1. Melao de Papelón:</strong> Disolver la panela en agua hirviendo hasta crear un almíbar suave.
+            <img src="https://images.unsplash.com/photo-1594975765715-e21820921c56?w=400" alt="Melao">
+        </div>
+        <div class="step">
+            <strong>2. Mezcla Base:</strong> Integrar la leche en polvo y la vainilla en el melao templado.
+            <img src="https://images.unsplash.com/photo-1601314002592-b8734bca6604?w=400" alt="Mezcla">
+        </div>
+        <div class="step">
+            <strong>3. Amasado:</strong> Mezclar el puré de plátano con la harina, queso y el melao hasta obtener una masa firme.
+            <img src="https://images.unsplash.com/photo-1571978255959-158913b48270?w=400" alt="Masa">
+        </div>
+        <div class="step">
+            <strong>4. Modelado:</strong> Formar los lazos tradicionales con las manos.
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400" alt="Lazos">
+        </div>
+        <div class="step">
+            <strong>5. Fritura:</strong> Pasar por ajonjolí y freír en aceite caliente hasta dorar.
+            <img src="https://images.unsplash.com/photo-1615485290382-44174d82f767?w=400" alt="Fritura">
+        </div>
+    </div>
+
+    <div class="logo-box">
+        <img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo">
+    </div>
+
+</body>
 </html>
