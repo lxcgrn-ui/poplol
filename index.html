@@ -3,986 +3,1159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proyecto Gastronómico: Mandocas</title>
+<title>Mandocas Venezolanas - High-Tech Glass UI</title>
 <style>
 :root {
---primary-color: #d97706;
---secondary-color: #451a03;
---accent-color: #dc2626;
---bg-main: #fefcfb;
---card-bg: rgba(255, 255, 255, 0.65);
---text-dark: #1c1917;
---text-light: #44403c;
---border: rgba(255, 255, 255, 0.4);
---glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --glass-blur: blur(16px);
+    --text-main: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --accent-color: #ffb703;
+    --bg-gradient-1: #023047;
+    --bg-gradient-2: #fb8500;
+    --bg-gradient-3: #219ebc;
+    --font-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-xl: 32px;
 }
-html {
--webkit-text-size-adjust: 100%;
--moz-text-size-adjust: 100%;
--ms-text-size-adjust: 100%;
-text-size-adjust: 100%;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-*,
-*::before,
-*::after {
--webkit-box-sizing: inherit;
--moz-box-sizing: inherit;
-box-sizing: inherit;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 body {
-font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-background-color: #fdfbfb;
-background-image: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%), linear-gradient(to right, #fef3c7, #fde68a);
-background-blend-mode: multiply;
-background-attachment: fixed;
-color: #1c1917;
-line-height: 1.6;
-padding-top: 20px;
-padding-right: 20px;
-padding-bottom: 20px;
-padding-left: 20px;
-min-height: 100vh;
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-3) 50%, var(--bg-gradient-2) 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
-.container {
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--webkit-flex-direction: column;
--ms-flex-direction: column;
-flex-direction: column;
-width: 100%;
-max-width: 1000px;
-margin-top: 0px;
-margin-right: auto;
-margin-bottom: 0px;
-margin-left: auto;
+.background-orb-1 {
+    position: fixed;
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(251,133,0,0.4) 0%, rgba(251,133,0,0) 70%);
+    z-index: -1;
 }
-.main-header {
-text-align: center;
-background-color: rgba(255, 255, 255, 0.45);
-background-image: linear-gradient(135deg, rgba(254, 243, 199, 0.6) 0%, rgba(253, 230, 138, 0.6) 100%);
-padding-top: 25px;
-padding-right: 20px;
-padding-bottom: 25px;
-padding-left: 20px;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
--webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
--moz-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
--webkit-backdrop-filter: blur(12px);
-backdrop-filter: blur(12px);
-border-top-width: 1px;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-left-width: 1px;
-border-top-style: solid;
-border-right-style: solid;
-border-bottom-style: solid;
-border-left-style: solid;
-border-top-color: rgba(255, 255, 255, 0.7);
-border-right-color: rgba(255, 255, 255, 0.7);
-border-bottom-color: rgba(255, 255, 255, 0.7);
-border-left-color: rgba(255, 255, 255, 0.7);
-margin-bottom: 30px;
--webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
--moz-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
--o-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+.background-orb-2 {
+    position: fixed;
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(33,158,188,0.4) 0%, rgba(33,158,188,0) 70%);
+    z-index: -1;
 }
-.main-header:hover {
--webkit-transform: translateY(-5px);
--moz-transform: translateY(-5px);
--ms-transform: translateY(-5px);
--o-transform: translateY(-5px);
-transform: translateY(-5px);
--webkit-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
--moz-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.2);
+.background-orb-3 {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(2,48,71,0.6) 0%, rgba(2,48,71,0) 70%);
+    z-index: -1;
 }
-.main-header p {
-font-weight: 700;
-color: #d97706;
-text-transform: uppercase;
-letter-spacing: 2px;
-font-size: 0.9rem;
-margin-bottom: 5px;
+.navbar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    padding: var(--spacing-md) var(--spacing-xl);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--glass-shadow);
 }
-.main-header h1 {
-font-size: 1.8rem;
-color: #451a03;
-margin-bottom: 15px;
-line-height: 1.2;
+.navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
-.integrantes-list {
-list-style-type: none;
-list-style-position: outside;
-list-style-image: none;
-font-size: 1rem;
-font-weight: 600;
-color: #78350f;
-margin-top: 15px;
-padding-top: 10px;
-padding-right: 15px;
-padding-bottom: 10px;
-padding-left: 15px;
-background-color: rgba(255, 255, 255, 0.5);
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
-border-bottom-left-radius: 12px;
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
--webkit-flex-direction: row;
--ms-flex-direction: row;
-flex-direction: row;
--webkit-flex-wrap: wrap;
--ms-flex-wrap: wrap;
-flex-wrap: wrap;
--webkit-box-pack: center;
--webkit-justify-content: center;
--ms-flex-pack: center;
-justify-content: center;
--webkit-box-align: center;
--webkit-align-items: center;
--ms-flex-align: center;
-align-items: center;
-gap: 10px;
+.navbar-nav {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
 }
-.integrantes-list li {
-display: inline-block;
-padding-top: 4px;
-padding-right: 12px;
-padding-bottom: 4px;
-padding-left: 12px;
-background-color: rgba(253, 230, 138, 0.4);
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.nav-item {
+    font-size: 16px;
+    font-weight: 500;
 }
-.integrantes-list li:first-child {
-background-color: transparent;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
+.nav-link {
+    color: var(--text-main);
+    text-decoration: none;
+    opacity: 0.8;
 }
-.integrantes-list li:hover {
-background-color: rgba(253, 230, 138, 1);
--webkit-transform: scale(1.05);
--moz-transform: scale(1.05);
--ms-transform: scale(1.05);
--o-transform: scale(1.05);
-transform: scale(1.05);
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xxl);
 }
-.hero-banner {
-width: 100%;
-height: 380px;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-overflow-x: hidden;
-overflow-y: hidden;
--webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
--moz-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-margin-bottom: 30px;
-position: relative;
--webkit-transition: all 0.5s ease;
--moz-transition: all 0.5s ease;
--o-transition: all 0.5s ease;
-transition: all 0.5s ease;
+.hero-section {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xxl);
+    box-shadow: var(--glass-shadow);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: center;
 }
-.hero-banner:hover {
--webkit-box-shadow: 0 15px 40px rgba(0,0,0,0.2);
--moz-box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
 }
-.hero-banner img {
-width: 100%;
-height: 100%;
--o-object-fit: cover;
-object-fit: cover;
--webkit-transition: all 0.8s ease;
--moz-transition: all 0.8s ease;
--o-transition: all 0.8s ease;
-transition: all 0.8s ease;
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-.hero-banner:hover img {
--webkit-transform: scale(1.08);
--moz-transform: scale(1.08);
--ms-transform: scale(1.08);
--o-transform: scale(1.08);
-transform: scale(1.08);
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.8;
 }
-.hero-text {
-position: absolute;
-bottom: 0px;
-left: 0px;
-right: 0px;
-background-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-padding-top: 40px;
-padding-right: 25px;
-padding-bottom: 25px;
-padding-left: 25px;
-color: #ffffff;
--webkit-backdrop-filter: blur(4px);
-backdrop-filter: blur(4px);
+.hero-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+    background: rgba(0,0,0,0.2);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--glass-border);
 }
-.hero-text h2 {
-font-size: 1.4rem;
-color: #fde68a;
-margin-bottom: 8px;
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
-.hero-text p {
-font-size: 0.95rem;
-color: #ffffff;
+.stat-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    font-weight: 700;
 }
-.content-grid {
-display: -ms-grid;
-display: grid;
--ms-grid-columns: 1fr;
-grid-template-columns: 1fr;
-grid-row-gap: 30px;
-grid-column-gap: 30px;
+.stat-value {
+    font-size: 18px;
+    font-weight: 600;
 }
-.section-card {
-background-color: rgba(255, 255, 255, 0.65);
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-padding-top: 30px;
-padding-right: 30px;
-padding-bottom: 30px;
-padding-left: 30px;
--webkit-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
--moz-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
--webkit-backdrop-filter: blur(16px);
-backdrop-filter: blur(16px);
-border-top-width: 1px;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-left-width: 1px;
-border-top-style: solid;
-border-right-style: solid;
-border-bottom-style: solid;
-border-left-style: solid;
-border-top-color: rgba(255, 255, 255, 0.8);
-border-right-color: rgba(255, 255, 255, 0.8);
-border-bottom-color: rgba(255, 255, 255, 0.8);
-border-left-color: rgba(255, 255, 255, 0.8);
--webkit-transition: all 0.4s ease;
--moz-transition: all 0.4s ease;
--o-transition: all 0.4s ease;
-transition: all 0.4s ease;
+.hero-image-container {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    position: relative;
 }
-.section-card:hover {
--webkit-transform: translateY(-3px);
--moz-transform: translateY(-3px);
--ms-transform: translateY(-3px);
--o-transform: translateY(-3px);
-transform: translateY(-3px);
--webkit-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
--moz-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
-box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
-background-color: rgba(255, 255, 255, 0.75);
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
 }
 .section-title {
-font-size: 1.4rem;
-color: #451a03;
-margin-bottom: 20px;
-padding-bottom: 10px;
-border-bottom-width: 3px;
-border-bottom-style: solid;
-border-bottom-color: #d97706;
-display: inline-block;
-font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
-.ingredients-table {
-width: 100%;
-border-collapse: collapse;
-background-color: transparent;
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
 }
-.ingredients-table th {
-background-color: rgba(255, 251, 235, 0.8);
-color: #451a03;
-text-align: left;
-padding-top: 14px;
-padding-right: 14px;
-padding-bottom: 14px;
-padding-left: 14px;
-font-weight: 700;
-border-bottom-width: 2px;
-border-bottom-style: solid;
-border-bottom-color: #fde68a;
+.ingredient-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
-.ingredients-table td {
-padding-top: 14px;
-padding-right: 14px;
-padding-bottom: 14px;
-padding-left: 14px;
-border-bottom-width: 1px;
-border-bottom-style: solid;
-border-bottom-color: rgba(245, 245, 244, 0.6);
-color: #44403c;
-font-size: 1rem;
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.ingredient-image-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    flex-shrink: 0;
 }
-.ingredients-table tbody tr {
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.ingredient-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.ingredients-table tbody tr:hover {
-background-color: rgba(253, 230, 138, 0.2);
+.ingredient-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
-.ingredients-table tbody tr:hover td {
-color: #1c1917;
--webkit-transform: translateX(5px);
--moz-transform: translateX(5px);
--ms-transform: translateX(5px);
--o-transform: translateX(5px);
-transform: translateX(5px);
+.ingredient-name {
+    font-size: 18px;
+    font-weight: 700;
 }
-.step-block {
-margin-bottom: 25px;
-padding-bottom: 20px;
-border-bottom-width: 1px;
-border-bottom-style: dashed;
-border-bottom-color: rgba(231, 229, 228, 0.8);
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.ingredient-amount {
+    font-size: 14px;
+    color: var(--accent-color);
+    font-weight: 600;
 }
-.step-block:hover {
-background-color: rgba(255, 255, 255, 0.3);
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
-border-bottom-left-radius: 12px;
-padding-top: 10px;
-padding-right: 10px;
-padding-bottom: 10px;
-padding-left: 10px;
-border-bottom-color: transparent;
+.ingredient-desc {
+    font-size: 12px;
+    color: var(--text-muted);
 }
-.step-block:last-child {
-margin-bottom: 0px;
-padding-bottom: 0px;
-border-bottom-width: 0px;
-border-bottom-style: none;
-border-bottom-color: transparent;
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
 }
-.step-num-title {
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--webkit-align-items: center;
--ms-flex-align: center;
-align-items: center;
-gap: 15px;
-margin-bottom: 12px;
+.step-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: var(--glass-shadow);
+    display: grid;
+    grid-template-columns: 100px 1fr 300px;
+    gap: var(--spacing-xl);
+    align-items: center;
 }
-.step-num {
-background-color: #d97706;
-color: #ffffff;
-width: 36px;
-height: 36px;
-border-top-left-radius: 50%;
-border-top-right-radius: 50%;
-border-bottom-right-radius: 50%;
-border-bottom-left-radius: 50%;
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-box-align: center;
--webkit-align-items: center;
--ms-flex-align: center;
-align-items: center;
--webkit-box-pack: center;
--webkit-justify-content: center;
--ms-flex-pack: center;
-justify-content: center;
-font-weight: 700;
-font-size: 1.1rem;
--webkit-box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
--moz-box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
-box-shadow: 0 4px 10px rgba(217, 119, 6, 0.4);
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.step-number-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.step-block:hover .step-num {
--webkit-transform: rotate(360deg) scale(1.1);
--moz-transform: rotate(360deg) scale(1.1);
--ms-transform: rotate(360deg) scale(1.1);
--o-transform: rotate(360deg) scale(1.1);
-transform: rotate(360deg) scale(1.1);
-background-color: #b45309;
+.step-number {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 183, 3, 0.2);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(255, 183, 3, 0.3);
+}
+.step-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 .step-title {
-font-size: 1.2rem;
-font-weight: 700;
-color: #451a03;
-}
-.step-detail-grid {
-display: -ms-grid;
-display: grid;
--ms-grid-columns: 1fr;
-grid-template-columns: 1fr;
-grid-row-gap: 15px;
-grid-column-gap: 15px;
+    font-size: 28px;
+    font-weight: 800;
 }
 .step-desc {
-font-size: 1rem;
-color: #44403c;
-text-align: justify;
-line-height: 1.7;
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
 }
-.step-img-holder {
-width: 100%;
-height: 150px;
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
-border-bottom-left-radius: 12px;
-overflow-x: hidden;
-overflow-y: hidden;
--webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
--moz-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-border-top-width: 3px;
-border-right-width: 3px;
-border-bottom-width: 3px;
-border-left-width: 3px;
-border-top-style: solid;
-border-right-style: solid;
-border-bottom-style: solid;
-border-left-style: solid;
-border-top-color: rgba(255, 255, 255, 0.9);
-border-right-color: rgba(255, 255, 255, 0.9);
-border-bottom-color: rgba(255, 255, 255, 0.9);
-border-left-color: rgba(255, 255, 255, 0.9);
-background-color: rgba(245, 245, 244, 0.5);
--webkit-transition: all 0.4s ease;
--moz-transition: all 0.4s ease;
--o-transition: all 0.4s ease;
-transition: all 0.4s ease;
+.step-image-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
-.step-img-holder img {
-width: 100%;
-height: 100%;
--o-object-fit: cover;
-object-fit: cover;
--webkit-transition: all 0.5s ease;
--moz-transition: all 0.5s ease;
--o-transition: all 0.5s ease;
-transition: all 0.5s ease;
+.step-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.step-block:hover .step-img-holder {
--webkit-transform: scale(1.03);
--moz-transform: scale(1.03);
--ms-transform: scale(1.03);
--o-transform: scale(1.03);
-transform: scale(1.03);
--webkit-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
--moz-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.nutrition-section {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xxl);
+    box-shadow: var(--glass-shadow);
 }
-.step-block:hover .step-img-holder img {
--webkit-transform: scale(1.1);
--moz-transform: scale(1.1);
--ms-transform: scale(1.1);
--o-transform: scale(1.1);
-transform: scale(1.1);
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
 }
-.info-alert {
-background-color: rgba(255, 247, 237, 0.8);
-border-left-width: 5px;
-border-left-style: solid;
-border-left-color: #d97706;
-padding-top: 18px;
-padding-right: 18px;
-padding-bottom: 18px;
-padding-left: 18px;
-border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
-margin-top: 25px;
-color: #7c2d12;
-font-size: 0.95rem;
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
--webkit-box-shadow: 0 4px 15px rgba(0,0,0,0.03);
--moz-box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-box-shadow: 0 4px 15px rgba(0,0,0,0.03);
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.nutrition-item {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-sm);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.info-alert:hover {
-background-color: rgba(255, 247, 237, 1);
--webkit-transform: translateX(8px);
--moz-transform: translateX(8px);
--ms-transform: translateX(8px);
--o-transform: translateX(8px);
-transform: translateX(8px);
-border-left-color: #b45309;
+.nutrition-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 500;
 }
-.thanks-section {
-text-align: center;
-background-color: rgba(69, 26, 3, 0.85);
-background-image: linear-gradient(135deg, rgba(69, 26, 3, 0.9) 0%, rgba(28, 25, 23, 0.9) 100%);
-color: #fef3c7;
-padding-top: 45px;
-padding-right: 25px;
-padding-bottom: 45px;
-padding-left: 25px;
-border-top-left-radius: 20px;
-border-top-right-radius: 20px;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-margin-top: 45px;
--webkit-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
--moz-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
--webkit-backdrop-filter: blur(10px);
-backdrop-filter: blur(10px);
-border-top-width: 1px;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-left-width: 1px;
-border-top-style: solid;
-border-right-style: solid;
-border-bottom-style: solid;
-border-left-style: solid;
-border-top-color: rgba(253, 230, 138, 0.2);
-border-right-color: rgba(253, 230, 138, 0.2);
-border-bottom-color: rgba(253, 230, 138, 0.2);
-border-left-color: rgba(253, 230, 138, 0.2);
--webkit-transition: all 0.4s ease;
--moz-transition: all 0.4s ease;
--o-transition: all 0.4s ease;
-transition: all 0.4s ease;
+.nutrition-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent-color);
 }
-.thanks-section:hover {
--webkit-transform: scale(1.02);
--moz-transform: scale(1.02);
--ms-transform: scale(1.02);
--o-transform: scale(1.02);
-transform: scale(1.02);
--webkit-box-shadow: 0 20px 45px rgba(0,0,0,0.3);
--moz-box-shadow: 0 20px 45px rgba(0,0,0,0.3);
-box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+.footer {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-top: 1px solid var(--glass-border);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    margin-top: var(--spacing-xxl);
+    text-align: center;
 }
-.thanks-section h3 {
-font-size: 2.2rem;
-margin-bottom: 0px;
-color: #fde68a;
-letter-spacing: 1px;
+.footer-text {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: var(--spacing-md);
 }
-.logo-container {
-text-align: center;
-margin-top: 40px;
-margin-bottom: 40px;
--webkit-transition: all 0.5s ease;
--moz-transition: all 0.5s ease;
--o-transition: all 0.5s ease;
-transition: all 0.5s ease;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
 }
-.logo-container img {
-max-width: 100%;
-width: 250px;
-border-top-left-radius: 15px;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
-border-bottom-left-radius: 15px;
--webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
--moz-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
--webkit-transition: all 0.4s ease;
--moz-transition: all 0.4s ease;
--o-transition: all 0.4s ease;
-transition: all 0.4s ease;
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.logo-container img:hover {
--webkit-transform: translateY(-8px) scale(1.05);
--moz-transform: translateY(-8px) scale(1.05);
--ms-transform: translateY(-8px) scale(1.05);
--o-transform: translateY(-8px) scale(1.05);
-transform: translateY(-8px) scale(1.05);
--webkit-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
--moz-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+.svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
-.custom-footer {
-margin-top: 30px;
-padding-top: 20px;
-padding-right: 10px;
-padding-bottom: 20px;
-padding-left: 10px;
-border-top-width: 1px;
-border-top-style: solid;
-border-top-color: rgba(231, 229, 228, 0.5);
-display: -webkit-box;
-display: -webkit-flex;
-display: -ms-flexbox;
-display: flex;
--webkit-box-orient: horizontal;
--webkit-box-direction: normal;
--webkit-flex-direction: row;
--ms-flex-direction: row;
-flex-direction: row;
--webkit-box-pack: justify;
--webkit-justify-content: space-between;
--ms-flex-pack: justify;
-justify-content: space-between;
--webkit-box-align: center;
--webkit-align-items: center;
--ms-flex-align: center;
-align-items: center;
--webkit-flex-wrap: wrap;
--ms-flex-wrap: wrap;
-flex-wrap: wrap;
-gap: 15px;
-background-color: rgba(255, 255, 255, 0.3);
-border-top-left-radius: 12px;
-border-top-right-radius: 12px;
-border-bottom-right-radius: 12px;
-border-bottom-left-radius: 12px;
--webkit-backdrop-filter: blur(5px);
-backdrop-filter: blur(5px);
+.divider {
+    height: 1px;
+    background: var(--glass-border);
+    width: 100%;
+    margin: var(--spacing-xl) 0;
 }
-.footer-left {
-font-size: 0.95rem;
-color: #57534e;
-font-style: italic;
+.button-primary {
+    background: var(--accent-color);
+    color: #000000;
+    border: none;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
-.footer-right {
-font-size: 1.05rem;
-font-weight: 700;
-color: #451a03;
-background-color: #fde68a;
-padding-top: 6px;
-padding-right: 18px;
-padding-bottom: 6px;
-padding-left: 18px;
-border-top-left-radius: 8px;
-border-top-right-radius: 8px;
-border-bottom-right-radius: 8px;
-border-bottom-left-radius: 8px;
--webkit-box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
--moz-box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
-box-shadow: 0 4px 10px rgba(253, 230, 138, 0.4);
--webkit-transition: all 0.3s ease;
--moz-transition: all 0.3s ease;
--o-transition: all 0.3s ease;
-transition: all 0.3s ease;
+.button-secondary {
+    background: rgba(255,255,255,0.1);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--border-radius-sm);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
 }
-.footer-right:hover {
-background-color: #fcd34d;
--webkit-transform: translateY(-2px);
--moz-transform: translateY(-2px);
--ms-transform: translateY(-2px);
--o-transform: translateY(-2px);
-transform: translateY(-2px);
--webkit-box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
--moz-box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
-box-shadow: 0 6px 15px rgba(253, 230, 138, 0.6);
+.badge {
+    background: rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
 }
-@media screen and (min-width: 600px) {
-.step-detail-grid {
--ms-grid-columns: 1fr 180px;
-grid-template-columns: 1fr 180px;
+@media (max-width: 1200px) {
+    .step-card {
+        grid-template-columns: 80px 1fr 250px;
+    }
 }
-.step-img-holder {
-height: 120px;
+@media (max-width: 992px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+    }
+    .hero-image-container {
+        height: 400px;
+    }
+    .nutrition-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .step-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .step-number-wrapper {
+        justify-content: center;
+    }
+    .step-image-wrapper {
+        height: 300px;
+    }
 }
-}
-@media screen and (min-width: 900px) {
-.content-grid {
--ms-grid-columns: 1.5fr 1fr;
-grid-template-columns: 1.5fr 1fr;
-}
-.main-header h1 {
-font-size: 2.2rem;
-}
-.hero-banner {
-height: 450px;
-}
-.step-img-holder {
-height: 140px;
-}
-}
-@media screen and (max-width: 599px) {
-body {
-padding-top: 10px;
-padding-right: 10px;
-padding-bottom: 10px;
-padding-left: 10px;
-}
-.main-header h1 {
-font-size: 1.5rem;
-}
-.integrantes-list {
-font-size: 0.9rem;
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--webkit-flex-direction: column;
--ms-flex-direction: column;
-flex-direction: column;
-gap: 5px;
-}
-.hero-banner {
-height: 250px;
-border-top-left-radius: 15px;
-border-top-right-radius: 15px;
-border-bottom-right-radius: 15px;
-border-bottom-left-radius: 15px;
-}
-.hero-text h2 {
-font-size: 1.2rem;
-}
-.section-card {
-padding-top: 20px;
-padding-right: 15px;
-padding-bottom: 20px;
-padding-left: 15px;
-}
-.custom-footer {
--webkit-box-orient: vertical;
--webkit-box-direction: normal;
--webkit-flex-direction: column;
--ms-flex-direction: column;
-flex-direction: column;
-text-align: center;
-}
-.thanks-section h3 {
-font-size: 1.6rem;
-}
-}
-@media screen and (max-width: 380px) {
-.main-header h1 {
-font-size: 1.3rem;
-}
-.hero-banner {
-height: 200px;
-}
-.step-num {
-width: 30px;
-height: 30px;
-font-size: 0.9rem;
-}
-.step-title {
-font-size: 1.1rem;
-}
-}
-@media print {
-body {
-background-color: #ffffff;
-background-image: none;
-color: #000000;
-}
-.section-card,
-.main-header,
-.thanks-section {
--webkit-box-shadow: none;
--moz-box-shadow: none;
-box-shadow: none;
-border-top-width: 1px;
-border-right-width: 1px;
-border-bottom-width: 1px;
-border-left-width: 1px;
-border-top-style: solid;
-border-right-style: solid;
-border-bottom-style: solid;
-border-left-style: solid;
-border-top-color: #dddddd;
-border-right-color: #dddddd;
-border-bottom-color: #dddddd;
-border-left-color: #dddddd;
--webkit-backdrop-filter: none;
-backdrop-filter: none;
-}
-.hero-text {
-position: relative;
-background-image: none;
-background-color: #eeeeee;
-color: #000000;
-}
-.hero-text h2,
-.hero-text p {
-color: #000000;
-}
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 48px;
+    }
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+    .ingredients-grid {
+        grid-template-columns: 1fr;
+    }
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 </head>
 <body>
-<div class="container">
-<header class="main-header">
-<p>Proyecto Expositivo de Gastronomía</p>
-<h1>Mandocas con Ajonjolí</h1>
-<ul class="integrantes-list">
-<li>Integrantes:</li>
-<li>Christian Liao</li>
-<li>Saul Alfonzo</li>
-<li>Pablo Mesa</li>
-</ul>
-</header>
-<div class="hero-banner">
-<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200" alt="Plato de Mandocas Tradicionales">
-<div class="hero-text">
-<h2>Tradición y Sabor del Estado Zulia</h2>
-<p>Una receta típica de nuestra tierra que equilibra perfectamente el sabor dulce y el salado.</p>
+<div class="background-orb-1"></div>
+<div class="background-orb-2"></div>
+<div class="background-orb-3"></div>
+
+<nav class="navbar">
+    <a href="#" class="navbar-brand">
+        <svg class="svg-icon" viewBox="0 0 24 24">
+            <path d="M12 2L2 22h20L12 2zm0 4.5l7.5 13.5h-15L12 6.5z"/>
+        </svg>
+        GlassCulinary
+    </a>
+    <ul class="navbar-nav">
+        <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Recetas</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Ingredientes</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Comunidad</a></li>
+    </ul>
+</nav>
+
+<div class="main-container">
+    <section class="hero-section">
+        <div class="hero-content">
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                <span class="badge">Zuliana</span>
+                <span class="badge">Frito</span>
+                <span class="badge">Dulce y Salado</span>
+            </div>
+            <h1 class="hero-title">Mandocas con Ajonjolí</h1>
+            <p class="hero-subtitle">Una experiencia culinaria de alta tecnología. La combinación perfecta de plátano maduro, papelón, queso blanco y masa de maíz, envuelta en un diseño de cristal absoluto.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Prep</span>
+                    <span class="stat-value">25 Min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Cocción</span>
+                    <span class="stat-value">15 Min</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Porciones</span>
+                    <span class="stat-value">12 Unidades</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Calorías</span>
+                    <span class="stat-value">210 kcal</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 16px; margin-top: 24px;">
+                <button class="button-primary">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                    Comenzar
+                </button>
+                <button class="button-secondary">
+                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                    Guardar
+                </button>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=1600" alt="Masa de maíz y preparación" class="hero-image">
+            <div class="hero-image-overlay"></div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+        <h2 class="section-title">Ingredientes Principales</h2>
+        <div class="ingredients-grid">
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1615486171448-4e89dbd1c0da?q=80&w=800" alt="Plátano Maduro" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Plátano Maduro</span>
+                    <span class="ingredient-amount">2 Unidades</span>
+                    <span class="ingredient-desc">Base dulce y suave</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581454558509-54cfce01aa73?q=80&w=800" alt="Papelón / Panela" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Papelón (Panela)</span>
+                    <span class="ingredient-amount">250 Gramos</span>
+                    <span class="ingredient-desc">Para el melao oscuro</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" alt="Harina de Maíz" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Harina de Maíz</span>
+                    <span class="ingredient-amount">2 Tazas</span>
+                    <span class="ingredient-desc">Textura y consistencia</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1632516428312-32b03657b29a?q=80&w=800" alt="Queso Blanco Duro" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Queso Blanco Duro</span>
+                    <span class="ingredient-amount">300 Gramos</span>
+                    <span class="ingredient-desc">Contraste salado, rallado</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800" alt="Ajonjolí" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Semillas de Ajonjolí</span>
+                    <span class="ingredient-amount">3 Cucharadas</span>
+                    <span class="ingredient-desc">Toque tostado en la masa</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596647413661-d70cb9e2a4cd?q=80&w=800" alt="Vainilla" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Esencia de Vainilla</span>
+                    <span class="ingredient-amount">1 Cucharadita</span>
+                    <span class="ingredient-desc">Aroma profundo</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800" alt="Anís Estrellado / Especias" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Especias (Anís/Canela)</span>
+                    <span class="ingredient-amount">Al gusto</span>
+                    <span class="ingredient-desc">Para hervir con el papelón</span>
+                </div>
+            </div>
+            <div class="ingredient-card">
+                <div class="ingredient-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=800" alt="Aceite" class="ingredient-image">
+                </div>
+                <div class="ingredient-details">
+                    <span class="ingredient-name">Aceite Vegetal</span>
+                    <span class="ingredient-amount">500 ml</span>
+                    <span class="ingredient-desc">Para freír a temperatura ideal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+        <h2 class="section-title">Proceso de Preparación</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">1</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">El Melao de Papelón</h3>
+                    <p class="step-desc">Coloque el papelón en una olla con media taza de agua, anís y canela. Cocine a fuego medio hasta que se disuelva completamente formando un almíbar oscuro y espeso. Deje enfriar ligeramente antes de usar.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581454558509-54cfce01aa73?q=80&w=800" alt="Papelón derritiéndose" class="step-image">
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">2</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Puré de Plátano</h3>
+                    <p class="step-desc">Hierva los plátanos maduros hasta que estén muy tiernos. Retírelos del agua y, aún calientes, tritúrelos con un tenedor hasta obtener un puré suave y sin grumos.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1615486171448-4e89dbd1c0da?q=80&w=800" alt="Plátanos maduros" class="step-image">
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">3</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Integración de la Masa</h3>
+                    <p class="step-desc">En un bol grande, combine la harina de maíz, el puré de plátano, la mitad del queso blanco rallado y las semillas de ajonjolí. Vierta progresivamente el melao de papelón colado.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" alt="Harina y mezcla de masa" class="step-image">
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">4</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Amasado Perfecto</h3>
+                    <p class="step-desc">Amase vigorosamente con las manos hasta obtener una masa homogénea, suave y que no se pegue a los dedos. Si está muy seca, agregue un toque de agua tibia; si está húmeda, un poco más de harina.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800" alt="Amasado manual" class="step-image">
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">5</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Modelado en Forma de Gota</h3>
+                    <p class="step-desc">Tome pequeñas porciones de masa, haga un cilindro alargado frotándolo sobre una superficie plana y luego una los extremos dándole la forma característica de gota o lazo.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=800" alt="Masa moldeada" class="step-image">
+                </div>
+            </div>
+            <div class="step-card">
+                <div class="step-number-wrapper">
+                    <div class="step-number">6</div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title">Fritura Profunda</h3>
+                    <p class="step-desc">Caliente abundante aceite a temperatura media-alta. Fría las mandocas hasta que adquieran un color marrón dorado intenso. Retire y escurra sobre papel absorbente. Sirva inmediatamente con el resto del queso rallado espolvoreado.</p>
+                </div>
+                <div class="step-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=800" alt="Aceite caliente para freír" class="step-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="nutrition-section">
+        <h2 class="section-title">Análisis Nutricional Avanzado</h2>
+        <div class="nutrition-grid" id="nutrition-data-container">
+        </div>
+    </section>
 </div>
-</div>
-<div class="content-grid">
-<div class="section-card">
-<span class="section-title">Pasos de Preparación</span>
-<div class="step-block">
-<div class="step-num-title">
-<div class="step-num">1</div>
-<div class="step-title">El Melao de Papelón</div>
-</div>
-<div class="step-detail-grid">
-<div class="step-desc">
-Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave, homogéneo y libre de impurezas. Dejar enfriar un poco.
-</div>
-<div class="step-img-holder">
-<img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=300" alt="Melao hirviendo">
-</div>
-</div>
-</div>
-<div class="step-block">
-<div class="step-num-title">
-<div class="step-num">2</div>
-<div class="step-title">Aromatizar la Base</div>
-</div>
-<div class="step-detail-grid">
-<div class="step-desc">
-Agregar los 50g de leche en polvo y la cucharada de esencia de vainilla al melao templado. Batir muy bien para evitar grumos y lograr una base líquida rica y perfumada.
-</div>
-<div class="step-img-holder">
-<img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=300" alt="Mezcla de vainilla">
-</div>
-</div>
-</div>
-<div class="step-block">
-<div class="step-num-title">
-<div class="step-num">3</div>
-<div class="step-title">El Amasado</div>
-</div>
-<div class="step-detail-grid">
-<div class="step-desc">
-Hacer un puré firme con los 2 plátanos maduros cocidos y los 100g de margarina. Agregar el melao líquido, el kilo de harina de maíz y los 700g de queso llanero rallado. Amasar hasta conseguir una consistencia suave y compacta.
-</div>
-<div class="step-img-holder">
-<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=300" alt="Amasado manual">
-</div>
-</div>
-</div>
-<div class="step-block">
-<div class="step-num-title">
-<div class="step-num">4</div>
-<div class="step-title">Modelado del Lazo</div>
-</div>
-<div class="step-detail-grid">
-<div class="step-desc">
-Hacer tiras o bastones delgados con la masa usando las manos sobre la mesa de trabajo. Doblar y unir los extremos para darle la forma tradicional de lazo o gota zuliana.
-</div>
-<div class="step-img-holder">
-<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300" alt="Forma de la masa">
-</div>
-</div>
-</div>
-<div class="step-block">
-<div class="step-num-title">
-<div class="step-num">5</div>
-<div class="step-title">Fritura y Toque Final</div>
-</div>
-<div class="step-detail-grid">
-<div class="step-desc">
-Pasar los lazos por semillas de ajonjolí al gusto. Freír en un caldero con el 1/2 litro de aceite bien caliente hasta que adquieran un color dorado oscuro y una textura muy crujiente.
-</div>
-<div class="step-img-holder">
-<img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=300" alt="Fritura en sartén">
-</div>
-</div>
-</div>
-</div>
-<div class="section-card">
-<span class="section-title">Ingredientes</span>
-<table class="ingredients-table">
-<thead>
-<tr>
-<th>Ingrediente</th>
-<th>Cantidad</th>
-</tr>
-</thead>
-<tbody>
-<tr><td><strong>Harina de maíz</strong></td><td>1 kg</td></tr>
-<tr><td><strong>Plátanos maduros</strong></td><td>2 unidades</td></tr>
-<tr><td><strong>Papelón (Panela)</strong></td><td>1 unidad</td></tr>
-<tr><td><strong>Queso llanero</strong></td><td>700 g</td></tr>
-<tr><td><strong>Margarina</strong></td><td>100 g</td></tr>
-<tr><td><strong>Leche en polvo</strong></td><td>50 g</td></tr>
-<tr><td><strong>Esencia de Vainilla</strong></td><td>1 cda.</td></tr>
-<tr><td><strong>Ajonjolí (Sésamo)</strong></td><td>Al gusto</td></tr>
-<tr><td><strong>Aceite vegetal</strong></td><td>1/2 litro</td></tr>
-</tbody>
-</table>
-<div class="info-alert">
-⚠️ <strong>Nota Técnica:</strong> Los 700g de queso llanero aportan la sal necesaria para la masa, logrando un equilibrio idóneo sin agregar sal común.
-</div>
-</div>
-</div>
-<section class="thanks-section">
-<h3>¡Muchas Gracias por su Atención!</h3>
-</section>
-<div class="logo-container">
-<img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo">
-</div>
-<footer class="custom-footer">
-<span class="footer-left">Todo el sitio web fue realizado independientemente por Christian.</span>
-<span class="footer-right">5to Grado "A"</span>
+
+<footer class="footer">
+    <p class="footer-text">© 2026 GlassCulinary High-Tech Recipe Interface. Todos los derechos reservados.</p>
+    <div class="social-links">
+        <div class="social-icon">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
+        </div>
+        <div class="social-icon">
+            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
+        </div>
+        <div class="social-icon">
+            <svg class="svg-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </div>
+    </div>
 </footer>
-</div>
+
+<script>
+const SYSTEM_CONFIG = {
+    appId: "GC-MD-88392",
+    version: "2.1.4",
+    renderMode: "static-glass",
+    lang: "es",
+    locale: "es-VE",
+    timezone: "America/Caracas",
+    theme: {
+        primary: "#ffb703",
+        secondary: "#023047",
+        tertiary: "#219ebc",
+        glassAlpha: 0.15,
+        blurRadius: 16
+    },
+    metrics: {
+        trackViews: true,
+        trackClicks: true,
+        reportErrors: true
+    },
+    endpoints: {
+        dataSync: "https://api.glassculinary.com/v1/sync",
+        imageCDN: "https://cdn.glassculinary.com/images",
+        telemetry: "https://telemetry.glassculinary.com/v2/event"
+    },
+    featureFlags: {
+        enableSocialShare: true,
+        enableNutritionCalc: true,
+        enableOfflineStorage: false,
+        enableARPreview: false,
+        enableVoiceCommands: false
+    }
+};
+
+const UI_STRINGS = {
+    headerTitle: "Mandocas con Ajonjolí",
+    headerSubtitle: "Una experiencia culinaria de alta tecnología.",
+    btnStart: "Comenzar",
+    btnSave: "Guardar",
+    sectionIngredients: "Ingredientes Principales",
+    sectionSteps: "Proceso de Preparación",
+    sectionNutrition: "Análisis Nutricional Avanzado",
+    footerText: "© 2026 GlassCulinary High-Tech Recipe Interface."
+};
+
+const INGREDIENTS_DATABASE = [
+    { id: "ing_001", name: "Plátano Maduro", baseAmount: 2, unit: "Unidades", type: "base", caloriesPerUnit: 105, isAllergen: false },
+    { id: "ing_002", name: "Papelón", baseAmount: 250, unit: "Gramos", type: "sweetener", caloriesPerUnit: 380, isAllergen: false },
+    { id: "ing_003", name: "Harina de Maíz", baseAmount: 2, unit: "Tazas", type: "binder", caloriesPerUnit: 414, isAllergen: false },
+    { id: "ing_004", name: "Queso Blanco Duro", baseAmount: 300, unit: "Gramos", type: "dairy", caloriesPerUnit: 320, isAllergen: true },
+    { id: "ing_005", name: "Semillas de Ajonjolí", baseAmount: 3, unit: "Cucharadas", type: "seed", caloriesPerUnit: 52, isAllergen: true },
+    { id: "ing_006", name: "Esencia de Vainilla", baseAmount: 1, unit: "Cucharadita", type: "flavoring", caloriesPerUnit: 12, isAllergen: false },
+    { id: "ing_007", name: "Anís Estrellado", baseAmount: 5, unit: "Gramos", type: "spice", caloriesPerUnit: 16, isAllergen: false },
+    { id: "ing_008", name: "Aceite Vegetal", baseAmount: 500, unit: "Mililitros", type: "fat", caloriesPerUnit: 884, isAllergen: false }
+];
+
+const RECIPE_STEPS = [
+    { stepId: 1, title: "El Melao de Papelón", duration: 10, requiresHeat: true, tools: ["olla", "cuchara de madera"] },
+    { stepId: 2, title: "Puré de Plátano", duration: 15, requiresHeat: true, tools: ["olla", "tenedor", "bol"] },
+    { stepId: 3, title: "Integración de la Masa", duration: 5, requiresHeat: false, tools: ["bol grande"] },
+    { stepId: 4, title: "Amasado Perfecto", duration: 10, requiresHeat: false, tools: ["manos", "superficie plana"] },
+    { stepId: 5, title: "Modelado en Forma de Gota", duration: 15, requiresHeat: false, tools: ["bandeja"] },
+    { stepId: 6, title: "Fritura Profunda", duration: 15, requiresHeat: true, tools: ["sartén profunda", "espumadera", "papel absorbente"] }
+];
+
+const NUTRITION_DATA = [
+    { id: "nut_01", label: "Calorías Totales", value: "210", unit: "kcal" },
+    { id: "nut_02", label: "Grasas Totales", value: "12", unit: "g" },
+    { id: "nut_03", label: "Grasas Saturadas", value: "3.5", unit: "g" },
+    { id: "nut_04", label: "Grasas Trans", value: "0", unit: "g" },
+    { id: "nut_05", label: "Colesterol", value: "15", unit: "mg" },
+    { id: "nut_06", label: "Sodio", value: "320", unit: "mg" },
+    { id: "nut_07", label: "Carbohidratos", value: "24", unit: "g" },
+    { id: "nut_08", label: "Fibra Dietética", value: "2", unit: "g" },
+    { id: "nut_09", label: "Azúcares Totales", value: "9", unit: "g" },
+    { id: "nut_10", label: "Proteínas", value: "5", unit: "g" },
+    { id: "nut_11", label: "Vitamina D", value: "0.2", unit: "mcg" },
+    { id: "nut_12", label: "Calcio", value: "150", unit: "mg" },
+    { id: "nut_13", label: "Hierro", value: "1.1", unit: "mg" },
+    { id: "nut_14", label: "Potasio", value: "210", unit: "mg" },
+    { id: "nut_15", label: "Vitamina A", value: "85", unit: "mcg" },
+    { id: "nut_16", label: "Vitamina C", value: "4", unit: "mg" },
+    { id: "nut_17", label: "Magnesio", value: "32", unit: "mg" },
+    { id: "nut_18", label: "Zinc", value: "0.8", unit: "mg" },
+    { id: "nut_19", label: "Ácido Fólico", value: "24", unit: "mcg" },
+    { id: "nut_20", label: "Índice Glucémico", value: "58", unit: "IG" }
+];
+
+const CORE_UTILITIES = {
+    generateUUID: function() {
+        let d = new Date().getTime();
+        let d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            let r = Math.random() * 16;
+            if(d > 0){
+                r = (d + r) % 16 | 0;
+                d = Math.floor(d / 16);
+            } else {
+                r = (d2 + r) % 16 | 0;
+                d2 = Math.floor(d2 / 16);
+            }
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+    },
+    formatDateISO: function(dateObj) {
+        return dateObj.toISOString();
+    },
+    calculateTotalDuration: function(stepsArray) {
+        let total = 0;
+        for (let i = 0; i < stepsArray.length; i++) {
+            total += stepsArray[i].duration;
+        }
+        return total;
+    },
+    validateSystemConfig: function(config) {
+        if (!config || !config.appId) return false;
+        if (config.version.split('.').length !== 3) return false;
+        return true;
+    },
+    parseNutritionValue: function(valueStr) {
+        let parsed = parseFloat(valueStr);
+        return isNaN(parsed) ? 0 : parsed;
+    },
+    sanitizeInputString: function(str) {
+        let temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    },
+    buildQueryString: function(params) {
+        let keys = Object.keys(params);
+        let pairs = [];
+        for (let i = 0; i < keys.length; i++) {
+            pairs.push(encodeURIComponent(keys[i]) + '=' + encodeURIComponent(params[keys[i]]));
+        }
+        return pairs.join('&');
+    },
+    hashString: function(str) {
+        let hash = 0;
+        if (str.length === 0) return hash;
+        for (let i = 0; i < str.length; i++) {
+            let char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+        return hash;
+    },
+    rgbToHex: function(r, g, b) {
+        return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
+    },
+    hexToRgb: function(hex) {
+        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+};
+
+const RENDER_ENGINE = {
+    initialize: function() {
+        this.renderNutritionData();
+        this.applySystemTheme();
+        this.bindEvents();
+    },
+    renderNutritionData: function() {
+        const container = document.getElementById('nutrition-data-container');
+        if (!container) return;
+        
+        let htmlContent = '';
+        for (let i = 0; i < NUTRITION_DATA.length; i++) {
+            const item = NUTRITION_DATA[i];
+            htmlContent += '<div class="nutrition-item">';
+            htmlContent += '<span class="nutrition-label">' + CORE_UTILITIES.sanitizeInputString(item.label) + '</span>';
+            htmlContent += '<span class="nutrition-value">' + CORE_UTILITIES.sanitizeInputString(item.value) + ' ' + CORE_UTILITIES.sanitizeInputString(item.unit) + '</span>';
+            htmlContent += '</div>';
+        }
+        container.innerHTML = htmlContent;
+    },
+    applySystemTheme: function() {
+        if (!SYSTEM_CONFIG.theme) return;
+        const root = document.documentElement;
+        root.style.setProperty('--accent-color', SYSTEM_CONFIG.theme.primary);
+        root.style.setProperty('--bg-gradient-1', SYSTEM_CONFIG.theme.secondary);
+        root.style.setProperty('--bg-gradient-3', SYSTEM_CONFIG.theme.tertiary);
+    },
+    bindEvents: function() {
+        const buttons = document.querySelectorAll('button');
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function(e) {
+                const actionData = {
+                    id: CORE_UTILITIES.generateUUID(),
+                    timestamp: CORE_UTILITIES.formatDateISO(new Date()),
+                    element: e.target.tagName,
+                    text: e.target.innerText.trim()
+                };
+                DATA_MANAGER.recordInteraction(actionData);
+            });
+        }
+    }
+};
+
+const DATA_MANAGER = {
+    interactionLog: [],
+    recordInteraction: function(data) {
+        this.interactionLog.push(data);
+        if (this.interactionLog.length > 100) {
+            this.interactionLog.shift();
+        }
+    },
+    getLogCount: function() {
+        return this.interactionLog.length;
+    },
+    clearLog: function() {
+        this.interactionLog = [];
+    },
+    exportLogAsJSON: function() {
+        return JSON.stringify(this.interactionLog);
+    },
+    calculateTotalCalories: function() {
+        let total = 0;
+        for (let i = 0; i < INGREDIENTS_DATABASE.length; i++) {
+            let ing = INGREDIENTS_DATABASE[i];
+            total += (ing.baseAmount * ing.caloriesPerUnit);
+        }
+        return total;
+    },
+    findAllergens: function() {
+        let allergens = [];
+        for (let i = 0; i < INGREDIENTS_DATABASE.length; i++) {
+            if (INGREDIENTS_DATABASE[i].isAllergen) {
+                allergens.push(INGREDIENTS_DATABASE[i].name);
+            }
+        }
+        return allergens;
+    },
+    getStepsRequiringHeat: function() {
+        let heatSteps = [];
+        for (let i = 0; i < RECIPE_STEPS.length; i++) {
+            if (RECIPE_STEPS[i].requiresHeat) {
+                heatSteps.push(RECIPE_STEPS[i].title);
+            }
+        }
+        return heatSteps;
+    },
+    getAllToolsNeeded: function() {
+        let toolsSet = {};
+        for (let i = 0; i < RECIPE_STEPS.length; i++) {
+            let toolsArray = RECIPE_STEPS[i].tools;
+            for (let j = 0; j < toolsArray.length; j++) {
+                toolsSet[toolsArray[j]] = true;
+            }
+        }
+        return Object.keys(toolsSet);
+    }
+};
+
+const ERROR_HANDLER = {
+    errors: [],
+    logError: function(code, message) {
+        this.errors.push({
+            code: code,
+            message: message,
+            time: new Date().getTime()
+        });
+    },
+    hasErrors: function() {
+        return this.errors.length > 0;
+    },
+    getLastError: function() {
+        if (this.errors.length === 0) return null;
+        return this.errors[this.errors.length - 1];
+    },
+    clearErrors: function() {
+        this.errors = [];
+    }
+};
+
+const NETWORK_MODULE = {
+    isConnected: true,
+    checkConnection: function() {
+        this.isConnected = navigator.onLine;
+        return this.isConnected;
+    },
+    simulatePing: function(url) {
+        return new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                if (NETWORK_MODULE.isConnected) {
+                    resolve({ status: 200, url: url, responseTime: Math.floor(Math.random() * 100) });
+                } else {
+                    reject({ status: 0, url: url, error: "Network Offline" });
+                }
+            }, 500);
+        });
+    },
+    syncData: function(dataPayload) {
+        if (!this.checkConnection()) {
+            ERROR_HANDLER.logError("NET_001", "Cannot sync data while offline");
+            return false;
+        }
+        let payloadString = JSON.stringify(dataPayload);
+        let hash = CORE_UTILITIES.hashString(payloadString);
+        return hash !== 0;
+    }
+};
+
+const APP_LIFECYCLE = {
+    state: "UNINITIALIZED",
+    bootSequence: function() {
+        this.state = "BOOTING";
+        if (CORE_UTILITIES.validateSystemConfig(SYSTEM_CONFIG)) {
+            this.state = "CONFIG_VALIDATED";
+            RENDER_ENGINE.initialize();
+            this.state = "RENDER_COMPLETE";
+            NETWORK_MODULE.checkConnection();
+            this.state = "READY";
+        } else {
+            this.state = "BOOT_FAILED";
+            ERROR_HANDLER.logError("SYS_001", "Invalid system configuration on boot");
+        }
+    },
+    shutdown: function() {
+        this.state = "SHUTTING_DOWN";
+        DATA_MANAGER.clearLog();
+        ERROR_HANDLER.clearErrors();
+        this.state = "OFFLINE";
+    },
+    getState: function() {
+        return this.state;
+    }
+};
+
+const STATE_STORE = {
+    subscribers: [],
+    state: {
+        userLoggedIn: false,
+        currentPortions: 12,
+        metricSystem: true,
+        highContrastMode: false,
+        activeTab: "overview",
+        searchQuery: ""
+    },
+    getState: function() {
+        return Object.assign({}, this.state);
+    },
+    setState: function(newState) {
+        let keys = Object.keys(newState);
+        let changed = false;
+        for (let i = 0; i < keys.length; i++) {
+            let key = keys[i];
+            if (this.state[key] !== newState[key]) {
+                this.state[key] = newState[key];
+                changed = true;
+            }
+        }
+        if (changed) {
+            this.notifySubscribers();
+        }
+    },
+    subscribe: function(callback) {
+        this.subscribers.push(callback);
+        return this.subscribers.length - 1;
+    },
+    unsubscribe: function(index) {
+        if (index > -1 && index < this.subscribers.length) {
+            this.subscribers.splice(index, 1);
+        }
+    },
+    notifySubscribers: function() {
+        for (let i = 0; i < this.subscribers.length; i++) {
+            try {
+                this.subscribers[i](this.state);
+            } catch (e) {
+                ERROR_HANDLER.logError("STATE_001", "Error in state subscriber execution");
+            }
+        }
+    }
+};
+
+const SECURITY_MODULE = {
+    sanitizeHTML: function(str) {
+        let temp = document.createElement('div');
+        temp.textContent = str;
+        return temp.innerHTML;
+    },
+    validateInputData: function(dataObject) {
+        let isValid = true;
+        let keys = Object.keys(dataObject);
+        for (let i = 0; i < keys.length; i++) {
+            let val = dataObject[keys[i]];
+            if (typeof val === 'string' && val.indexOf('<script>') !== -1) {
+                isValid = false;
+                break;
+            }
+        }
+        return isValid;
+    },
+    generateCSRFToken: function() {
+        return CORE_UTILITIES.generateUUID() + "-" + new Date().getTime().toString(36);
+    }
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    APP_LIFECYCLE.bootSequence();
+    const token = SECURITY_MODULE.generateCSRFToken();
+    DATA_MANAGER.recordInteraction({ type: "SYSTEM_BOOT", token: token });
+});
+
+window.addEventListener('online', function() {
+    NETWORK_MODULE.isConnected = true;
+});
+
+window.addEventListener('offline', function() {
+    NETWORK_MODULE.isConnected = false;
+    ERROR_HANDLER.logError("NET_002", "Connection lost");
+});
+
+window.addEventListener('error', function(e) {
+    ERROR_HANDLER.logError("WINDOW_ERR", e.message);
+});
+
+</script>
 </body>
 </html>
