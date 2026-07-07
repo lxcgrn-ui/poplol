@@ -8,58 +8,424 @@
         :root {
             --primary-color: #d97706;
             --secondary-color: #451a03;
+            --accent-color: #dc2626;
             --bg-main: #fefcfb;
             --card-bg: #ffffff;
+            --text-dark: #1c1917;
+            --text-light: #44403c;
+            --border: #f1f0ee;
         }
-        body { font-family: sans-serif; background-color: var(--bg-main); color: #1c1917; line-height: 1.6; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        
-        .main-header { text-align: center; background: #fffbeb; padding: 40px 20px; border-radius: 20px; border-bottom: 5px solid var(--primary-color); margin-bottom: 30px; }
-        h1 { font-size: 3.2rem; color: var(--secondary-color); margin: 10px 0; text-transform: uppercase; }
-        .integrantes-list { list-style: none; font-size: 1.2rem; font-weight: 600; color: #92400e; margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
-        
-        .section-card { background: white; border-radius: 20px; padding: 30px; border: 1px solid #e7e5e4; margin-bottom: 20px; }
-        .section-title { font-size: 1.6rem; color: var(--secondary-color); margin-bottom: 20px; border-bottom: 3px solid var(--primary-color); display: inline-block; }
-        
-        .step-block { margin-bottom: 25px; }
-        .step-num { background: var(--primary-color); color: white; width: 30px; height: 30px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-right: 10px; }
-        
-        /* Logo 放置在最底下 */
-        .footer-logo { text-align: center; margin-top: 50px; padding: 20px; }
-        .footer-logo img { max-width: 300px; height: auto; border-radius: 10px; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .main-header {
+            text-align: center;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 2px solid #fcd34d;
+        }
+
+        .main-header p {
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .main-header h1 {
+            font-size: 2.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .integrantes-list {
+            list-style: none;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #78350f;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 15px;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            padding: 25px;
+            color: white;
+        }
+
+        .hero-text h2 {
+            font-size: 1.6rem;
+            color: #fde68a;
+            margin-bottom: 5px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 850px) {
+            .content-grid {
+                grid-template-columns: 1.6fr 1fr;
+            }
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid #e7e5e4;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .ingredients-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ingredients-table th {
+            background-color: #fffbeb;
+            color: var(--secondary-color);
+            text-align: left;
+            padding: 12px;
+            font-weight: bold;
+            border-bottom: 2px solid #fde68a;
+        }
+
+        .ingredients-table td {
+            padding: 12px;
+            border-bottom: 1px solid #f5f5f4;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .step-block {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e7e5e4;
+        }
+
+        .step-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-num-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .step-num {
+            background-color: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .step-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 550px) {
+            .step-detail-grid {
+                grid-template-columns: 1fr 150px;
+            }
+        }
+
+        .step-desc {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .step-img-holder {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 2px solid white;
+            background-color: #f5f5f4;
+        }
+
+        .step-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-alert {
+            background-color: #fff7ed;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #7c2d12;
+            font-size: 0.95rem;
+        }
+
+        .thanks-section {
+            text-align: center;
+            background: linear-gradient(135deg, #451a03 0%, #1c1917 100%);
+            color: #fef3c7;
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-top: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .thanks-section h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #fde68a;
+        }
+
+        .custom-footer {
+            margin-top: 25px;
+            padding: 15px 5px;
+            border-top: 1px solid #e7e5e4;
+            display: block;
+            overflow: hidden;
+        }
+
+        .footer-left {
+            float: left;
+            font-size: 0.95rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        .footer-right {
+            float: right;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            background-color: #fde68a;
+            padding: 2px 12px;
+            border-radius: 6px;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header class="main-header">
-        <p style="color:var(--primary-color); font-weight:bold;">PROYECTO EXPOSITIVO DE GASTRONOMÍA</p>
-        <h1>Mandocas con Ajonjolí</h1>
-        <ul class="integrantes-list">
-            <li>Christian Liao</li>
-            <li>Saul Alfonzo</li>
-            <li>Pablo Mesa</li>
-        </ul>
-    </header>
+    <div class="container">
+        
+        <header class="main-header">
+            <p>Proyecto Expositivo de Gastronomía</p>
+            <h1>Mandocas con Ajonjolí</h1>
+            
+            <ul class="integrantes-list">
+                <li>Integrantes:</li>
+                <li>Christian Liao</li>
+                <li>Saul Alfonzo</li>
+                <li>Pablo Mesa</li>
+            </ul>
+        </header>
 
-    <div class="section-card">
-        <span class="section-title">Ingredientes</span>
-        <p>1 kg Harina de maíz, 2 Plátanos maduros, 1 Papelón, 700g Queso llanero, 100g Margarina, 50g Leche en polvo, 1 cda. Vainilla, Ajonjolí, 1/2 litro Aceite.</p>
-    </div>
+        <div class="hero-banner">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200" alt="Plato de Mandocas Tradicionales">
+            <div class="hero-text">
+                <h2>Tradición y Sabor del Estado Zulia</h2>
+                <p>Una receta típica de nuestra tierra que equilibra perfectamente el sabor dulce y el salado.</p>
+            </div>
+        </div>
 
-    <div class="section-card">
-        <span class="section-title">Pasos de Preparación</span>
-        <div class="step-block"><div class="step-num">1</div><strong>El Melao:</strong> Disolver la panela en agua hirviendo y dejar enfriar.</div>
-        <div class="step-block"><div class="step-num">2</div><strong>Aromatizar:</strong> Mezclar leche en polvo y vainilla en el melao.</div>
-        <div class="step-block"><div class="step-num">3</div><strong>Amasado:</strong> Integrar plátano, harina, queso y melao.</div>
-        <div class="step-block"><div class="step-num">4</div><strong>Modelado:</strong> Formar los lazos tradicionales a mano.</div>
-        <div class="step-block"><div class="step-num">5</div><strong>Fritura:</strong> Pasar por ajonjolí y freír hasta dorar.</div>
-    </div>
+        <div class="content-grid">
+            
+            <div class="section-card">
+                <span class="section-title">Pasos de Preparación</span>
+                
+                <div class="step-block">
+                    <div class="step-num-title">
+                        <div class="step-num">1</div>
+                        <div class="step-title">El Melao de Papelón</div>
+                    </div>
+                    <div class="step-detail-grid">
+                        <div class="step-desc">
+                            Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave, homogéneo y libre de impurezas. Dejar enfriar un poco.
+                        </div>
+                        <div class="step-img-holder">
+                            <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=300" alt="Melao hirviendo">
+                        </div>
+                    </div>
+                </div>
 
-    <div class="footer-logo">
-        <img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo">
+                <div class="step-block">
+                    <div class="step-num-title">
+                        <div class="step-num">2</div>
+                        <div class="step-title">Aromatizar la Base</div>
+                    </div>
+                    <div class="step-detail-grid">
+                        <div class="step-desc">
+                            Agregar los 50g de leche en polvo y la cucharada de esencia de vainilla al melao templado. Batir muy bien para evitar grumos y lograr una base líquida rica y perfumada.
+                        </div>
+                        <div class="step-img-holder">
+                            <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=300" alt="Mezcla de vainilla">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-num-title">
+                        <div class="step-num">3</div>
+                        <div class="step-title">El Amasado</div>
+                    </div>
+                    <div class="step-detail-grid">
+                        <div class="step-desc">
+                            Hacer un puré firme con los 2 plátanos maduros cocidos y los 100g de margarina. Agregar el melao líquido, el kilo de harina de maíz y los 700g de queso llanero rallado. Amasar hasta conseguir una consistencia suave y compacta.
+                        </div>
+                        <div class="step-img-holder">
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=300" alt="Amasado manual">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-num-title">
+                        <div class="step-num">4</div>
+                        <div class="step-title">Modelado del Lazo</div>
+                    </div>
+                    <div class="step-detail-grid">
+                        <div class="step-desc">
+                            Hacer tiras o bastones delgados con la masa usando las manos sobre la mesa de trabajo. Doblar y unir los extremos para darle la forma tradicional de lazo o gota zuliana.
+                        </div>
+                        <div class="step-img-holder">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300" alt="Forma de la masa">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-block">
+                    <div class="step-num-title">
+                        <div class="step-num">5</div>
+                        <div class="step-title">Fritura y Toque Final</div>
+                    </div>
+                    <div class="step-detail-grid">
+                        <div class="step-desc">
+                            Pasar los lazos por semillas de ajonjolí al gusto. Freír en un caldero con el 1/2 litro de aceite bien caliente hasta que adquieran un color dorado oscuro y una textura muy crujiente.
+                        </div>
+                        <div class="step-img-holder">
+                            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=300" alt="Fritura en sartén">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="section-card">
+                <span class="section-title">Ingredientes</span>
+                <table class="ingredients-table">
+                    <thead>
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Harina de maíz</strong></td><td>1 kg</td></tr>
+                        <tr><td><strong>Plátanos maduros</strong></td><td>2 unidades</td></tr>
+                        <tr><td><strong>Papelón (Panela)</strong></td><td>1 unidad</td></tr>
+                        <tr><td><strong>Queso llanero</strong></td><td>700 g</td></tr>
+                        <tr><td><strong>Margarina</strong></td><td>100 g</td></tr>
+                        <tr><td><strong>Leche en polvo</strong></td><td>50 g</td></tr>
+                        <tr><td><strong>Esencia de Vainilla</strong></td><td>1 cda.</td></tr>
+                        <tr><td><strong>Ajonjolí (Sésamo)</strong></td><td>Al gusto</td></tr>
+                        <tr><td><strong>Aceite vegetal</strong></td><td>1/2 litro</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="info-alert">
+                    ⚠️ <strong>Nota Técnica:</strong> Los 700g de queso llanero aportan la sal necesaria para la masa, logrando un equilibrio idóneo sin agregar sal común.
+                </div>
+            </div>
+
+        </div>
+
+        <section class="thanks-section">
+            <h3>¡Muchas Gracias por su Atención!</h3>
+        </section>
+
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 30px;">
+            <img src="https://raw.githubusercontent.com/lxcgrn-ui/poplol/main/WhatsApp%20Image%202026-07-06%20at%2011.12.02%20PM.jpeg" alt="Logo" style="max-width: 300px; border-radius: 10px;">
+        </div>
+
+        <footer class="custom-footer">
+            <span class="footer-left">Todo el sitio web fue realizado independientemente por Christian.</span>
+            <span class="footer-right">5to Grado "A"</span>
+        </footer>
+
     </div>
-</div>
 
 </body>
 </html>
