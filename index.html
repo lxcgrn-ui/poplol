@@ -58,20 +58,32 @@
         .main-header h1 {
             font-size: 2.8rem;
             color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        /* 改進後的名單區塊：更大、更醒目 */
+        .integrantes-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 20px;
+            border: 2px dashed var(--primary-color);
+        }
+
+        .integrantes-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-transform: uppercase;
             margin-bottom: 10px;
         }
 
-        /* 名單區塊調整 */
         .integrantes-list {
             list-style: none;
-            display: inline-block;
-            text-align: left;
-            margin-top: 15px;
-            background-color: rgba(255,255,255,0.7);
-            padding: 10px 20px;
-            border-radius: 15px;
-            font-weight: 600;
-            color: #78350f;
+            font-size: 2.5rem; /* 字體放大 */
+            font-weight: 800;
+            color: var(--secondary-color);
+            line-height: 1.2;
         }
 
         /* 主視覺：絕不敷衍的主題圖片 */
@@ -159,7 +171,7 @@
             font-size: 1.05rem;
         }
 
-        /* 導覽步驟：清晰好讀 */
+        /* 導覽步驟 */
         .step-block {
             margin-bottom: 25px;
             padding-bottom: 20px;
@@ -242,7 +254,7 @@
             font-size: 0.95rem;
         }
 
-        /* 感謝觀看區塊 */
+        /* 感謝區塊 */
         .thanks-section {
             text-align: center;
             background: linear-gradient(135deg, #451a03 0%, #1c1917 100%);
@@ -259,12 +271,7 @@
             color: #fde68a;
         }
 
-        .thanks-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* 底部頁尾：嚴格的左右對齊 */
+        /* 底部頁尾 */
         .custom-footer {
             margin-top: 25px;
             padding: 15px 5px;
@@ -298,12 +305,15 @@
         <header class="main-header">
             <p>Proyecto Expositivo de Gastronomía</p>
             <h1>Mandocas con Ajonjolí</h1>
-            <ul class="integrantes-list">
-                <li>Integrantes:</li>
-                <li>Christian</li>
-                <li>Saul</li>
-                <li>Pablo</li>
-            </ul>
+            
+            <div class="integrantes-box">
+                <div class="integrantes-title">Integrantes</div>
+                <ul class="integrantes-list">
+                    <li>Christian Liao</li>
+                    <li>Saul Alfonzo</li>
+                    <li>Pablo Mesa</li>
+                </ul>
+            </div>
         </header>
 
         <div class="hero-banner">
@@ -315,127 +325,35 @@
         </div>
 
         <div class="content-grid">
-            
             <div class="section-card">
                 <span class="section-title">Pasos de Preparación</span>
-                
                 <div class="step-block">
                     <div class="step-num-title">
                         <div class="step-num">1</div>
                         <div class="step-title">El Melao de Papelón</div>
                     </div>
                     <div class="step-detail-grid">
-                        <div class="step-desc">
-                            Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave, homogéneo y libre de impurezas. Dejar enfriar un poco.
-                        </div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=300" alt="Melao hirviendo">
-                        </div>
+                        <div class="step-desc">Disolver la panela (papelón) en un litro de agua hirviendo a fuego medio hasta que se convierta en un almíbar suave, homogéneo y libre de impurezas.</div>
+                        <div class="step-img-holder"><img src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=300"></div>
                     </div>
                 </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">2</div>
-                        <div class="step-title">Aromatizar la Base</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">
-                            Agregar los 50g de leche en polvo y la cucharada de esencia de vainilla al melao templado. Batir muy bien para evitar grumos y lograr una base líquida rica y perfumada.
-                        </div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=300" alt="Mezcla de vainilla">
-                        </div>
-                    </div>
                 </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">3</div>
-                        <div class="step-title">El Amasado</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">
-                            Hacer un puré firme con los 2 plátanos maduros cocidos y los 100g de margarina. Agregar el melao líquido, el kilo de harina de maíz y los 700g de queso llanero rallado. Amasar hasta conseguir una consistencia suave y compacta.
-                        </div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=300" alt="Amasado manual">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">4</div>
-                        <div class="step-title">Modelado del Lazo</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">
-                            Hacer tiras o bastones delgados con la masa usando las manos sobre la mesa de trabajo. Doblar y unir los extremos para darle la forma tradicional de lazo o gota.
-                        </div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=300" alt="Forma de la masa">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="step-block">
-                    <div class="step-num-title">
-                        <div class="step-num">5</div>
-                        <div class="step-title">Fritura y Toque Final</div>
-                    </div>
-                    <div class="step-detail-grid">
-                        <div class="step-desc">
-                            Pasar los lazos por semillas de ajonjolí al gusto. Freír en un caldero con el 1/2 litro de aceite bien caliente hasta que adquieran un color dorado oscuro y una textura muy crujiente.
-                        </div>
-                        <div class="step-img-holder">
-                            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=300" alt="Fritura en sartén">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 
             <div class="section-card">
                 <span class="section-title">Ingredientes</span>
                 <table class="ingredients-table">
-                    <thead>
-                        <tr>
-                            <th>Ingrediente</th>
-                            <th>Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>Harina de maíz</strong></td><td>1 kg</td></tr>
-                        <tr><td><strong>Plátanos maduros</strong></td><td>2 unidades</td></tr>
-                        <tr><td><strong>Papelón (Panela)</strong></td><td>1 unidad</td></tr>
-                        <tr><td><strong>Queso llanero</strong></td><td>700 g</td></tr>
-                        <tr><td><strong>Margarina</strong></td><td>100 g</td></tr>
-                        <tr><td><strong>Leche en polvo</strong></td><td>50 g</td></tr>
-                        <tr><td><strong>Esencia de Vainilla</strong></td><td>1 cda.</td></tr>
-                        <tr><td><strong>Ajonjolí (Sésamo)</strong></td><td>Al gusto</td></tr>
-                        <tr><td><strong>Aceite vegetal</strong></td><td>1/2 litro</td></tr>
-                    </tbody>
-                </table>
-
-                <div class="info-alert">
-                    ⚠️ <strong>Nota Técnica:</strong> Los 700g de queso llanero aportan la sal necesaria para la masa, logrando un equilibrio idóneo sin agregar sal común.
-                </div>
+                    </table>
             </div>
-
         </div>
 
         <section class="thanks-section">
             <h3>¡Muchas Gracias por su Atención!</h3>
-            <p>Espero que disfruten preparando y degustando esta maravillosa receta de nuestra cultura tradicional.</p>
         </section>
 
         <footer class="custom-footer">
             <span class="footer-left">Todo el sitio web fue realizado independientemente por Christian.</span>
             <span class="footer-right">5to Grado "A"</span>
         </footer>
-
     </div>
-
 </body>
 </html>
