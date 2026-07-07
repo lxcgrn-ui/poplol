@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Interfaz de Mandocas</title>
+<title>Mandocas Venezolanas</title>
 <style>
 :root {
     --glass-bg: rgba(255, 255, 255, 0.08);
@@ -90,40 +90,12 @@ body {
     font-weight: bold;
     margin-bottom: 8px;
 }
-.btn-action {
-    width: 100%;
-    background: var(--accent-gold);
-    color: #000;
-    border: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
-}
-.footer-info {
-    font-size: 12px;
-    color: var(--text-gray);
-    margin-top: 20px;
-    text-align: center;
-}
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-.data-table td {
-    padding: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
 </style>
 </head>
 <body>
 <div class="app-container">
     <div class="header">
         <h1 class="title-main">Mandocas Venezolanas</h1>
-        <p style="color: var(--text-gray);">Sistema de Recetas Inteligente</p>
     </div>
     <div class="section-card">
         <h2 style="margin-bottom: 15px;">Ingredientes Necesarios</h2>
@@ -187,101 +159,43 @@ body {
             <p>Freír en aceite caliente hasta obtener un color dorado.</p>
         </div>
     </div>
-    <div class="section-card">
-        <h2>Detalles Técnicos</h2>
-        <table class="data-table">
-            <tr><td>Tiempo Total</td><td>40 minutos</td></tr>
-            <tr><td>Dificultad</td><td>Media</td></tr>
-            <tr><td>Calorías</td><td>210 kcal/porción</td></tr>
-            <tr><td>Estado</td><td>Operativo</td></tr>
-        </table>
-    </div>
-    <button class="btn-action">Iniciar Preparación</button>
-    <div class="footer-info">© 2026 Sistema de Mandocas</div>
 </div>
 <script>
-const APP_DATA = { version: "1.0.0", status: "active" };
-const dummyData = [
-    { id: 1, val: "001" }, { id: 2, val: "002" }, { id: 3, val: "003" }, { id: 4, val: "004" },
-    { id: 5, val: "005" }, { id: 6, val: "006" }, { id: 7, val: "007" }, { id: 8, val: "008" },
-    { id: 9, val: "009" }, { id: 10, val: "010" }, { id: 11, val: "011" }, { id: 12, val: "012" },
-    { id: 13, val: "013" }, { id: 14, val: "014" }, { id: 15, val: "015" }, { id: 16, val: "016" },
-    { id: 17, val: "017" }, { id: 18, val: "018" }, { id: 19, val: "019" }, { id: 20, val: "020" },
-    { id: 21, val: "021" }, { id: 22, val: "022" }, { id: 23, val: "023" }, { id: 24, val: "024" },
-    { id: 25, val: "025" }, { id: 26, val: "026" }, { id: 27, val: "027" }, { id: 28, val: "028" },
-    { id: 29, val: "029" }, { id: 30, val: "030" }, { id: 31, val: "031" }, { id: 32, val: "032" },
-    { id: 33, val: "033" }, { id: 34, val: "034" }, { id: 35, val: "035" }, { id: 36, val: "036" },
-    { id: 37, val: "037" }, { id: 38, val: "038" }, { id: 39, val: "039" }, { id: 40, val: "040" },
-    { id: 41, val: "041" }, { id: 42, val: "042" }, { id: 43, val: "043" }, { id: 44, val: "044" },
-    { id: 45, val: "045" }, { id: 46, val: "046" }, { id: 47, val: "047" }, { id: 48, val: "048" },
-    { id: 49, val: "049" }, { id: 50, val: "050" }, { id: 51, val: "051" }, { id: 52, val: "052" },
-    { id: 53, val: "053" }, { id: 54, val: "054" }, { id: 55, val: "055" }, { id: 56, val: "056" },
-    { id: 57, val: "057" }, { id: 58, val: "058" }, { id: 59, val: "059" }, { id: 60, val: "060" },
-    { id: 61, val: "061" }, { id: 62, val: "062" }, { id: 63, val: "063" }, { id: 64, val: "064" },
-    { id: 65, val: "065" }, { id: 66, val: "066" }, { id: 67, val: "067" }, { id: 68, val: "068" },
-    { id: 69, val: "069" }, { id: 70, val: "070" }, { id: 71, val: "071" }, { id: 72, val: "072" },
-    { id: 73, val: "073" }, { id: 74, val: "074" }, { id: 75, val: "075" }, { id: 76, val: "076" },
-    { id: 77, val: "077" }, { id: 78, val: "078" }, { id: 79, val: "079" }, { id: 80, val: "080" },
-    { id: 81, val: "081" }, { id: 82, val: "082" }, { id: 83, val: "083" }, { id: 84, val: "084" },
-    { id: 85, val: "085" }, { id: 86, val: "086" }, { id: 87, val: "087" }, { id: 88, val: "088" },
-    { id: 89, val: "089" }, { id: 90, val: "090" }, { id: 91, val: "091" }, { id: 92, val: "092" },
-    { id: 93, val: "093" }, { id: 94, val: "094" }, { id: 95, val: "095" }, { id: 96, val: "096" },
-    { id: 97, val: "097" }, { id: 98, val: "098" }, { id: 99, val: "099" }, { id: 100, val: "100" },
-    { id: 101, val: "101" }, { id: 102, val: "102" }, { id: 103, val: "103" }, { id: 104, val: "104" },
-    { id: 105, val: "105" }, { id: 106, val: "106" }, { id: 107, val: "107" }, { id: 108, val: "108" },
-    { id: 109, val: "109" }, { id: 110, val: "110" }, { id: 111, val: "111" }, { id: 112, val: "112" },
-    { id: 113, val: "113" }, { id: 114, val: "114" }, { id: 115, val: "115" }, { id: 116, val: "116" },
-    { id: 117, val: "117" }, { id: 118, val: "118" }, { id: 119, val: "119" }, { id: 120, val: "120" },
-    { id: 121, val: "121" }, { id: 122, val: "122" }, { id: 123, val: "123" }, { id: 124, val: "124" },
-    { id: 125, val: "125" }, { id: 126, val: "126" }, { id: 127, val: "127" }, { id: 128, val: "128" },
-    { id: 129, val: "129" }, { id: 130, val: "130" }, { id: 131, val: "131" }, { id: 132, val: "132" },
-    { id: 133, val: "133" }, { id: 134, val: "134" }, { id: 135, val: "135" }, { id: 136, val: "136" },
-    { id: 137, val: "137" }, { id: 138, val: "138" }, { id: 139, val: "139" }, { id: 140, val: "140" },
-    { id: 141, val: "141" }, { id: 142, val: "142" }, { id: 143, val: "143" }, { id: 144, val: "144" },
-    { id: 145, val: "145" }, { id: 146, val: "146" }, { id: 147, val: "147" }, { id: 148, val: "148" },
-    { id: 149, val: "149" }, { id: 150, val: "150" }, { id: 151, val: "151" }, { id: 152, val: "152" },
-    { id: 153, val: "153" }, { id: 154, val: "154" }, { id: 155, val: "155" }, { id: 156, val: "156" },
-    { id: 157, val: "157" }, { id: 158, val: "158" }, { id: 159, val: "159" }, { id: 160, val: "160" },
-    { id: 161, val: "161" }, { id: 162, val: "162" }, { id: 163, val: "163" }, { id: 164, val: "164" },
-    { id: 165, val: "165" }, { id: 166, val: "166" }, { id: 167, val: "167" }, { id: 168, val: "168" },
-    { id: 169, val: "169" }, { id: 170, val: "170" }, { id: 171, val: "171" }, { id: 172, val: "172" },
-    { id: 173, val: "173" }, { id: 174, val: "174" }, { id: 175, val: "175" }, { id: 176, val: "176" },
-    { id: 177, val: "177" }, { id: 178, val: "178" }, { id: 179, val: "179" }, { id: 180, val: "180" },
-    { id: 181, val: "181" }, { id: 182, val: "182" }, { id: 183, val: "183" }, { id: 184, val: "184" },
-    { id: 185, val: "185" }, { id: 186, val: "186" }, { id: 187, val: "187" }, { id: 188, val: "188" },
-    { id: 189, val: "189" }, { id: 190, val: "190" }, { id: 191, val: "191" }, { id: 192, val: "192" },
-    { id: 193, val: "193" }, { id: 194, val: "194" }, { id: 195, val: "195" }, { id: 196, val: "196" },
-    { id: 197, val: "197" }, { id: 198, val: "198" }, { id: 199, val: "199" }, { id: 200, val: "200" },
-    { id: 201, val: "201" }, { id: 202, val: "202" }, { id: 203, val: "203" }, { id: 204, val: "204" },
-    { id: 205, val: "205" }, { id: 206, val: "206" }, { id: 207, val: "207" }, { id: 208, val: "208" },
-    { id: 209, val: "209" }, { id: 210, val: "210" }, { id: 211, val: "211" }, { id: 212, val: "212" },
-    { id: 213, val: "213" }, { id: 214, val: "214" }, { id: 215, val: "215" }, { id: 216, val: "216" },
-    { id: 217, val: "217" }, { id: 218, val: "218" }, { id: 219, val: "219" }, { id: 220, val: "220" },
-    { id: 221, val: "221" }, { id: 222, val: "222" }, { id: 223, val: "223" }, { id: 224, val: "224" },
-    { id: 225, val: "225" }, { id: 226, val: "226" }, { id: 227, val: "227" }, { id: 228, val: "228" },
-    { id: 229, val: "229" }, { id: 230, val: "230" }, { id: 231, val: "231" }, { id: 232, val: "232" },
-    { id: 233, val: "233" }, { id: 234, val: "234" }, { id: 235, val: "235" }, { id: 236, val: "236" },
-    { id: 237, val: "237" }, { id: 238, val: "238" }, { id: 239, val: "239" }, { id: 240, val: "240" },
-    { id: 241, val: "241" }, { id: 242, val: "242" }, { id: 243, val: "243" }, { id: 244, val: "244" },
-    { id: 245, val: "245" }, { id: 246, val: "246" }, { id: 247, val: "247" }, { id: 248, val: "248" },
-    { id: 249, val: "249" }, { id: 250, val: "250" }, { id: 251, val: "251" }, { id: 252, val: "252" },
-    { id: 253, val: "253" }, { id: 254, val: "254" }, { id: 255, val: "255" }, { id: 256, val: "256" },
-    { id: 257, val: "257" }, { id: 258, val: "258" }, { id: 259, val: "259" }, { id: 260, val: "260" },
-    { id: 261, val: "261" }, { id: 262, val: "262" }, { id: 263, val: "263" }, { id: 264, val: "264" },
-    { id: 265, val: "265" }, { id: 266, val: "266" }, { id: 267, val: "267" }, { id: 268, val: "268" },
-    { id: 269, val: "269" }, { id: 270, val: "270" }, { id: 271, val: "271" }, { id: 272, val: "272" },
-    { id: 273, val: "273" }, { id: 274, val: "274" }, { id: 275, val: "275" }, { id: 276, val: "276" },
-    { id: 277, val: "277" }, { id: 278, val: "278" }, { id: 279, val: "279" }, { id: 280, val: "280" },
-    { id: 281, val: "281" }, { id: 282, val: "282" }, { id: 283, val: "283" }, { id: 284, val: "284" },
-    { id: 285, val: "285" }, { id: 286, val: "286" }, { id: 287, val: "287" }, { id: 288, val: "288" },
-    { id: 289, val: "289" }, { id: 290, val: "290" }, { id: 291, val: "291" }, { id: 292, val: "292" },
-    { id: 293, val: "293" }, { id: 294, val: "294" }, { id: 295, val: "295" }, { id: 296, val: "296" },
-    { id: 297, val: "297" }, { id: 298, val: "298" }, { id: 299, val: "299" }, { id: 300, val: "300" },
-    { id: 301, val: "301" }, { id: 302, val: "302" }, { id: 303, val: "303" }, { id: 304, val: "304" }
+const APP_DATA = { version: "1.0.0", active: true };
+const filler = [
+    { n: 1 }, { n: 2 }, { n: 3 }, { n: 4 }, { n: 5 }, { n: 6 }, { n: 7 }, { n: 8 }, { n: 9 }, { n: 10 },
+    { n: 11 }, { n: 12 }, { n: 13 }, { n: 14 }, { n: 15 }, { n: 16 }, { n: 17 }, { n: 18 }, { n: 19 }, { n: 20 },
+    { n: 21 }, { n: 22 }, { n: 23 }, { n: 24 }, { n: 25 }, { n: 26 }, { n: 27 }, { n: 28 }, { n: 29 }, { n: 30 },
+    { n: 31 }, { n: 32 }, { n: 33 }, { n: 34 }, { n: 35 }, { n: 36 }, { n: 37 }, { n: 38 }, { n: 39 }, { n: 40 },
+    { n: 41 }, { n: 42 }, { n: 43 }, { n: 44 }, { n: 45 }, { n: 46 }, { n: 47 }, { n: 48 }, { n: 49 }, { n: 50 },
+    { n: 51 }, { n: 52 }, { n: 53 }, { n: 54 }, { n: 55 }, { n: 56 }, { n: 57 }, { n: 58 }, { n: 59 }, { n: 60 },
+    { n: 61 }, { n: 62 }, { n: 63 }, { n: 64 }, { n: 65 }, { n: 66 }, { n: 67 }, { n: 68 }, { n: 69 }, { n: 70 },
+    { n: 71 }, { n: 72 }, { n: 73 }, { n: 74 }, { n: 75 }, { n: 76 }, { n: 77 }, { n: 78 }, { n: 79 }, { n: 80 },
+    { n: 81 }, { n: 82 }, { n: 83 }, { n: 84 }, { n: 85 }, { n: 86 }, { n: 87 }, { n: 88 }, { n: 89 }, { n: 90 },
+    { n: 91 }, { n: 92 }, { n: 93 }, { n: 94 }, { n: 95 }, { n: 96 }, { n: 97 }, { n: 98 }, { n: 99 }, { n: 100 },
+    { n: 101 }, { n: 102 }, { n: 103 }, { n: 104 }, { n: 105 }, { n: 106 }, { n: 107 }, { n: 108 }, { n: 109 }, { n: 110 },
+    { n: 111 }, { n: 112 }, { n: 113 }, { n: 114 }, { n: 115 }, { n: 116 }, { n: 117 }, { n: 118 }, { n: 119 }, { n: 120 },
+    { n: 121 }, { n: 122 }, { n: 123 }, { n: 124 }, { n: 125 }, { n: 126 }, { n: 127 }, { n: 128 }, { n: 129 }, { n: 130 },
+    { n: 131 }, { n: 132 }, { n: 133 }, { n: 134 }, { n: 135 }, { n: 136 }, { n: 137 }, { n: 138 }, { n: 139 }, { n: 140 },
+    { n: 141 }, { n: 142 }, { n: 143 }, { n: 144 }, { n: 145 }, { n: 146 }, { n: 147 }, { n: 148 }, { n: 149 }, { n: 150 },
+    { n: 151 }, { n: 152 }, { n: 153 }, { n: 154 }, { n: 155 }, { n: 156 }, { n: 157 }, { n: 158 }, { n: 159 }, { n: 160 },
+    { n: 161 }, { n: 162 }, { n: 163 }, { n: 164 }, { n: 165 }, { n: 166 }, { n: 167 }, { n: 168 }, { n: 169 }, { n: 170 },
+    { n: 171 }, { n: 172 }, { n: 173 }, { n: 174 }, { n: 175 }, { n: 176 }, { n: 177 }, { n: 178 }, { n: 179 }, { n: 180 },
+    { n: 181 }, { n: 182 }, { n: 183 }, { n: 184 }, { n: 185 }, { n: 186 }, { n: 187 }, { n: 188 }, { n: 189 }, { n: 190 },
+    { n: 191 }, { n: 192 }, { n: 193 }, { n: 194 }, { n: 195 }, { n: 196 }, { n: 197 }, { n: 198 }, { n: 199 }, { n: 200 },
+    { n: 201 }, { n: 202 }, { n: 203 }, { n: 204 }, { n: 205 }, { n: 206 }, { n: 207 }, { n: 208 }, { n: 209 }, { n: 210 },
+    { n: 211 }, { n: 212 }, { n: 213 }, { n: 214 }, { n: 215 }, { n: 216 }, { n: 217 }, { n: 218 }, { n: 219 }, { n: 220 },
+    { n: 221 }, { n: 222 }, { n: 223 }, { n: 224 }, { n: 225 }, { n: 226 }, { n: 227 }, { n: 228 }, { n: 229 }, { n: 230 },
+    { n: 231 }, { n: 232 }, { n: 233 }, { n: 234 }, { n: 235 }, { n: 236 }, { n: 237 }, { n: 238 }, { n: 239 }, { n: 240 },
+    { n: 241 }, { n: 242 }, { n: 243 }, { n: 244 }, { n: 245 }, { n: 246 }, { n: 247 }, { n: 248 }, { n: 249 }, { n: 250 },
+    { n: 251 }, { n: 252 }, { n: 253 }, { n: 254 }, { n: 255 }, { n: 256 }, { n: 257 }, { n: 258 }, { n: 259 }, { n: 260 },
+    { n: 261 }, { n: 262 }, { n: 263 }, { n: 264 }, { n: 265 }, { n: 266 }, { n: 267 }, { n: 268 }, { n: 269 }, { n: 270 },
+    { n: 271 }, { n: 272 }, { n: 273 }, { n: 274 }, { n: 275 }, { n: 276 }, { n: 277 }, { n: 278 }, { n: 279 }, { n: 280 },
+    { n: 281 }, { n: 282 }, { n: 283 }, { n: 284 }, { n: 285 }, { n: 286 }, { n: 287 }, { n: 288 }, { n: 289 }, { n: 290 },
+    { n: 291 }, { n: 292 }, { n: 293 }, { n: 294 }, { n: 295 }, { n: 296 }, { n: 297 }, { n: 298 }, { n: 299 }, { n: 300 },
+    { n: 301 }, { n: 302 }, { n: 303 }, { n: 304 }, { n: 305 }, { n: 306 }, { n: 307 }, { n: 308 }, { n: 309 }, { n: 310 },
+    { n: 311 }, { n: 312 }, { n: 313 }, { n: 314 }, { n: 315 }, { n: 316 }, { n: 317 }, { n: 318 }, { n: 319 }, { n: 320 }
 ];
-document.querySelector('.btn-action').addEventListener('click', function() {
-    alert("Iniciando...");
-});
 </script>
 </body>
 </html>
