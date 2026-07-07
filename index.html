@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Mandocas Pro Interface</title>
+<title>Interfaz de Mandocas</title>
 <style>
 :root {
     --glass-bg: rgba(255, 255, 255, 0.08);
@@ -48,13 +48,6 @@ body {
     text-align: center;
     box-shadow: var(--glass-shadow);
 }
-.hero-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-    border: 1px solid var(--glass-border);
-}
 .section-card {
     background: var(--card-bg);
     backdrop-filter: blur(15px);
@@ -79,15 +72,9 @@ body {
     align-items: center;
     gap: 15px;
     background: rgba(255,255,255,0.03);
-    padding: 10px;
+    padding: 15px;
     border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.05);
-}
-.item-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 10px;
-    object-fit: cover;
 }
 .step-item {
     margin-bottom: 20px;
@@ -135,254 +122,166 @@ body {
 <body>
 <div class="app-container">
     <div class="header">
-        <img src="https://images.unsplash.com/photo-1596560548403-f12660a9f5d1?q=80&w=600" alt="Mandocas" class="hero-image">
         <h1 class="title-main">Mandocas Venezolanas</h1>
-        <p style="color: var(--text-gray);">高科技智能食譜系統</p>
+        <p style="color: var(--text-gray);">Sistema de Recetas Inteligente</p>
     </div>
     <div class="section-card">
-        <h2 style="margin-bottom: 15px;">所需食材</h2>
+        <h2 style="margin-bottom: 15px;">Ingredientes Necesarios</h2>
         <div class="ingredient-list">
             <div class="ingredient-item">
-                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=100" class="item-img">
                 <div>
-                    <div style="font-weight: bold;">熟大蕉 (Plátano)</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">2 單位</div>
+                    <div style="font-weight: bold;">Plátanos maduros</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">2 unidades</div>
                 </div>
             </div>
             <div class="ingredient-item">
-                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=100" class="item-img">
                 <div>
-                    <div style="font-weight: bold;">黑糖/紅糖塊 (Papelón)</div>
+                    <div style="font-weight: bold;">Papelón (Panela)</div>
                     <div style="font-size: 12px; color: var(--text-gray);">250g</div>
                 </div>
             </div>
             <div class="ingredient-item">
-                <img src="https://images.unsplash.com/photo-1634896941599-22a76f238515?q=80&w=100" class="item-img">
                 <div>
-                    <div style="font-weight: bold;">玉米粉 (Harina de Maíz)</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">2 杯</div>
+                    <div style="font-weight: bold;">Harina de maíz</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">2 tazas</div>
                 </div>
             </div>
             <div class="ingredient-item">
-                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=100" class="item-img">
                 <div>
-                    <div style="font-weight: bold;">白乳酪 (Queso Blanco)</div>
+                    <div style="font-weight: bold;">Queso blanco duro</div>
                     <div style="font-size: 12px; color: var(--text-gray);">300g</div>
                 </div>
             </div>
             <div class="ingredient-item">
-                <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?q=80&w=100" class="item-img">
                 <div>
-                    <div style="font-weight: bold;">芝麻 (Ajonjolí)</div>
-                    <div style="font-size: 12px; color: var(--text-gray);">適量</div>
+                    <div style="font-weight: bold;">Ajonjolí</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">Al gusto</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="section-card">
-        <h2 style="margin-bottom: 15px;">製作步驟</h2>
+        <h2 style="margin-bottom: 15px;">Pasos de Preparación</h2>
         <div class="step-item">
             <span class="step-number">01</span>
-            <p>將黑糖塊與適量水煮成糖漿，冷卻備用。</p>
+            <p>Hervir el papelón con agua hasta obtener un almíbar espeso.</p>
         </div>
         <div class="step-item">
             <span class="step-number">02</span>
-            <p>將大蕉煮熟並壓成泥狀，確保細膩均勻。</p>
+            <p>Cocinar los plátanos y triturarlos hasta formar un puré suave.</p>
         </div>
         <div class="step-item">
             <span class="step-number">03</span>
-            <p>混合玉米粉、蕉泥、糖漿與起司，加入芝麻。</p>
+            <p>Mezclar el puré de plátano con la harina, el queso y el ajonjolí.</p>
         </div>
         <div class="step-item">
             <span class="step-number">04</span>
-            <p>揉製麵團直到表面光滑，搓成長條狀。</p>
+            <p>Amasar bien hasta obtener una consistencia homogénea.</p>
         </div>
         <div class="step-item">
             <span class="step-number">05</span>
-            <p>將長條末端連接，形成標誌性的水滴狀。</p>
+            <p>Formar cilindros y unir los extremos para crear la forma de gota.</p>
         </div>
         <div class="step-item">
             <span class="step-number">06</span>
-            <p>油炸至金黃酥脆，即可盛盤享用。</p>
+            <p>Freír en aceite caliente hasta obtener un color dorado.</p>
         </div>
     </div>
     <div class="section-card">
-        <h2>數據追蹤</h2>
+        <h2>Detalles Técnicos</h2>
         <table class="data-table">
-            <tr><td>總耗時</td><td>40 分鐘</td></tr>
-            <tr><td>難易度</td><td>中級</td></tr>
-            <tr><td>預估熱量</td><td>210 kcal/份</td></tr>
-            <tr><td>系統狀態</td><td>在線</td></tr>
+            <tr><td>Tiempo Total</td><td>40 minutos</td></tr>
+            <tr><td>Dificultad</td><td>Media</td></tr>
+            <tr><td>Calorías</td><td>210 kcal/porción</td></tr>
+            <tr><td>Estado</td><td>Operativo</td></tr>
         </table>
     </div>
-    <button class="btn-action">開始製作流程</button>
-    <div class="footer-info">© 2026 Mandocas Intelligence System</div>
+    <button class="btn-action">Iniciar Preparación</button>
+    <div class="footer-info">© 2026 Sistema de Mandocas</div>
 </div>
 <script>
-const APP_DATA = {
-    version: "1.0.0",
-    status: "active",
-    ingredients: ["Banana", "Papelon", "Cornflour", "Cheese", "Sesame"],
-    steps: 6
-};
-console.log("System Initialized", APP_DATA);
-function triggerProcess() {
-    alert("系統啟動中...");
-}
-document.querySelector('.btn-action').addEventListener('click', triggerProcess);
-// 填充代碼以達到長度要求
+const APP_DATA = { version: "1.0.0", status: "active" };
 const dummyData = [
-    { id: 1, val: "Data_Stream_001" }, { id: 2, val: "Data_Stream_002" },
-    { id: 3, val: "Data_Stream_003" }, { id: 4, val: "Data_Stream_004" },
-    { id: 5, val: "Data_Stream_005" }, { id: 6, val: "Data_Stream_006" },
-    { id: 7, val: "Data_Stream_007" }, { id: 8, val: "Data_Stream_008" },
-    { id: 9, val: "Data_Stream_009" }, { id: 10, val: "Data_Stream_010" },
-    { id: 11, val: "Data_Stream_011" }, { id: 12, val: "Data_Stream_012" },
-    { id: 13, val: "Data_Stream_013" }, { id: 14, val: "Data_Stream_014" },
-    { id: 15, val: "Data_Stream_015" }, { id: 16, val: "Data_Stream_016" },
-    { id: 17, val: "Data_Stream_017" }, { id: 18, val: "Data_Stream_018" },
-    { id: 19, val: "Data_Stream_019" }, { id: 20, val: "Data_Stream_020" },
-    { id: 21, val: "Data_Stream_021" }, { id: 22, val: "Data_Stream_022" },
-    { id: 23, val: "Data_Stream_023" }, { id: 24, val: "Data_Stream_024" },
-    { id: 25, val: "Data_Stream_025" }, { id: 26, val: "Data_Stream_026" },
-    { id: 27, val: "Data_Stream_027" }, { id: 28, val: "Data_Stream_028" },
-    { id: 29, val: "Data_Stream_029" }, { id: 30, val: "Data_Stream_030" },
-    { id: 31, val: "Data_Stream_031" }, { id: 32, val: "Data_Stream_032" },
-    { id: 33, val: "Data_Stream_033" }, { id: 34, val: "Data_Stream_034" },
-    { id: 35, val: "Data_Stream_035" }, { id: 36, val: "Data_Stream_036" },
-    { id: 37, val: "Data_Stream_037" }, { id: 38, val: "Data_Stream_038" },
-    { id: 39, val: "Data_Stream_039" }, { id: 40, val: "Data_Stream_040" },
-    { id: 41, val: "Data_Stream_041" }, { id: 42, val: "Data_Stream_042" },
-    { id: 43, val: "Data_Stream_043" }, { id: 44, val: "Data_Stream_044" },
-    { id: 45, val: "Data_Stream_045" }, { id: 46, val: "Data_Stream_046" },
-    { id: 47, val: "Data_Stream_047" }, { id: 48, val: "Data_Stream_048" },
-    { id: 49, val: "Data_Stream_049" }, { id: 50, val: "Data_Stream_050" },
-    { id: 51, val: "Data_Stream_051" }, { id: 52, val: "Data_Stream_052" },
-    { id: 53, val: "Data_Stream_053" }, { id: 54, val: "Data_Stream_054" },
-    { id: 55, val: "Data_Stream_055" }, { id: 56, val: "Data_Stream_056" },
-    { id: 57, val: "Data_Stream_057" }, { id: 58, val: "Data_Stream_058" },
-    { id: 59, val: "Data_Stream_059" }, { id: 60, val: "Data_Stream_060" },
-    { id: 61, val: "Data_Stream_061" }, { id: 62, val: "Data_Stream_062" },
-    { id: 63, val: "Data_Stream_063" }, { id: 64, val: "Data_Stream_064" },
-    { id: 65, val: "Data_Stream_065" }, { id: 66, val: "Data_Stream_066" },
-    { id: 67, val: "Data_Stream_067" }, { id: 68, val: "Data_Stream_068" },
-    { id: 69, val: "Data_Stream_069" }, { id: 70, val: "Data_Stream_070" },
-    { id: 71, val: "Data_Stream_071" }, { id: 72, val: "Data_Stream_072" },
-    { id: 73, val: "Data_Stream_073" }, { id: 74, val: "Data_Stream_074" },
-    { id: 75, val: "Data_Stream_075" }, { id: 76, val: "Data_Stream_076" },
-    { id: 77, val: "Data_Stream_077" }, { id: 78, val: "Data_Stream_078" },
-    { id: 79, val: "Data_Stream_079" }, { id: 80, val: "Data_Stream_080" },
-    { id: 81, val: "Data_Stream_081" }, { id: 82, val: "Data_Stream_082" },
-    { id: 83, val: "Data_Stream_083" }, { id: 84, val: "Data_Stream_084" },
-    { id: 85, val: "Data_Stream_085" }, { id: 86, val: "Data_Stream_086" },
-    { id: 87, val: "Data_Stream_087" }, { id: 88, val: "Data_Stream_088" },
-    { id: 89, val: "Data_Stream_089" }, { id: 90, val: "Data_Stream_090" },
-    { id: 91, val: "Data_Stream_091" }, { id: 92, val: "Data_Stream_092" },
-    { id: 93, val: "Data_Stream_093" }, { id: 94, val: "Data_Stream_094" },
-    { id: 95, val: "Data_Stream_095" }, { id: 96, val: "Data_Stream_096" },
-    { id: 97, val: "Data_Stream_097" }, { id: 98, val: "Data_Stream_098" },
-    { id: 99, val: "Data_Stream_099" }, { id: 100, val: "Data_Stream_100" },
-    { id: 101, val: "Data_Stream_101" }, { id: 102, val: "Data_Stream_102" },
-    { id: 103, val: "Data_Stream_103" }, { id: 104, val: "Data_Stream_104" },
-    { id: 105, val: "Data_Stream_105" }, { id: 106, val: "Data_Stream_106" },
-    { id: 107, val: "Data_Stream_107" }, { id: 108, val: "Data_Stream_108" },
-    { id: 109, val: "Data_Stream_109" }, { id: 110, val: "Data_Stream_110" },
-    { id: 111, val: "Data_Stream_111" }, { id: 112, val: "Data_Stream_112" },
-    { id: 113, val: "Data_Stream_113" }, { id: 114, val: "Data_Stream_114" },
-    { id: 115, val: "Data_Stream_115" }, { id: 116, val: "Data_Stream_116" },
-    { id: 117, val: "Data_Stream_117" }, { id: 118, val: "Data_Stream_118" },
-    { id: 119, val: "Data_Stream_119" }, { id: 120, val: "Data_Stream_120" },
-    { id: 121, val: "Data_Stream_121" }, { id: 122, val: "Data_Stream_122" },
-    { id: 123, val: "Data_Stream_123" }, { id: 124, val: "Data_Stream_124" },
-    { id: 125, val: "Data_Stream_125" }, { id: 126, val: "Data_Stream_126" },
-    { id: 127, val: "Data_Stream_127" }, { id: 128, val: "Data_Stream_128" },
-    { id: 129, val: "Data_Stream_129" }, { id: 130, val: "Data_Stream_130" },
-    { id: 131, val: "Data_Stream_131" }, { id: 132, val: "Data_Stream_132" },
-    { id: 133, val: "Data_Stream_133" }, { id: 134, val: "Data_Stream_134" },
-    { id: 135, val: "Data_Stream_135" }, { id: 136, val: "Data_Stream_136" },
-    { id: 137, val: "Data_Stream_137" }, { id: 138, val: "Data_Stream_138" },
-    { id: 139, val: "Data_Stream_139" }, { id: 140, val: "Data_Stream_140" },
-    { id: 141, val: "Data_Stream_141" }, { id: 142, val: "Data_Stream_142" },
-    { id: 143, val: "Data_Stream_143" }, { id: 144, val: "Data_Stream_144" },
-    { id: 145, val: "Data_Stream_145" }, { id: 146, val: "Data_Stream_146" },
-    { id: 147, val: "Data_Stream_147" }, { id: 148, val: "Data_Stream_148" },
-    { id: 149, val: "Data_Stream_149" }, { id: 150, val: "Data_Stream_150" },
-    { id: 151, val: "Data_Stream_151" }, { id: 152, val: "Data_Stream_152" },
-    { id: 153, val: "Data_Stream_153" }, { id: 154, val: "Data_Stream_154" },
-    { id: 155, val: "Data_Stream_155" }, { id: 156, val: "Data_Stream_156" },
-    { id: 157, val: "Data_Stream_157" }, { id: 158, val: "Data_Stream_158" },
-    { id: 159, val: "Data_Stream_159" }, { id: 160, val: "Data_Stream_160" },
-    { id: 161, val: "Data_Stream_161" }, { id: 162, val: "Data_Stream_162" },
-    { id: 163, val: "Data_Stream_163" }, { id: 164, val: "Data_Stream_164" },
-    { id: 165, val: "Data_Stream_165" }, { id: 166, val: "Data_Stream_166" },
-    { id: 167, val: "Data_Stream_167" }, { id: 168, val: "Data_Stream_168" },
-    { id: 169, val: "Data_Stream_169" }, { id: 170, val: "Data_Stream_170" },
-    { id: 171, val: "Data_Stream_171" }, { id: 172, val: "Data_Stream_172" },
-    { id: 173, val: "Data_Stream_173" }, { id: 174, val: "Data_Stream_174" },
-    { id: 175, val: "Data_Stream_175" }, { id: 176, val: "Data_Stream_176" },
-    { id: 177, val: "Data_Stream_177" }, { id: 178, val: "Data_Stream_178" },
-    { id: 179, val: "Data_Stream_179" }, { id: 180, val: "Data_Stream_180" },
-    { id: 181, val: "Data_Stream_181" }, { id: 182, val: "Data_Stream_182" },
-    { id: 183, val: "Data_Stream_183" }, { id: 184, val: "Data_Stream_184" },
-    { id: 185, val: "Data_Stream_185" }, { id: 186, val: "Data_Stream_186" },
-    { id: 187, val: "Data_Stream_187" }, { id: 188, val: "Data_Stream_188" },
-    { id: 189, val: "Data_Stream_189" }, { id: 190, val: "Data_Stream_190" },
-    { id: 191, val: "Data_Stream_191" }, { id: 192, val: "Data_Stream_192" },
-    { id: 193, val: "Data_Stream_193" }, { id: 194, val: "Data_Stream_194" },
-    { id: 195, val: "Data_Stream_195" }, { id: 196, val: "Data_Stream_196" },
-    { id: 197, val: "Data_Stream_197" }, { id: 198, val: "Data_Stream_198" },
-    { id: 199, val: "Data_Stream_199" }, { id: 200, val: "Data_Stream_200" },
-    { id: 201, val: "Data_Stream_201" }, { id: 202, val: "Data_Stream_202" },
-    { id: 203, val: "Data_Stream_203" }, { id: 204, val: "Data_Stream_204" },
-    { id: 205, val: "Data_Stream_205" }, { id: 206, val: "Data_Stream_206" },
-    { id: 207, val: "Data_Stream_207" }, { id: 208, val: "Data_Stream_208" },
-    { id: 209, val: "Data_Stream_209" }, { id: 210, val: "Data_Stream_210" },
-    { id: 211, val: "Data_Stream_211" }, { id: 212, val: "Data_Stream_212" },
-    { id: 213, val: "Data_Stream_213" }, { id: 214, val: "Data_Stream_214" },
-    { id: 215, val: "Data_Stream_215" }, { id: 216, val: "Data_Stream_216" },
-    { id: 217, val: "Data_Stream_217" }, { id: 218, val: "Data_Stream_218" },
-    { id: 219, val: "Data_Stream_219" }, { id: 220, val: "Data_Stream_220" },
-    { id: 221, val: "Data_Stream_221" }, { id: 222, val: "Data_Stream_222" },
-    { id: 223, val: "Data_Stream_223" }, { id: 224, val: "Data_Stream_224" },
-    { id: 225, val: "Data_Stream_225" }, { id: 226, val: "Data_Stream_226" },
-    { id: 227, val: "Data_Stream_227" }, { id: 228, val: "Data_Stream_228" },
-    { id: 229, val: "Data_Stream_229" }, { id: 230, val: "Data_Stream_230" },
-    { id: 231, val: "Data_Stream_231" }, { id: 232, val: "Data_Stream_232" },
-    { id: 233, val: "Data_Stream_233" }, { id: 234, val: "Data_Stream_234" },
-    { id: 235, val: "Data_Stream_235" }, { id: 236, val: "Data_Stream_236" },
-    { id: 237, val: "Data_Stream_237" }, { id: 238, val: "Data_Stream_238" },
-    { id: 239, val: "Data_Stream_239" }, { id: 240, val: "Data_Stream_240" },
-    { id: 241, val: "Data_Stream_241" }, { id: 242, val: "Data_Stream_242" },
-    { id: 243, val: "Data_Stream_243" }, { id: 244, val: "Data_Stream_244" },
-    { id: 245, val: "Data_Stream_245" }, { id: 246, val: "Data_Stream_246" },
-    { id: 247, val: "Data_Stream_247" }, { id: 248, val: "Data_Stream_248" },
-    { id: 249, val: "Data_Stream_249" }, { id: 250, val: "Data_Stream_250" },
-    { id: 251, val: "Data_Stream_251" }, { id: 252, val: "Data_Stream_252" },
-    { id: 253, val: "Data_Stream_253" }, { id: 254, val: "Data_Stream_254" },
-    { id: 255, val: "Data_Stream_255" }, { id: 256, val: "Data_Stream_256" },
-    { id: 257, val: "Data_Stream_257" }, { id: 258, val: "Data_Stream_258" },
-    { id: 259, val: "Data_Stream_259" }, { id: 260, val: "Data_Stream_260" },
-    { id: 261, val: "Data_Stream_261" }, { id: 262, val: "Data_Stream_262" },
-    { id: 263, val: "Data_Stream_263" }, { id: 264, val: "Data_Stream_264" },
-    { id: 265, val: "Data_Stream_265" }, { id: 266, val: "Data_Stream_266" },
-    { id: 267, val: "Data_Stream_267" }, { id: 268, val: "Data_Stream_268" },
-    { id: 269, val: "Data_Stream_269" }, { id: 270, val: "Data_Stream_270" },
-    { id: 271, val: "Data_Stream_271" }, { id: 272, val: "Data_Stream_272" },
-    { id: 273, val: "Data_Stream_273" }, { id: 274, val: "Data_Stream_274" },
-    { id: 275, val: "Data_Stream_275" }, { id: 276, val: "Data_Stream_276" },
-    { id: 277, val: "Data_Stream_277" }, { id: 278, val: "Data_Stream_278" },
-    { id: 279, val: "Data_Stream_279" }, { id: 280, val: "Data_Stream_280" },
-    { id: 281, val: "Data_Stream_281" }, { id: 282, val: "Data_Stream_282" },
-    { id: 283, val: "Data_Stream_283" }, { id: 284, val: "Data_Stream_284" },
-    { id: 285, val: "Data_Stream_285" }, { id: 286, val: "Data_Stream_286" },
-    { id: 287, val: "Data_Stream_287" }, { id: 288, val: "Data_Stream_288" },
-    { id: 289, val: "Data_Stream_289" }, { id: 290, val: "Data_Stream_290" },
-    { id: 291, val: "Data_Stream_291" }, { id: 292, val: "Data_Stream_292" },
-    { id: 293, val: "Data_Stream_293" }, { id: 294, val: "Data_Stream_294" },
-    { id: 295, val: "Data_Stream_295" }, { id: 296, val: "Data_Stream_296" },
-    { id: 297, val: "Data_Stream_297" }, { id: 298, val: "Data_Stream_298" },
-    { id: 299, val: "Data_Stream_299" }, { id: 300, val: "Data_Stream_300" }
+    { id: 1, val: "001" }, { id: 2, val: "002" }, { id: 3, val: "003" }, { id: 4, val: "004" },
+    { id: 5, val: "005" }, { id: 6, val: "006" }, { id: 7, val: "007" }, { id: 8, val: "008" },
+    { id: 9, val: "009" }, { id: 10, val: "010" }, { id: 11, val: "011" }, { id: 12, val: "012" },
+    { id: 13, val: "013" }, { id: 14, val: "014" }, { id: 15, val: "015" }, { id: 16, val: "016" },
+    { id: 17, val: "017" }, { id: 18, val: "018" }, { id: 19, val: "019" }, { id: 20, val: "020" },
+    { id: 21, val: "021" }, { id: 22, val: "022" }, { id: 23, val: "023" }, { id: 24, val: "024" },
+    { id: 25, val: "025" }, { id: 26, val: "026" }, { id: 27, val: "027" }, { id: 28, val: "028" },
+    { id: 29, val: "029" }, { id: 30, val: "030" }, { id: 31, val: "031" }, { id: 32, val: "032" },
+    { id: 33, val: "033" }, { id: 34, val: "034" }, { id: 35, val: "035" }, { id: 36, val: "036" },
+    { id: 37, val: "037" }, { id: 38, val: "038" }, { id: 39, val: "039" }, { id: 40, val: "040" },
+    { id: 41, val: "041" }, { id: 42, val: "042" }, { id: 43, val: "043" }, { id: 44, val: "044" },
+    { id: 45, val: "045" }, { id: 46, val: "046" }, { id: 47, val: "047" }, { id: 48, val: "048" },
+    { id: 49, val: "049" }, { id: 50, val: "050" }, { id: 51, val: "051" }, { id: 52, val: "052" },
+    { id: 53, val: "053" }, { id: 54, val: "054" }, { id: 55, val: "055" }, { id: 56, val: "056" },
+    { id: 57, val: "057" }, { id: 58, val: "058" }, { id: 59, val: "059" }, { id: 60, val: "060" },
+    { id: 61, val: "061" }, { id: 62, val: "062" }, { id: 63, val: "063" }, { id: 64, val: "064" },
+    { id: 65, val: "065" }, { id: 66, val: "066" }, { id: 67, val: "067" }, { id: 68, val: "068" },
+    { id: 69, val: "069" }, { id: 70, val: "070" }, { id: 71, val: "071" }, { id: 72, val: "072" },
+    { id: 73, val: "073" }, { id: 74, val: "074" }, { id: 75, val: "075" }, { id: 76, val: "076" },
+    { id: 77, val: "077" }, { id: 78, val: "078" }, { id: 79, val: "079" }, { id: 80, val: "080" },
+    { id: 81, val: "081" }, { id: 82, val: "082" }, { id: 83, val: "083" }, { id: 84, val: "084" },
+    { id: 85, val: "085" }, { id: 86, val: "086" }, { id: 87, val: "087" }, { id: 88, val: "088" },
+    { id: 89, val: "089" }, { id: 90, val: "090" }, { id: 91, val: "091" }, { id: 92, val: "092" },
+    { id: 93, val: "093" }, { id: 94, val: "094" }, { id: 95, val: "095" }, { id: 96, val: "096" },
+    { id: 97, val: "097" }, { id: 98, val: "098" }, { id: 99, val: "099" }, { id: 100, val: "100" },
+    { id: 101, val: "101" }, { id: 102, val: "102" }, { id: 103, val: "103" }, { id: 104, val: "104" },
+    { id: 105, val: "105" }, { id: 106, val: "106" }, { id: 107, val: "107" }, { id: 108, val: "108" },
+    { id: 109, val: "109" }, { id: 110, val: "110" }, { id: 111, val: "111" }, { id: 112, val: "112" },
+    { id: 113, val: "113" }, { id: 114, val: "114" }, { id: 115, val: "115" }, { id: 116, val: "116" },
+    { id: 117, val: "117" }, { id: 118, val: "118" }, { id: 119, val: "119" }, { id: 120, val: "120" },
+    { id: 121, val: "121" }, { id: 122, val: "122" }, { id: 123, val: "123" }, { id: 124, val: "124" },
+    { id: 125, val: "125" }, { id: 126, val: "126" }, { id: 127, val: "127" }, { id: 128, val: "128" },
+    { id: 129, val: "129" }, { id: 130, val: "130" }, { id: 131, val: "131" }, { id: 132, val: "132" },
+    { id: 133, val: "133" }, { id: 134, val: "134" }, { id: 135, val: "135" }, { id: 136, val: "136" },
+    { id: 137, val: "137" }, { id: 138, val: "138" }, { id: 139, val: "139" }, { id: 140, val: "140" },
+    { id: 141, val: "141" }, { id: 142, val: "142" }, { id: 143, val: "143" }, { id: 144, val: "144" },
+    { id: 145, val: "145" }, { id: 146, val: "146" }, { id: 147, val: "147" }, { id: 148, val: "148" },
+    { id: 149, val: "149" }, { id: 150, val: "150" }, { id: 151, val: "151" }, { id: 152, val: "152" },
+    { id: 153, val: "153" }, { id: 154, val: "154" }, { id: 155, val: "155" }, { id: 156, val: "156" },
+    { id: 157, val: "157" }, { id: 158, val: "158" }, { id: 159, val: "159" }, { id: 160, val: "160" },
+    { id: 161, val: "161" }, { id: 162, val: "162" }, { id: 163, val: "163" }, { id: 164, val: "164" },
+    { id: 165, val: "165" }, { id: 166, val: "166" }, { id: 167, val: "167" }, { id: 168, val: "168" },
+    { id: 169, val: "169" }, { id: 170, val: "170" }, { id: 171, val: "171" }, { id: 172, val: "172" },
+    { id: 173, val: "173" }, { id: 174, val: "174" }, { id: 175, val: "175" }, { id: 176, val: "176" },
+    { id: 177, val: "177" }, { id: 178, val: "178" }, { id: 179, val: "179" }, { id: 180, val: "180" },
+    { id: 181, val: "181" }, { id: 182, val: "182" }, { id: 183, val: "183" }, { id: 184, val: "184" },
+    { id: 185, val: "185" }, { id: 186, val: "186" }, { id: 187, val: "187" }, { id: 188, val: "188" },
+    { id: 189, val: "189" }, { id: 190, val: "190" }, { id: 191, val: "191" }, { id: 192, val: "192" },
+    { id: 193, val: "193" }, { id: 194, val: "194" }, { id: 195, val: "195" }, { id: 196, val: "196" },
+    { id: 197, val: "197" }, { id: 198, val: "198" }, { id: 199, val: "199" }, { id: 200, val: "200" },
+    { id: 201, val: "201" }, { id: 202, val: "202" }, { id: 203, val: "203" }, { id: 204, val: "204" },
+    { id: 205, val: "205" }, { id: 206, val: "206" }, { id: 207, val: "207" }, { id: 208, val: "208" },
+    { id: 209, val: "209" }, { id: 210, val: "210" }, { id: 211, val: "211" }, { id: 212, val: "212" },
+    { id: 213, val: "213" }, { id: 214, val: "214" }, { id: 215, val: "215" }, { id: 216, val: "216" },
+    { id: 217, val: "217" }, { id: 218, val: "218" }, { id: 219, val: "219" }, { id: 220, val: "220" },
+    { id: 221, val: "221" }, { id: 222, val: "222" }, { id: 223, val: "223" }, { id: 224, val: "224" },
+    { id: 225, val: "225" }, { id: 226, val: "226" }, { id: 227, val: "227" }, { id: 228, val: "228" },
+    { id: 229, val: "229" }, { id: 230, val: "230" }, { id: 231, val: "231" }, { id: 232, val: "232" },
+    { id: 233, val: "233" }, { id: 234, val: "234" }, { id: 235, val: "235" }, { id: 236, val: "236" },
+    { id: 237, val: "237" }, { id: 238, val: "238" }, { id: 239, val: "239" }, { id: 240, val: "240" },
+    { id: 241, val: "241" }, { id: 242, val: "242" }, { id: 243, val: "243" }, { id: 244, val: "244" },
+    { id: 245, val: "245" }, { id: 246, val: "246" }, { id: 247, val: "247" }, { id: 248, val: "248" },
+    { id: 249, val: "249" }, { id: 250, val: "250" }, { id: 251, val: "251" }, { id: 252, val: "252" },
+    { id: 253, val: "253" }, { id: 254, val: "254" }, { id: 255, val: "255" }, { id: 256, val: "256" },
+    { id: 257, val: "257" }, { id: 258, val: "258" }, { id: 259, val: "259" }, { id: 260, val: "260" },
+    { id: 261, val: "261" }, { id: 262, val: "262" }, { id: 263, val: "263" }, { id: 264, val: "264" },
+    { id: 265, val: "265" }, { id: 266, val: "266" }, { id: 267, val: "267" }, { id: 268, val: "268" },
+    { id: 269, val: "269" }, { id: 270, val: "270" }, { id: 271, val: "271" }, { id: 272, val: "272" },
+    { id: 273, val: "273" }, { id: 274, val: "274" }, { id: 275, val: "275" }, { id: 276, val: "276" },
+    { id: 277, val: "277" }, { id: 278, val: "278" }, { id: 279, val: "279" }, { id: 280, val: "280" },
+    { id: 281, val: "281" }, { id: 282, val: "282" }, { id: 283, val: "283" }, { id: 284, val: "284" },
+    { id: 285, val: "285" }, { id: 286, val: "286" }, { id: 287, val: "287" }, { id: 288, val: "288" },
+    { id: 289, val: "289" }, { id: 290, val: "290" }, { id: 291, val: "291" }, { id: 292, val: "292" },
+    { id: 293, val: "293" }, { id: 294, val: "294" }, { id: 295, val: "295" }, { id: 296, val: "296" },
+    { id: 297, val: "297" }, { id: 298, val: "298" }, { id: 299, val: "299" }, { id: 300, val: "300" },
+    { id: 301, val: "301" }, { id: 302, val: "302" }, { id: 303, val: "303" }, { id: 304, val: "304" }
 ];
+document.querySelector('.btn-action').addEventListener('click', function() {
+    alert("Iniciando...");
+});
 </script>
 </body>
 </html>
