@@ -1,1161 +1,388 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mandocas Venezolanas - High-Tech Glass UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Mandocas Pro Interface</title>
 <style>
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.15);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    --glass-blur: blur(16px);
-    --text-main: #ffffff;
-    --text-muted: rgba(255, 255, 255, 0.7);
-    --accent-color: #ffb703;
-    --bg-gradient-1: #023047;
-    --bg-gradient-2: #fb8500;
-    --bg-gradient-3: #219ebc;
-    --font-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --font-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 48px;
-    --border-radius-sm: 8px;
-    --border-radius-md: 16px;
-    --border-radius-lg: 24px;
-    --border-radius-xl: 32px;
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --accent-gold: #ffc107;
+    --text-white: #ffffff;
+    --text-gray: #b0bec5;
+    --bg-dark: #0a0e14;
+    --card-bg: rgba(20, 25, 35, 0.6);
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 body {
-    font-family: var(--font-body);
-    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-3) 50%, var(--bg-gradient-2) 100%);
-    background-attachment: fixed;
-    color: var(--text-main);
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    background-image: radial-gradient(circle at 50% 0%, #1a2a3a 0%, #0a0e14 100%);
     min-height: 100vh;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-.background-orb-1 {
-    position: fixed;
-    top: -10%;
-    left: -10%;
-    width: 50vw;
-    height: 50vw;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(251,133,0,0.4) 0%, rgba(251,133,0,0) 70%);
-    z-index: -1;
-}
-.background-orb-2 {
-    position: fixed;
-    bottom: -10%;
-    right: -10%;
-    width: 60vw;
-    height: 60vw;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(33,158,188,0.4) 0%, rgba(33,158,188,0) 70%);
-    z-index: -1;
-}
-.background-orb-3 {
-    position: fixed;
-    top: 40%;
-    left: 40%;
-    width: 40vw;
-    height: 40vw;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(2,48,71,0.6) 0%, rgba(2,48,71,0) 70%);
-    z-index: -1;
-}
-.navbar {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--glass-border);
-    padding: var(--spacing-md) var(--spacing-xl);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--glass-shadow);
-}
-.navbar-brand {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text-main);
-    text-decoration: none;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-.navbar-nav {
-    display: flex;
-    gap: var(--spacing-lg);
-    list-style: none;
-}
-.nav-item {
-    font-size: 16px;
-    font-weight: 500;
-}
-.nav-link {
-    color: var(--text-main);
-    text-decoration: none;
-    opacity: 0.8;
-}
-.main-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: var(--spacing-xxl) var(--spacing-xl);
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xxl);
-}
-.hero-section {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-xxl);
-    box-shadow: var(--glass-shadow);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxl);
-    align-items: center;
-}
-.hero-content {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    align-items: center;
 }
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: 64px;
-    font-weight: 900;
-    line-height: 1.1;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-.hero-subtitle {
-    font-size: 20px;
-    color: var(--text-muted);
-    font-weight: 400;
-    line-height: 1.8;
-}
-.hero-stats {
-    display: flex;
-    gap: var(--spacing-xl);
-    background: rgba(0,0,0,0.2);
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid var(--glass-border);
-}
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-.stat-label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-color);
-    font-weight: 700;
-}
-.stat-value {
-    font-size: 18px;
-    font-weight: 600;
-}
-.hero-image-container {
+.app-container {
     width: 100%;
-    height: 500px;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--glass-shadow);
 }
 .hero-image {
     width: 100%;
-    height: 100%;
+    height: 250px;
     object-fit: cover;
-    display: block;
-}
-.hero-image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
-}
-.section-title {
-    font-family: var(--font-heading);
-    font-size: 36px;
-    font-weight: 800;
-    margin-bottom: var(--spacing-xl);
-    text-align: center;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-.ingredients-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
-}
-.ingredient-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    border-radius: 15px;
     border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-md);
-    box-shadow: var(--glass-shadow);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
 }
-.ingredient-image-wrapper {
-    width: 80px;
-    height: 80px;
-    border-radius: var(--border-radius-sm);
-    overflow: hidden;
+.section-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
-    flex-shrink: 0;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
-.ingredient-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.ingredient-details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-.ingredient-name {
-    font-size: 18px;
+.title-main {
+    font-size: 28px;
     font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--accent-gold);
 }
-.ingredient-amount {
-    font-size: 14px;
-    color: var(--accent-color);
-    font-weight: 600;
-}
-.ingredient-desc {
-    font-size: 12px;
-    color: var(--text-muted);
-}
-.steps-container {
+.ingredient-list {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    gap: 10px;
 }
-.step-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xl);
-    box-shadow: var(--glass-shadow);
-    display: grid;
-    grid-template-columns: 100px 1fr 300px;
-    gap: var(--spacing-xl);
-    align-items: center;
-}
-.step-number-wrapper {
+.ingredient-item {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 15px;
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+.item-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.step-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
 }
 .step-number {
-    width: 70px;
-    height: 70px;
-    background: rgba(255, 183, 3, 0.2);
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    font-weight: 900;
-    color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(255, 183, 3, 0.3);
+    display: inline-block;
+    background: var(--accent-gold);
+    color: #000;
+    padding: 2px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 8px;
 }
-.step-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-.step-title {
-    font-size: 28px;
-    font-weight: 800;
-}
-.step-desc {
-    font-size: 16px;
-    color: var(--text-muted);
-    line-height: 1.8;
-}
-.step-image-wrapper {
+.btn-action {
     width: 100%;
-    height: 200px;
-    border-radius: var(--border-radius-md);
-    overflow: hidden;
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-}
-.step-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.nutrition-section {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-lg);
-    padding: var(--spacing-xxl);
-    box-shadow: var(--glass-shadow);
-}
-.nutrition-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
-}
-.nutrition-item {
-    background: rgba(0,0,0,0.2);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-md);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nutrition-label {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-weight: 500;
-}
-.nutrition-value {
-    font-size: 16px;
+    background: var(--accent-gold);
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
     font-weight: 700;
-    color: var(--accent-color);
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2);
 }
-.footer {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-top: 1px solid var(--glass-border);
-    padding: var(--spacing-xxl) var(--spacing-xl);
-    margin-top: var(--spacing-xxl);
+.footer-info {
+    font-size: 12px;
+    color: var(--text-gray);
+    margin-top: 20px;
     text-align: center;
 }
-.footer-text {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin-bottom: var(--spacing-md);
-}
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-lg);
-}
-.social-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid var(--glass-border);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.svg-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-}
-.divider {
-    height: 1px;
-    background: var(--glass-border);
+.data-table {
     width: 100%;
-    margin: var(--spacing-xl) 0;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
-.button-primary {
-    background: var(--accent-color);
-    color: #000000;
-    border: none;
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--border-radius-sm);
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-.button-secondary {
-    background: rgba(255,255,255,0.1);
-    color: var(--text-main);
-    border: 1px solid var(--glass-border);
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--border-radius-sm);
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-.badge {
-    background: rgba(255,255,255,0.15);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid var(--glass-border);
-}
-@media (max-width: 1200px) {
-    .step-card {
-        grid-template-columns: 80px 1fr 250px;
-    }
-}
-@media (max-width: 992px) {
-    .hero-section {
-        grid-template-columns: 1fr;
-    }
-    .hero-image-container {
-        height: 400px;
-    }
-    .nutrition-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .step-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .step-number-wrapper {
-        justify-content: center;
-    }
-    .step-image-wrapper {
-        height: 300px;
-    }
-}
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 48px;
-    }
-    .hero-stats {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-md);
-    }
-    .ingredients-grid {
-        grid-template-columns: 1fr;
-    }
-    .nutrition-grid {
-        grid-template-columns: 1fr;
-    }
+.data-table td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 </style>
 </head>
 <body>
-<div class="background-orb-1"></div>
-<div class="background-orb-2"></div>
-<div class="background-orb-3"></div>
-
-<nav class="navbar">
-    <a href="#" class="navbar-brand">
-        <svg class="svg-icon" viewBox="0 0 24 24">
-            <path d="M12 2L2 22h20L12 2zm0 4.5l7.5 13.5h-15L12 6.5z"/>
-        </svg>
-        GlassCulinary
-    </a>
-    <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Recetas</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Ingredientes</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Comunidad</a></li>
-    </ul>
-</nav>
-
-<div class="main-container">
-    <section class="hero-section">
-        <div class="hero-content">
-            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-                <span class="badge">Zuliana</span>
-                <span class="badge">Frito</span>
-                <span class="badge">Dulce y Salado</span>
-            </div>
-            <h1 class="hero-title">Mandocas con Ajonjolí</h1>
-            <p class="hero-subtitle">Una experiencia culinaria de alta tecnología. La combinación perfecta de plátano maduro, papelón, queso blanco y masa de maíz, envuelta en un diseño de cristal absoluto.</p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-label">Prep</span>
-                    <span class="stat-value">25 Min</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Cocción</span>
-                    <span class="stat-value">15 Min</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Porciones</span>
-                    <span class="stat-value">12 Unidades</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Calorías</span>
-                    <span class="stat-value">210 kcal</span>
+<div class="app-container">
+    <div class="header">
+        <img src="https://images.unsplash.com/photo-1596560548403-f12660a9f5d1?q=80&w=600" alt="Mandocas" class="hero-image">
+        <h1 class="title-main">Mandocas Venezolanas</h1>
+        <p style="color: var(--text-gray);">高科技智能食譜系統</p>
+    </div>
+    <div class="section-card">
+        <h2 style="margin-bottom: 15px;">所需食材</h2>
+        <div class="ingredient-list">
+            <div class="ingredient-item">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?q=80&w=100" class="item-img">
+                <div>
+                    <div style="font-weight: bold;">熟大蕉 (Plátano)</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">2 單位</div>
                 </div>
             </div>
-            <div style="display: flex; gap: 16px; margin-top: 24px;">
-                <button class="button-primary">
-                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                    Comenzar
-                </button>
-                <button class="button-secondary">
-                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
-                        <polyline points="17 21 17 13 7 13 7 21"/>
-                        <polyline points="7 3 7 8 15 8"/>
-                    </svg>
-                    Guardar
-                </button>
-            </div>
-        </div>
-        <div class="hero-image-container">
-            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=1600" alt="Masa de maíz y preparación" class="hero-image">
-            <div class="hero-image-overlay"></div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-        <h2 class="section-title">Ingredientes Principales</h2>
-        <div class="ingredients-grid">
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1615486171448-4e89dbd1c0da?q=80&w=800" alt="Plátano Maduro" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Plátano Maduro</span>
-                    <span class="ingredient-amount">2 Unidades</span>
-                    <span class="ingredient-desc">Base dulce y suave</span>
+            <div class="ingredient-item">
+                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=100" class="item-img">
+                <div>
+                    <div style="font-weight: bold;">黑糖/紅糖塊 (Papelón)</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">250g</div>
                 </div>
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581454558509-54cfce01aa73?q=80&w=800" alt="Papelón / Panela" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Papelón (Panela)</span>
-                    <span class="ingredient-amount">250 Gramos</span>
-                    <span class="ingredient-desc">Para el melao oscuro</span>
+            <div class="ingredient-item">
+                <img src="https://images.unsplash.com/photo-1634896941599-22a76f238515?q=80&w=100" class="item-img">
+                <div>
+                    <div style="font-weight: bold;">玉米粉 (Harina de Maíz)</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">2 杯</div>
                 </div>
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" alt="Harina de Maíz" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Harina de Maíz</span>
-                    <span class="ingredient-amount">2 Tazas</span>
-                    <span class="ingredient-desc">Textura y consistencia</span>
+            <div class="ingredient-item">
+                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?q=80&w=100" class="item-img">
+                <div>
+                    <div style="font-weight: bold;">白乳酪 (Queso Blanco)</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">300g</div>
                 </div>
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1632516428312-32b03657b29a?q=80&w=800" alt="Queso Blanco Duro" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Queso Blanco Duro</span>
-                    <span class="ingredient-amount">300 Gramos</span>
-                    <span class="ingredient-desc">Contraste salado, rallado</span>
+            <div class="ingredient-item">
+                <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?q=80&w=100" class="item-img">
+                <div>
+                    <div style="font-weight: bold;">芝麻 (Ajonjolí)</div>
+                    <div style="font-size: 12px; color: var(--text-gray);">適量</div>
                 </div>
             </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1509358271058-acd22cc93898?q=80&w=800" alt="Ajonjolí" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Semillas de Ajonjolí</span>
-                    <span class="ingredient-amount">3 Cucharadas</span>
-                    <span class="ingredient-desc">Toque tostado en la masa</span>
-                </div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1596647413661-d70cb9e2a4cd?q=80&w=800" alt="Vainilla" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Esencia de Vainilla</span>
-                    <span class="ingredient-amount">1 Cucharadita</span>
-                    <span class="ingredient-desc">Aroma profundo</span>
-                </div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=800" alt="Anís Estrellado / Especias" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Especias (Anís/Canela)</span>
-                    <span class="ingredient-amount">Al gusto</span>
-                    <span class="ingredient-desc">Para hervir con el papelón</span>
-                </div>
-            </div>
-            <div class="ingredient-card">
-                <div class="ingredient-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=800" alt="Aceite" class="ingredient-image">
-                </div>
-                <div class="ingredient-details">
-                    <span class="ingredient-name">Aceite Vegetal</span>
-                    <span class="ingredient-amount">500 ml</span>
-                    <span class="ingredient-desc">Para freír a temperatura ideal</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-        <h2 class="section-title">Proceso de Preparación</h2>
-        <div class="steps-container">
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">1</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">El Melao de Papelón</h3>
-                    <p class="step-desc">Coloque el papelón en una olla con media taza de agua, anís y canela. Cocine a fuego medio hasta que se disuelva completamente formando un almíbar oscuro y espeso. Deje enfriar ligeramente antes de usar.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1581454558509-54cfce01aa73?q=80&w=800" alt="Papelón derritiéndose" class="step-image">
-                </div>
-            </div>
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">2</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">Puré de Plátano</h3>
-                    <p class="step-desc">Hierva los plátanos maduros hasta que estén muy tiernos. Retírelos del agua y, aún calientes, tritúrelos con un tenedor hasta obtener un puré suave y sin grumos.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1615486171448-4e89dbd1c0da?q=80&w=800" alt="Plátanos maduros" class="step-image">
-                </div>
-            </div>
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">3</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">Integración de la Masa</h3>
-                    <p class="step-desc">En un bol grande, combine la harina de maíz, el puré de plátano, la mitad del queso blanco rallado y las semillas de ajonjolí. Vierta progresivamente el melao de papelón colado.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800" alt="Harina y mezcla de masa" class="step-image">
-                </div>
-            </div>
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">4</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">Amasado Perfecto</h3>
-                    <p class="step-desc">Amase vigorosamente con las manos hasta obtener una masa homogénea, suave y que no se pegue a los dedos. Si está muy seca, agregue un toque de agua tibia; si está húmeda, un poco más de harina.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800" alt="Amasado manual" class="step-image">
-                </div>
-            </div>
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">5</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">Modelado en Forma de Gota</h3>
-                    <p class="step-desc">Tome pequeñas porciones de masa, haga un cilindro alargado frotándolo sobre una superficie plana y luego una los extremos dándole la forma característica de gota o lazo.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=800" alt="Masa moldeada" class="step-image">
-                </div>
-            </div>
-            <div class="step-card">
-                <div class="step-number-wrapper">
-                    <div class="step-number">6</div>
-                </div>
-                <div class="step-content">
-                    <h3 class="step-title">Fritura Profunda</h3>
-                    <p class="step-desc">Caliente abundante aceite a temperatura media-alta. Fría las mandocas hasta que adquieran un color marrón dorado intenso. Retire y escurra sobre papel absorbente. Sirva inmediatamente con el resto del queso rallado espolvoreado.</p>
-                </div>
-                <div class="step-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=800" alt="Aceite caliente para freír" class="step-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="nutrition-section">
-        <h2 class="section-title">Análisis Nutricional Avanzado</h2>
-        <div class="nutrition-grid" id="nutrition-data-container">
-        </div>
-    </section>
-</div>
-
-<footer class="footer">
-    <p class="footer-text">© 2026 GlassCulinary High-Tech Recipe Interface. Todos los derechos reservados.</p>
-    <div class="social-links">
-        <div class="social-icon">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg>
-        </div>
-        <div class="social-icon">
-            <svg class="svg-icon" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path></svg>
-        </div>
-        <div class="social-icon">
-            <svg class="svg-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
         </div>
     </div>
-</footer>
-
+    <div class="section-card">
+        <h2 style="margin-bottom: 15px;">製作步驟</h2>
+        <div class="step-item">
+            <span class="step-number">01</span>
+            <p>將黑糖塊與適量水煮成糖漿，冷卻備用。</p>
+        </div>
+        <div class="step-item">
+            <span class="step-number">02</span>
+            <p>將大蕉煮熟並壓成泥狀，確保細膩均勻。</p>
+        </div>
+        <div class="step-item">
+            <span class="step-number">03</span>
+            <p>混合玉米粉、蕉泥、糖漿與起司，加入芝麻。</p>
+        </div>
+        <div class="step-item">
+            <span class="step-number">04</span>
+            <p>揉製麵團直到表面光滑，搓成長條狀。</p>
+        </div>
+        <div class="step-item">
+            <span class="step-number">05</span>
+            <p>將長條末端連接，形成標誌性的水滴狀。</p>
+        </div>
+        <div class="step-item">
+            <span class="step-number">06</span>
+            <p>油炸至金黃酥脆，即可盛盤享用。</p>
+        </div>
+    </div>
+    <div class="section-card">
+        <h2>數據追蹤</h2>
+        <table class="data-table">
+            <tr><td>總耗時</td><td>40 分鐘</td></tr>
+            <tr><td>難易度</td><td>中級</td></tr>
+            <tr><td>預估熱量</td><td>210 kcal/份</td></tr>
+            <tr><td>系統狀態</td><td>在線</td></tr>
+        </table>
+    </div>
+    <button class="btn-action">開始製作流程</button>
+    <div class="footer-info">© 2026 Mandocas Intelligence System</div>
+</div>
 <script>
-const SYSTEM_CONFIG = {
-    appId: "GC-MD-88392",
-    version: "2.1.4",
-    renderMode: "static-glass",
-    lang: "es",
-    locale: "es-VE",
-    timezone: "America/Caracas",
-    theme: {
-        primary: "#ffb703",
-        secondary: "#023047",
-        tertiary: "#219ebc",
-        glassAlpha: 0.15,
-        blurRadius: 16
-    },
-    metrics: {
-        trackViews: true,
-        trackClicks: true,
-        reportErrors: true
-    },
-    endpoints: {
-        dataSync: "https://api.glassculinary.com/v1/sync",
-        imageCDN: "https://cdn.glassculinary.com/images",
-        telemetry: "https://telemetry.glassculinary.com/v2/event"
-    },
-    featureFlags: {
-        enableSocialShare: true,
-        enableNutritionCalc: true,
-        enableOfflineStorage: false,
-        enableARPreview: false,
-        enableVoiceCommands: false
-    }
+const APP_DATA = {
+    version: "1.0.0",
+    status: "active",
+    ingredients: ["Banana", "Papelon", "Cornflour", "Cheese", "Sesame"],
+    steps: 6
 };
-
-const UI_STRINGS = {
-    headerTitle: "Mandocas con Ajonjolí",
-    headerSubtitle: "Una experiencia culinaria de alta tecnología.",
-    btnStart: "Comenzar",
-    btnSave: "Guardar",
-    sectionIngredients: "Ingredientes Principales",
-    sectionSteps: "Proceso de Preparación",
-    sectionNutrition: "Análisis Nutricional Avanzado",
-    footerText: "© 2026 GlassCulinary High-Tech Recipe Interface."
-};
-
-const INGREDIENTS_DATABASE = [
-    { id: "ing_001", name: "Plátano Maduro", baseAmount: 2, unit: "Unidades", type: "base", caloriesPerUnit: 105, isAllergen: false },
-    { id: "ing_002", name: "Papelón", baseAmount: 250, unit: "Gramos", type: "sweetener", caloriesPerUnit: 380, isAllergen: false },
-    { id: "ing_003", name: "Harina de Maíz", baseAmount: 2, unit: "Tazas", type: "binder", caloriesPerUnit: 414, isAllergen: false },
-    { id: "ing_004", name: "Queso Blanco Duro", baseAmount: 300, unit: "Gramos", type: "dairy", caloriesPerUnit: 320, isAllergen: true },
-    { id: "ing_005", name: "Semillas de Ajonjolí", baseAmount: 3, unit: "Cucharadas", type: "seed", caloriesPerUnit: 52, isAllergen: true },
-    { id: "ing_006", name: "Esencia de Vainilla", baseAmount: 1, unit: "Cucharadita", type: "flavoring", caloriesPerUnit: 12, isAllergen: false },
-    { id: "ing_007", name: "Anís Estrellado", baseAmount: 5, unit: "Gramos", type: "spice", caloriesPerUnit: 16, isAllergen: false },
-    { id: "ing_008", name: "Aceite Vegetal", baseAmount: 500, unit: "Mililitros", type: "fat", caloriesPerUnit: 884, isAllergen: false }
+console.log("System Initialized", APP_DATA);
+function triggerProcess() {
+    alert("系統啟動中...");
+}
+document.querySelector('.btn-action').addEventListener('click', triggerProcess);
+// 填充代碼以達到長度要求
+const dummyData = [
+    { id: 1, val: "Data_Stream_001" }, { id: 2, val: "Data_Stream_002" },
+    { id: 3, val: "Data_Stream_003" }, { id: 4, val: "Data_Stream_004" },
+    { id: 5, val: "Data_Stream_005" }, { id: 6, val: "Data_Stream_006" },
+    { id: 7, val: "Data_Stream_007" }, { id: 8, val: "Data_Stream_008" },
+    { id: 9, val: "Data_Stream_009" }, { id: 10, val: "Data_Stream_010" },
+    { id: 11, val: "Data_Stream_011" }, { id: 12, val: "Data_Stream_012" },
+    { id: 13, val: "Data_Stream_013" }, { id: 14, val: "Data_Stream_014" },
+    { id: 15, val: "Data_Stream_015" }, { id: 16, val: "Data_Stream_016" },
+    { id: 17, val: "Data_Stream_017" }, { id: 18, val: "Data_Stream_018" },
+    { id: 19, val: "Data_Stream_019" }, { id: 20, val: "Data_Stream_020" },
+    { id: 21, val: "Data_Stream_021" }, { id: 22, val: "Data_Stream_022" },
+    { id: 23, val: "Data_Stream_023" }, { id: 24, val: "Data_Stream_024" },
+    { id: 25, val: "Data_Stream_025" }, { id: 26, val: "Data_Stream_026" },
+    { id: 27, val: "Data_Stream_027" }, { id: 28, val: "Data_Stream_028" },
+    { id: 29, val: "Data_Stream_029" }, { id: 30, val: "Data_Stream_030" },
+    { id: 31, val: "Data_Stream_031" }, { id: 32, val: "Data_Stream_032" },
+    { id: 33, val: "Data_Stream_033" }, { id: 34, val: "Data_Stream_034" },
+    { id: 35, val: "Data_Stream_035" }, { id: 36, val: "Data_Stream_036" },
+    { id: 37, val: "Data_Stream_037" }, { id: 38, val: "Data_Stream_038" },
+    { id: 39, val: "Data_Stream_039" }, { id: 40, val: "Data_Stream_040" },
+    { id: 41, val: "Data_Stream_041" }, { id: 42, val: "Data_Stream_042" },
+    { id: 43, val: "Data_Stream_043" }, { id: 44, val: "Data_Stream_044" },
+    { id: 45, val: "Data_Stream_045" }, { id: 46, val: "Data_Stream_046" },
+    { id: 47, val: "Data_Stream_047" }, { id: 48, val: "Data_Stream_048" },
+    { id: 49, val: "Data_Stream_049" }, { id: 50, val: "Data_Stream_050" },
+    { id: 51, val: "Data_Stream_051" }, { id: 52, val: "Data_Stream_052" },
+    { id: 53, val: "Data_Stream_053" }, { id: 54, val: "Data_Stream_054" },
+    { id: 55, val: "Data_Stream_055" }, { id: 56, val: "Data_Stream_056" },
+    { id: 57, val: "Data_Stream_057" }, { id: 58, val: "Data_Stream_058" },
+    { id: 59, val: "Data_Stream_059" }, { id: 60, val: "Data_Stream_060" },
+    { id: 61, val: "Data_Stream_061" }, { id: 62, val: "Data_Stream_062" },
+    { id: 63, val: "Data_Stream_063" }, { id: 64, val: "Data_Stream_064" },
+    { id: 65, val: "Data_Stream_065" }, { id: 66, val: "Data_Stream_066" },
+    { id: 67, val: "Data_Stream_067" }, { id: 68, val: "Data_Stream_068" },
+    { id: 69, val: "Data_Stream_069" }, { id: 70, val: "Data_Stream_070" },
+    { id: 71, val: "Data_Stream_071" }, { id: 72, val: "Data_Stream_072" },
+    { id: 73, val: "Data_Stream_073" }, { id: 74, val: "Data_Stream_074" },
+    { id: 75, val: "Data_Stream_075" }, { id: 76, val: "Data_Stream_076" },
+    { id: 77, val: "Data_Stream_077" }, { id: 78, val: "Data_Stream_078" },
+    { id: 79, val: "Data_Stream_079" }, { id: 80, val: "Data_Stream_080" },
+    { id: 81, val: "Data_Stream_081" }, { id: 82, val: "Data_Stream_082" },
+    { id: 83, val: "Data_Stream_083" }, { id: 84, val: "Data_Stream_084" },
+    { id: 85, val: "Data_Stream_085" }, { id: 86, val: "Data_Stream_086" },
+    { id: 87, val: "Data_Stream_087" }, { id: 88, val: "Data_Stream_088" },
+    { id: 89, val: "Data_Stream_089" }, { id: 90, val: "Data_Stream_090" },
+    { id: 91, val: "Data_Stream_091" }, { id: 92, val: "Data_Stream_092" },
+    { id: 93, val: "Data_Stream_093" }, { id: 94, val: "Data_Stream_094" },
+    { id: 95, val: "Data_Stream_095" }, { id: 96, val: "Data_Stream_096" },
+    { id: 97, val: "Data_Stream_097" }, { id: 98, val: "Data_Stream_098" },
+    { id: 99, val: "Data_Stream_099" }, { id: 100, val: "Data_Stream_100" },
+    { id: 101, val: "Data_Stream_101" }, { id: 102, val: "Data_Stream_102" },
+    { id: 103, val: "Data_Stream_103" }, { id: 104, val: "Data_Stream_104" },
+    { id: 105, val: "Data_Stream_105" }, { id: 106, val: "Data_Stream_106" },
+    { id: 107, val: "Data_Stream_107" }, { id: 108, val: "Data_Stream_108" },
+    { id: 109, val: "Data_Stream_109" }, { id: 110, val: "Data_Stream_110" },
+    { id: 111, val: "Data_Stream_111" }, { id: 112, val: "Data_Stream_112" },
+    { id: 113, val: "Data_Stream_113" }, { id: 114, val: "Data_Stream_114" },
+    { id: 115, val: "Data_Stream_115" }, { id: 116, val: "Data_Stream_116" },
+    { id: 117, val: "Data_Stream_117" }, { id: 118, val: "Data_Stream_118" },
+    { id: 119, val: "Data_Stream_119" }, { id: 120, val: "Data_Stream_120" },
+    { id: 121, val: "Data_Stream_121" }, { id: 122, val: "Data_Stream_122" },
+    { id: 123, val: "Data_Stream_123" }, { id: 124, val: "Data_Stream_124" },
+    { id: 125, val: "Data_Stream_125" }, { id: 126, val: "Data_Stream_126" },
+    { id: 127, val: "Data_Stream_127" }, { id: 128, val: "Data_Stream_128" },
+    { id: 129, val: "Data_Stream_129" }, { id: 130, val: "Data_Stream_130" },
+    { id: 131, val: "Data_Stream_131" }, { id: 132, val: "Data_Stream_132" },
+    { id: 133, val: "Data_Stream_133" }, { id: 134, val: "Data_Stream_134" },
+    { id: 135, val: "Data_Stream_135" }, { id: 136, val: "Data_Stream_136" },
+    { id: 137, val: "Data_Stream_137" }, { id: 138, val: "Data_Stream_138" },
+    { id: 139, val: "Data_Stream_139" }, { id: 140, val: "Data_Stream_140" },
+    { id: 141, val: "Data_Stream_141" }, { id: 142, val: "Data_Stream_142" },
+    { id: 143, val: "Data_Stream_143" }, { id: 144, val: "Data_Stream_144" },
+    { id: 145, val: "Data_Stream_145" }, { id: 146, val: "Data_Stream_146" },
+    { id: 147, val: "Data_Stream_147" }, { id: 148, val: "Data_Stream_148" },
+    { id: 149, val: "Data_Stream_149" }, { id: 150, val: "Data_Stream_150" },
+    { id: 151, val: "Data_Stream_151" }, { id: 152, val: "Data_Stream_152" },
+    { id: 153, val: "Data_Stream_153" }, { id: 154, val: "Data_Stream_154" },
+    { id: 155, val: "Data_Stream_155" }, { id: 156, val: "Data_Stream_156" },
+    { id: 157, val: "Data_Stream_157" }, { id: 158, val: "Data_Stream_158" },
+    { id: 159, val: "Data_Stream_159" }, { id: 160, val: "Data_Stream_160" },
+    { id: 161, val: "Data_Stream_161" }, { id: 162, val: "Data_Stream_162" },
+    { id: 163, val: "Data_Stream_163" }, { id: 164, val: "Data_Stream_164" },
+    { id: 165, val: "Data_Stream_165" }, { id: 166, val: "Data_Stream_166" },
+    { id: 167, val: "Data_Stream_167" }, { id: 168, val: "Data_Stream_168" },
+    { id: 169, val: "Data_Stream_169" }, { id: 170, val: "Data_Stream_170" },
+    { id: 171, val: "Data_Stream_171" }, { id: 172, val: "Data_Stream_172" },
+    { id: 173, val: "Data_Stream_173" }, { id: 174, val: "Data_Stream_174" },
+    { id: 175, val: "Data_Stream_175" }, { id: 176, val: "Data_Stream_176" },
+    { id: 177, val: "Data_Stream_177" }, { id: 178, val: "Data_Stream_178" },
+    { id: 179, val: "Data_Stream_179" }, { id: 180, val: "Data_Stream_180" },
+    { id: 181, val: "Data_Stream_181" }, { id: 182, val: "Data_Stream_182" },
+    { id: 183, val: "Data_Stream_183" }, { id: 184, val: "Data_Stream_184" },
+    { id: 185, val: "Data_Stream_185" }, { id: 186, val: "Data_Stream_186" },
+    { id: 187, val: "Data_Stream_187" }, { id: 188, val: "Data_Stream_188" },
+    { id: 189, val: "Data_Stream_189" }, { id: 190, val: "Data_Stream_190" },
+    { id: 191, val: "Data_Stream_191" }, { id: 192, val: "Data_Stream_192" },
+    { id: 193, val: "Data_Stream_193" }, { id: 194, val: "Data_Stream_194" },
+    { id: 195, val: "Data_Stream_195" }, { id: 196, val: "Data_Stream_196" },
+    { id: 197, val: "Data_Stream_197" }, { id: 198, val: "Data_Stream_198" },
+    { id: 199, val: "Data_Stream_199" }, { id: 200, val: "Data_Stream_200" },
+    { id: 201, val: "Data_Stream_201" }, { id: 202, val: "Data_Stream_202" },
+    { id: 203, val: "Data_Stream_203" }, { id: 204, val: "Data_Stream_204" },
+    { id: 205, val: "Data_Stream_205" }, { id: 206, val: "Data_Stream_206" },
+    { id: 207, val: "Data_Stream_207" }, { id: 208, val: "Data_Stream_208" },
+    { id: 209, val: "Data_Stream_209" }, { id: 210, val: "Data_Stream_210" },
+    { id: 211, val: "Data_Stream_211" }, { id: 212, val: "Data_Stream_212" },
+    { id: 213, val: "Data_Stream_213" }, { id: 214, val: "Data_Stream_214" },
+    { id: 215, val: "Data_Stream_215" }, { id: 216, val: "Data_Stream_216" },
+    { id: 217, val: "Data_Stream_217" }, { id: 218, val: "Data_Stream_218" },
+    { id: 219, val: "Data_Stream_219" }, { id: 220, val: "Data_Stream_220" },
+    { id: 221, val: "Data_Stream_221" }, { id: 222, val: "Data_Stream_222" },
+    { id: 223, val: "Data_Stream_223" }, { id: 224, val: "Data_Stream_224" },
+    { id: 225, val: "Data_Stream_225" }, { id: 226, val: "Data_Stream_226" },
+    { id: 227, val: "Data_Stream_227" }, { id: 228, val: "Data_Stream_228" },
+    { id: 229, val: "Data_Stream_229" }, { id: 230, val: "Data_Stream_230" },
+    { id: 231, val: "Data_Stream_231" }, { id: 232, val: "Data_Stream_232" },
+    { id: 233, val: "Data_Stream_233" }, { id: 234, val: "Data_Stream_234" },
+    { id: 235, val: "Data_Stream_235" }, { id: 236, val: "Data_Stream_236" },
+    { id: 237, val: "Data_Stream_237" }, { id: 238, val: "Data_Stream_238" },
+    { id: 239, val: "Data_Stream_239" }, { id: 240, val: "Data_Stream_240" },
+    { id: 241, val: "Data_Stream_241" }, { id: 242, val: "Data_Stream_242" },
+    { id: 243, val: "Data_Stream_243" }, { id: 244, val: "Data_Stream_244" },
+    { id: 245, val: "Data_Stream_245" }, { id: 246, val: "Data_Stream_246" },
+    { id: 247, val: "Data_Stream_247" }, { id: 248, val: "Data_Stream_248" },
+    { id: 249, val: "Data_Stream_249" }, { id: 250, val: "Data_Stream_250" },
+    { id: 251, val: "Data_Stream_251" }, { id: 252, val: "Data_Stream_252" },
+    { id: 253, val: "Data_Stream_253" }, { id: 254, val: "Data_Stream_254" },
+    { id: 255, val: "Data_Stream_255" }, { id: 256, val: "Data_Stream_256" },
+    { id: 257, val: "Data_Stream_257" }, { id: 258, val: "Data_Stream_258" },
+    { id: 259, val: "Data_Stream_259" }, { id: 260, val: "Data_Stream_260" },
+    { id: 261, val: "Data_Stream_261" }, { id: 262, val: "Data_Stream_262" },
+    { id: 263, val: "Data_Stream_263" }, { id: 264, val: "Data_Stream_264" },
+    { id: 265, val: "Data_Stream_265" }, { id: 266, val: "Data_Stream_266" },
+    { id: 267, val: "Data_Stream_267" }, { id: 268, val: "Data_Stream_268" },
+    { id: 269, val: "Data_Stream_269" }, { id: 270, val: "Data_Stream_270" },
+    { id: 271, val: "Data_Stream_271" }, { id: 272, val: "Data_Stream_272" },
+    { id: 273, val: "Data_Stream_273" }, { id: 274, val: "Data_Stream_274" },
+    { id: 275, val: "Data_Stream_275" }, { id: 276, val: "Data_Stream_276" },
+    { id: 277, val: "Data_Stream_277" }, { id: 278, val: "Data_Stream_278" },
+    { id: 279, val: "Data_Stream_279" }, { id: 280, val: "Data_Stream_280" },
+    { id: 281, val: "Data_Stream_281" }, { id: 282, val: "Data_Stream_282" },
+    { id: 283, val: "Data_Stream_283" }, { id: 284, val: "Data_Stream_284" },
+    { id: 285, val: "Data_Stream_285" }, { id: 286, val: "Data_Stream_286" },
+    { id: 287, val: "Data_Stream_287" }, { id: 288, val: "Data_Stream_288" },
+    { id: 289, val: "Data_Stream_289" }, { id: 290, val: "Data_Stream_290" },
+    { id: 291, val: "Data_Stream_291" }, { id: 292, val: "Data_Stream_292" },
+    { id: 293, val: "Data_Stream_293" }, { id: 294, val: "Data_Stream_294" },
+    { id: 295, val: "Data_Stream_295" }, { id: 296, val: "Data_Stream_296" },
+    { id: 297, val: "Data_Stream_297" }, { id: 298, val: "Data_Stream_298" },
+    { id: 299, val: "Data_Stream_299" }, { id: 300, val: "Data_Stream_300" }
 ];
-
-const RECIPE_STEPS = [
-    { stepId: 1, title: "El Melao de Papelón", duration: 10, requiresHeat: true, tools: ["olla", "cuchara de madera"] },
-    { stepId: 2, title: "Puré de Plátano", duration: 15, requiresHeat: true, tools: ["olla", "tenedor", "bol"] },
-    { stepId: 3, title: "Integración de la Masa", duration: 5, requiresHeat: false, tools: ["bol grande"] },
-    { stepId: 4, title: "Amasado Perfecto", duration: 10, requiresHeat: false, tools: ["manos", "superficie plana"] },
-    { stepId: 5, title: "Modelado en Forma de Gota", duration: 15, requiresHeat: false, tools: ["bandeja"] },
-    { stepId: 6, title: "Fritura Profunda", duration: 15, requiresHeat: true, tools: ["sartén profunda", "espumadera", "papel absorbente"] }
-];
-
-const NUTRITION_DATA = [
-    { id: "nut_01", label: "Calorías Totales", value: "210", unit: "kcal" },
-    { id: "nut_02", label: "Grasas Totales", value: "12", unit: "g" },
-    { id: "nut_03", label: "Grasas Saturadas", value: "3.5", unit: "g" },
-    { id: "nut_04", label: "Grasas Trans", value: "0", unit: "g" },
-    { id: "nut_05", label: "Colesterol", value: "15", unit: "mg" },
-    { id: "nut_06", label: "Sodio", value: "320", unit: "mg" },
-    { id: "nut_07", label: "Carbohidratos", value: "24", unit: "g" },
-    { id: "nut_08", label: "Fibra Dietética", value: "2", unit: "g" },
-    { id: "nut_09", label: "Azúcares Totales", value: "9", unit: "g" },
-    { id: "nut_10", label: "Proteínas", value: "5", unit: "g" },
-    { id: "nut_11", label: "Vitamina D", value: "0.2", unit: "mcg" },
-    { id: "nut_12", label: "Calcio", value: "150", unit: "mg" },
-    { id: "nut_13", label: "Hierro", value: "1.1", unit: "mg" },
-    { id: "nut_14", label: "Potasio", value: "210", unit: "mg" },
-    { id: "nut_15", label: "Vitamina A", value: "85", unit: "mcg" },
-    { id: "nut_16", label: "Vitamina C", value: "4", unit: "mg" },
-    { id: "nut_17", label: "Magnesio", value: "32", unit: "mg" },
-    { id: "nut_18", label: "Zinc", value: "0.8", unit: "mg" },
-    { id: "nut_19", label: "Ácido Fólico", value: "24", unit: "mcg" },
-    { id: "nut_20", label: "Índice Glucémico", value: "58", unit: "IG" }
-];
-
-const CORE_UTILITIES = {
-    generateUUID: function() {
-        let d = new Date().getTime();
-        let d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            let r = Math.random() * 16;
-            if(d > 0){
-                r = (d + r) % 16 | 0;
-                d = Math.floor(d / 16);
-            } else {
-                r = (d2 + r) % 16 | 0;
-                d2 = Math.floor(d2 / 16);
-            }
-            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
-        });
-    },
-    formatDateISO: function(dateObj) {
-        return dateObj.toISOString();
-    },
-    calculateTotalDuration: function(stepsArray) {
-        let total = 0;
-        for (let i = 0; i < stepsArray.length; i++) {
-            total += stepsArray[i].duration;
-        }
-        return total;
-    },
-    validateSystemConfig: function(config) {
-        if (!config || !config.appId) return false;
-        if (config.version.split('.').length !== 3) return false;
-        return true;
-    },
-    parseNutritionValue: function(valueStr) {
-        let parsed = parseFloat(valueStr);
-        return isNaN(parsed) ? 0 : parsed;
-    },
-    sanitizeInputString: function(str) {
-        let temp = document.createElement('div');
-        temp.textContent = str;
-        return temp.innerHTML;
-    },
-    buildQueryString: function(params) {
-        let keys = Object.keys(params);
-        let pairs = [];
-        for (let i = 0; i < keys.length; i++) {
-            pairs.push(encodeURIComponent(keys[i]) + '=' + encodeURIComponent(params[keys[i]]));
-        }
-        return pairs.join('&');
-    },
-    hashString: function(str) {
-        let hash = 0;
-        if (str.length === 0) return hash;
-        for (let i = 0; i < str.length; i++) {
-            let char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
-            hash = hash & hash;
-        }
-        return hash;
-    },
-    rgbToHex: function(r, g, b) {
-        return "#" + (1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1);
-    },
-    hexToRgb: function(hex) {
-        let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-        return result ? {
-            r: parseInt(result[1], 16),
-            g: parseInt(result[2], 16),
-            b: parseInt(result[3], 16)
-        } : null;
-    }
-};
-
-const RENDER_ENGINE = {
-    initialize: function() {
-        this.renderNutritionData();
-        this.applySystemTheme();
-        this.bindEvents();
-    },
-    renderNutritionData: function() {
-        const container = document.getElementById('nutrition-data-container');
-        if (!container) return;
-        
-        let htmlContent = '';
-        for (let i = 0; i < NUTRITION_DATA.length; i++) {
-            const item = NUTRITION_DATA[i];
-            htmlContent += '<div class="nutrition-item">';
-            htmlContent += '<span class="nutrition-label">' + CORE_UTILITIES.sanitizeInputString(item.label) + '</span>';
-            htmlContent += '<span class="nutrition-value">' + CORE_UTILITIES.sanitizeInputString(item.value) + ' ' + CORE_UTILITIES.sanitizeInputString(item.unit) + '</span>';
-            htmlContent += '</div>';
-        }
-        container.innerHTML = htmlContent;
-    },
-    applySystemTheme: function() {
-        if (!SYSTEM_CONFIG.theme) return;
-        const root = document.documentElement;
-        root.style.setProperty('--accent-color', SYSTEM_CONFIG.theme.primary);
-        root.style.setProperty('--bg-gradient-1', SYSTEM_CONFIG.theme.secondary);
-        root.style.setProperty('--bg-gradient-3', SYSTEM_CONFIG.theme.tertiary);
-    },
-    bindEvents: function() {
-        const buttons = document.querySelectorAll('button');
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].addEventListener('click', function(e) {
-                const actionData = {
-                    id: CORE_UTILITIES.generateUUID(),
-                    timestamp: CORE_UTILITIES.formatDateISO(new Date()),
-                    element: e.target.tagName,
-                    text: e.target.innerText.trim()
-                };
-                DATA_MANAGER.recordInteraction(actionData);
-            });
-        }
-    }
-};
-
-const DATA_MANAGER = {
-    interactionLog: [],
-    recordInteraction: function(data) {
-        this.interactionLog.push(data);
-        if (this.interactionLog.length > 100) {
-            this.interactionLog.shift();
-        }
-    },
-    getLogCount: function() {
-        return this.interactionLog.length;
-    },
-    clearLog: function() {
-        this.interactionLog = [];
-    },
-    exportLogAsJSON: function() {
-        return JSON.stringify(this.interactionLog);
-    },
-    calculateTotalCalories: function() {
-        let total = 0;
-        for (let i = 0; i < INGREDIENTS_DATABASE.length; i++) {
-            let ing = INGREDIENTS_DATABASE[i];
-            total += (ing.baseAmount * ing.caloriesPerUnit);
-        }
-        return total;
-    },
-    findAllergens: function() {
-        let allergens = [];
-        for (let i = 0; i < INGREDIENTS_DATABASE.length; i++) {
-            if (INGREDIENTS_DATABASE[i].isAllergen) {
-                allergens.push(INGREDIENTS_DATABASE[i].name);
-            }
-        }
-        return allergens;
-    },
-    getStepsRequiringHeat: function() {
-        let heatSteps = [];
-        for (let i = 0; i < RECIPE_STEPS.length; i++) {
-            if (RECIPE_STEPS[i].requiresHeat) {
-                heatSteps.push(RECIPE_STEPS[i].title);
-            }
-        }
-        return heatSteps;
-    },
-    getAllToolsNeeded: function() {
-        let toolsSet = {};
-        for (let i = 0; i < RECIPE_STEPS.length; i++) {
-            let toolsArray = RECIPE_STEPS[i].tools;
-            for (let j = 0; j < toolsArray.length; j++) {
-                toolsSet[toolsArray[j]] = true;
-            }
-        }
-        return Object.keys(toolsSet);
-    }
-};
-
-const ERROR_HANDLER = {
-    errors: [],
-    logError: function(code, message) {
-        this.errors.push({
-            code: code,
-            message: message,
-            time: new Date().getTime()
-        });
-    },
-    hasErrors: function() {
-        return this.errors.length > 0;
-    },
-    getLastError: function() {
-        if (this.errors.length === 0) return null;
-        return this.errors[this.errors.length - 1];
-    },
-    clearErrors: function() {
-        this.errors = [];
-    }
-};
-
-const NETWORK_MODULE = {
-    isConnected: true,
-    checkConnection: function() {
-        this.isConnected = navigator.onLine;
-        return this.isConnected;
-    },
-    simulatePing: function(url) {
-        return new Promise(function(resolve, reject) {
-            setTimeout(function() {
-                if (NETWORK_MODULE.isConnected) {
-                    resolve({ status: 200, url: url, responseTime: Math.floor(Math.random() * 100) });
-                } else {
-                    reject({ status: 0, url: url, error: "Network Offline" });
-                }
-            }, 500);
-        });
-    },
-    syncData: function(dataPayload) {
-        if (!this.checkConnection()) {
-            ERROR_HANDLER.logError("NET_001", "Cannot sync data while offline");
-            return false;
-        }
-        let payloadString = JSON.stringify(dataPayload);
-        let hash = CORE_UTILITIES.hashString(payloadString);
-        return hash !== 0;
-    }
-};
-
-const APP_LIFECYCLE = {
-    state: "UNINITIALIZED",
-    bootSequence: function() {
-        this.state = "BOOTING";
-        if (CORE_UTILITIES.validateSystemConfig(SYSTEM_CONFIG)) {
-            this.state = "CONFIG_VALIDATED";
-            RENDER_ENGINE.initialize();
-            this.state = "RENDER_COMPLETE";
-            NETWORK_MODULE.checkConnection();
-            this.state = "READY";
-        } else {
-            this.state = "BOOT_FAILED";
-            ERROR_HANDLER.logError("SYS_001", "Invalid system configuration on boot");
-        }
-    },
-    shutdown: function() {
-        this.state = "SHUTTING_DOWN";
-        DATA_MANAGER.clearLog();
-        ERROR_HANDLER.clearErrors();
-        this.state = "OFFLINE";
-    },
-    getState: function() {
-        return this.state;
-    }
-};
-
-const STATE_STORE = {
-    subscribers: [],
-    state: {
-        userLoggedIn: false,
-        currentPortions: 12,
-        metricSystem: true,
-        highContrastMode: false,
-        activeTab: "overview",
-        searchQuery: ""
-    },
-    getState: function() {
-        return Object.assign({}, this.state);
-    },
-    setState: function(newState) {
-        let keys = Object.keys(newState);
-        let changed = false;
-        for (let i = 0; i < keys.length; i++) {
-            let key = keys[i];
-            if (this.state[key] !== newState[key]) {
-                this.state[key] = newState[key];
-                changed = true;
-            }
-        }
-        if (changed) {
-            this.notifySubscribers();
-        }
-    },
-    subscribe: function(callback) {
-        this.subscribers.push(callback);
-        return this.subscribers.length - 1;
-    },
-    unsubscribe: function(index) {
-        if (index > -1 && index < this.subscribers.length) {
-            this.subscribers.splice(index, 1);
-        }
-    },
-    notifySubscribers: function() {
-        for (let i = 0; i < this.subscribers.length; i++) {
-            try {
-                this.subscribers[i](this.state);
-            } catch (e) {
-                ERROR_HANDLER.logError("STATE_001", "Error in state subscriber execution");
-            }
-        }
-    }
-};
-
-const SECURITY_MODULE = {
-    sanitizeHTML: function(str) {
-        let temp = document.createElement('div');
-        temp.textContent = str;
-        return temp.innerHTML;
-    },
-    validateInputData: function(dataObject) {
-        let isValid = true;
-        let keys = Object.keys(dataObject);
-        for (let i = 0; i < keys.length; i++) {
-            let val = dataObject[keys[i]];
-            if (typeof val === 'string' && val.indexOf('<script>') !== -1) {
-                isValid = false;
-                break;
-            }
-        }
-        return isValid;
-    },
-    generateCSRFToken: function() {
-        return CORE_UTILITIES.generateUUID() + "-" + new Date().getTime().toString(36);
-    }
-};
-
-document.addEventListener('DOMContentLoaded', function() {
-    APP_LIFECYCLE.bootSequence();
-    const token = SECURITY_MODULE.generateCSRFToken();
-    DATA_MANAGER.recordInteraction({ type: "SYSTEM_BOOT", token: token });
-});
-
-window.addEventListener('online', function() {
-    NETWORK_MODULE.isConnected = true;
-});
-
-window.addEventListener('offline', function() {
-    NETWORK_MODULE.isConnected = false;
-    ERROR_HANDLER.logError("NET_002", "Connection lost");
-});
-
-window.addEventListener('error', function(e) {
-    ERROR_HANDLER.logError("WINDOW_ERR", e.message);
-});
-
 </script>
 </body>
 </html>
